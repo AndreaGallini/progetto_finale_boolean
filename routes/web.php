@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MediabookController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\StatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +34,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
+    ->group(function () {
+        // Route::get('/', [DashboardController::class, 'index'])
+        // ->name('dashboard');
+        Route::resource('apartment', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
+        Route::resource('category', CategoryController::class)->parameters(['categories' => 'category:slug']);
+        Route::resource('mediabook', MediabookController::class)->parameters(['mediabooks' => 'mediabook:slug']);
+        Route::resource('service', ServiceController::class)->parameters(['services' => 'service:slug']);
+        Route::resource('stat', StatController::class)->parameters(['stats' => 'stat:slug']);
+        Route::resource('sponsor', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
+    });
