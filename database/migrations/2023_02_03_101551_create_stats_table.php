@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('stats', function (Blueprint $table) {
             $table->id();
-            $table->integer('views_counter');
-            $table->integer('mail_counter');
+            $table->integer('views_counter')->nullable();
+            $table->integer('mail_counter')->nullable();
             $table->timestamps();
         });
     }
