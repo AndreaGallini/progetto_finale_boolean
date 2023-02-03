@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Stat extends Model
 {
@@ -17,9 +17,9 @@ class Stat extends Model
     {
         return Str::slug($name, '-');
     }
-
-    public function apartments(): HasMany
+    public function apartment(): BelongsTo
     {
-        return $this->hasMany(Apartment::class);
+        return $this->belongsTo(Apartment::class);
     }
+
 }

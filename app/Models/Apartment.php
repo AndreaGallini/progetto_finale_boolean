@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Apartment extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 
     public static function generateSlug($name)
     {
@@ -20,10 +23,6 @@ class Apartment extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
-    }
-    public function stat(): BelongsTo
-    {
-        return $this->belongsTo(Stat::class);
     }
 
     // uno a uno
@@ -40,5 +39,13 @@ class Apartment extends Model
     public function sponsor(): BelongsToMany
     {
         return $this->belongsToMany(Sponsor::class, 'apartment_sponsor', 'apartment_id', 'sponsor_id');
+    }
+
+
+    ////////////////////////////////////////////////
+
+    public function stat(): HasMany
+    {
+        return $this->hasMany(Stat::class);
     }
 }
