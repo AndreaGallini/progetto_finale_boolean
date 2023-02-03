@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('sponsors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('time');
+            $table->string('price');
             $table->timestamps();
         });
     }
