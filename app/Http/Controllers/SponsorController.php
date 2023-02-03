@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSponsorRequest;
 use App\Http\Requests\UpdateSponsorRequest;
 use App\Models\Sponsor;
@@ -15,7 +16,8 @@ class SponsorController extends Controller
      */
     public function index()
     {
-        //
+        $sponsors = Sponsor::all();
+        return view('admin.sponsors.index', compact('sponsors'));
     }
 
     /**
@@ -23,10 +25,10 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +38,13 @@ class SponsorController extends Controller
      */
     public function store(StoreSponsorRequest $request)
     {
-        //
+        $data = $request->validated();
+        $slug = Sponsor::generateSlug($request->name);
+        $data['slug'] = $slug;
+
+        Sponsor::create($data);
+
+        return redirect()->back()->with('message', "Sponsor $slug added successfully");
     }
 
     /**
@@ -45,10 +53,10 @@ class SponsorController extends Controller
      * @param  \App\Models\Sponsor  $sponsor
      * @return \Illuminate\Http\Response
      */
-    public function show(Sponsor $sponsor)
-    {
-        //
-    }
+    // public function show(Sponsor $sponsor)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -56,10 +64,10 @@ class SponsorController extends Controller
      * @param  \App\Models\Sponsor  $sponsor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sponsor $sponsor)
-    {
-        //
-    }
+    // public function edit(Sponsor $sponsor)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -70,7 +78,12 @@ class SponsorController extends Controller
      */
     public function update(UpdateSponsorRequest $request, Sponsor $sponsor)
     {
-        //
+        $data = $request->validated();
+        $slug = Sponsor::generateSlug($request->name);
+        $data['slug'] = $slug;
+        $sponsor->update($data);
+
+        return redirect()->back()->with('message', "Sponsor $slug updated successfully");
     }
 
     /**
@@ -81,6 +94,7 @@ class SponsorController extends Controller
      */
     public function destroy(Sponsor $sponsor)
     {
-        //
+        $sponsor->delete();
+        return redirect()->back()->with('message', "Sponsor $sponsor->name removed successfully");
     }
 }

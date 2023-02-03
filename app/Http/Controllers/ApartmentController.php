@@ -4,7 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreApartmentRequest;
 use App\Http\Requests\UpdateApartmentRequest;
+
 use App\Models\Apartment;
+use App\Models\Category;
+use App\Models\Mediabook;
+use App\Models\Service;
+use App\Models\Sponsor;
+use App\Models\Stat;
+
+use Illuminate\Support\Facades\Storage;
+
 
 class ApartmentController extends Controller
 {
@@ -15,7 +24,8 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //
+        $apartments = Apartment::all();
+        return view('admin.apartments.index', compact('apartments'));
     }
 
     /**
@@ -25,7 +35,12 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        $apartments = Apartment::all();
+        $categories = Category::all();
+        $services = Service::all();
+        $sponsors = Sponsor::all();
+
+        return view('admin.apartments.create', compact('apartments', 'categories', 'services', 'sponsors'));
     }
 
     /**
@@ -36,7 +51,25 @@ class ApartmentController extends Controller
      */
     public function store(StoreApartmentRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $slug = Apartment::generateSlug($request->title);
+
+        $data['slug'] = $slug;
+
+        if ($request->hasFile('cover_image')) {
+            $path = Storage::disk('public')->put('images', $request->cover_image);
+            $data['cover_image'] = $path;
+        }
+        $newApartment = Apartment::create($data);
+
+        if($request->has('sponsors')){
+            $newApartment->sponsors()->attach($request->sponsors);
+        }
+        if($request->has('services')){
+            $newApartment->services()->attach($request->services);
+        }
+        return redirect()->route('admin.apartments.index', $newApartment->slug)->with('message', "La creazione di $newApartment->title è andata a buon fine!");
     }
 
     /**
@@ -47,7 +80,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        //
+        return view('admin.apartments.show', compact('apartment'));
     }
 
     /**
@@ -58,7 +91,12 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        //
+        $apartments = Apartment::all();
+        $categories = Category::all();
+        $mediabooks = Mediabook::all();
+        $services = Service::all();
+        $sponsors = Sponsor::all();
+        return view('admin.apartments.edit', compact('apartment', 'categories', 'mediabooks', 'services', 'sponsors'));
     }
 
     /**
@@ -70,7 +108,30 @@ class ApartmentController extends Controller
      */
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
-        //
+        $data = $request->validated();
+        $slug = Apartment::generateSlug($request->title);
+        $data['slug'] = $slug;
+        if ($request->hasFile('cover_img')) {
+            if ($apartment->cover_img) {
+                Storage::delete($apartment->cover_img);
+            }
+            $path = Storage::disk('public')->put('apartment_img', $request->cover_img);
+            $data['cover_img'] = $path;
+        }
+        $apartment->update($data);
+
+        if($request->has('services')){
+            $apartment->services()->sync($request->services);
+        } else {
+            $apartment->services()->sync([]);
+        }
+
+        if($request->has('sponsors')){
+            $apartment->sponsors()->sync($request->sponsors);
+        } else {
+            $apartment->sponsors()->sync([]);
+        }
+        return redirect()->route('admin.apartments.index')->with('message', "$apartment->title aggiornato");
     }
 
     /**
@@ -81,6 +142,7 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->delete();
+        return redirect()->route('admin.apartments.index')->with('message', "$apartment->title cancellato");
     }
 }
