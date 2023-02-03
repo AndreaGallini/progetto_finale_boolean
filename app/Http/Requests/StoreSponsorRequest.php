@@ -13,7 +13,7 @@ class StoreSponsorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,22 @@ class StoreSponsorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:5|max:100',
+            'time' => 'required|max:100',
+            'price' => 'required|max:100',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Per favore inserire un nome',
+            'name.min' => 'Il nome deve essere lungo almeno 5 caratteri.',
+            'name.max' => 'Il nome non può superare i 100 caratteri.',
+            'time.required' => 'Per favore inserire una durata',
+            'time.max' => 'La cifra non può superare i 100 caratteri.',
+            'price.required' => 'Per favore inserire un prezzo',
+            'price.max' => 'La cifra non può superare i 100 caratteri.',
         ];
     }
 }

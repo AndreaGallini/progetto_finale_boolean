@@ -13,7 +13,7 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'min:3', 'max:100'],
+            'img' => ['required'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Per favore inserire un nome',
+            'name.min' => 'Il nome deve essere lungo almeno 3 caratteri',
+            'name.max' => 'Il nome non può superare i 100 caratteri',
+            'img.required' => "Per favore inserire un'icona",
         ];
     }
 }
