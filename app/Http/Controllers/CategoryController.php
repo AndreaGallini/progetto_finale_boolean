@@ -80,7 +80,7 @@ class CategoryController extends Controller
         $slug = Category::generateSlug($request->name);
         $data['slug'] = $slug;
         $category->update($data);
-        return redirect()->route('admin.mediabook.index')->with('message', "$category->name aggiornato con successo");
+        return redirect()->route('admin.category.index')->with('message', "$category->name aggiornato con successo");
     }
 
     /**
