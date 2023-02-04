@@ -44,6 +44,7 @@ class CategoryController extends Controller
         $data['slug'] = $slug;
         $new_category = Category::create([
             'name' => $data['name'],
+            'slug' => $slug = Category::generateSlug($data->name),
             'img' => $data['img'],
         ]);
         return redirect()->route('admin.category.index')->with('message',"$new_category->name aggiunto con successo");
