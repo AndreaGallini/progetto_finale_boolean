@@ -37,10 +37,14 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+        dd($request);
                 $data = $request->validated();
         $slug = Category::generateSlug($request->name);
         $data['slug'] = $slug;
-        $new_category = Category::create($data);
+        $new_category = Category::create([
+            'name' => $data['name'],
+            'img' => $data['img'],
+        ]);
         return redirect()->route('admin.service.index')->with('message',"$new_category->name aggiunto con successo");
     }
 

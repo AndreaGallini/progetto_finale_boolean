@@ -1,6 +1,7 @@
+<a href="{{ route('admin.category.create') }}">Add</a>
 @foreach ($categories as $category)
     <h1>{{ $category->name }}</h1>
-    <a href="{{ route('admin.category.edit', $category->slug) }}">modifica</a>
+
     <form action="{{ route('admin.category.destroy', $category->slug) }}" method="POST">
         @csrf
         @method('DELETE')
