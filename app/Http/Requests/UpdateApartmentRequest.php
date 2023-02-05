@@ -24,10 +24,10 @@ class UpdateApartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'min:5', 'max:200'],
-            'room_number' => ['required', 'max:20'],
-            'bed_number' => ['required', 'max:20'],
-            'bath_number' => ['required', 'max:20'],
+            'title' => ['required', 'min:5', 'max:100'],
+            'room_number' => ['required', 'max:2'],
+            'bed_number' => ['required', 'max:2'],
+            'bath_number' => ['required', 'max:2'],
             'mq_value' => ['required', 'max:20'],
             'address' => ['required', 'max:200'],
             'lat' => ['required'],
@@ -45,13 +45,13 @@ class UpdateApartmentRequest extends FormRequest
         return [
             'title.required' => 'Per favore inserire un titolo',
             'title.min' => 'Il titolo deve essere lungo almeno 5 caratteri.',
-            'title.max' => 'Il titolo non può superare i 200 caratteri.',
+            'title.max' => 'Il titolo non può superare i 100 caratteri.',
             'room_number.required' => 'Per favore inserire il numero di stanze',
-            'room_number.max' => 'Il numero non può superare le 20 cifre',
+            'room_number.max' => 'Il numero non può superare le 2 cifre',
             'bed_number.required' => 'Per favore inserire i posti letto disponibili',
-            'bed_number.max' => 'Il numero non può superare le 20 cifre',
+            'bed_number.max' => 'Il numero non può superare le 2 cifre',
             'bath_number.required' => 'Per favore inserire i bagni disponibili',
-            'bath_number.max' => 'Il numero non può superare le 20 cifre',
+            'bath_number.max' => 'Il numero non può superare le 2 cifre',
             'mq_value.required' => 'Per favore inserire i metri quadri',
             'mq_value.max' => 'Il numero non può superare le 20 cifre',
             'address.required' => 'Per favore inserire un indirizzo',
