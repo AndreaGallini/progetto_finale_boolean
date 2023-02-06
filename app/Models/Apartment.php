@@ -25,12 +25,6 @@ class Apartment extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // uno a uno
-    // public function mediabook(): BelongsTo
-    // {
-    //     return $this->belongsTo(Mediabook::class);
-    // }
-
     public function service(): BelongsToMany
     {
         return $this->belongsToMany(Service::class, 'apartment_service', 'apartment_id', 'service_id');
@@ -41,11 +35,12 @@ class Apartment extends Model
         return $this->belongsToMany(Sponsor::class, 'apartment_sponsor', 'apartment_id', 'sponsor_id');
     }
 
-
-    ////////////////////////////////////////////////
-
     public function stat(): HasMany
     {
         return $this->hasMany(Stat::class);
+    }
+    public function mediabook(): HasMany
+    {
+        return $this->hasMany(Mediabook::class);
     }
 }
