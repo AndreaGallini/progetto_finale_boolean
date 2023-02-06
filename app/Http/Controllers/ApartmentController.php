@@ -122,6 +122,7 @@ class ApartmentController extends Controller
      */
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
+        // dd($request);
         if (!Auth::user()->isAdmin() && $apartment->user_id !== Auth::id()) {
             abort(403);
         }
@@ -132,7 +133,7 @@ class ApartmentController extends Controller
             if ($apartment->cover_img) {
                 Storage::delete($apartment->cover_img);
             }
-            $path = Storage::disk('public')->put('apartment_img', $request->cover_img);
+            $path = Storage::disk('public')->put('apartment_image', $request->cover_img);
             $data['cover_img'] = $path;
         }
         $apartment->update($data);

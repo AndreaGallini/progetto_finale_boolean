@@ -163,6 +163,17 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
 
+                <div class="mb-3">
+                    <h5>Visibility</h5>
+                    <label for="mq_value" class="form-label">Visible</label>
+                    <input type="checkbox" class="form-control @error('visible') is-invalid @enderror" id="visible" name="visible" {{ old('visible', $apartment->visible) == true ? 'checked' : '' }} required>
+                    @error('visible')
+                        <div class="invalid-feedback d-block">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
                 <div class="my-5">
                     <button type="submit" class="btn btn-success">Aggiungi</button>
                     <button type="reset" class="btn btn-danger">Resetta</button>

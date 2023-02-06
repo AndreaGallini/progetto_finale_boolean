@@ -127,6 +127,18 @@
                     @endforeach
                 </div>
 
+                <div class="mb-3">
+                    <h5>Visibility</h5>
+                    <label for="visible" class="form-label">Visible</label>
+                    {{-- <input type="checkbox" class="form-control @error('visible') is-invalid @enderror" id="visible" name="visible" required> --}}
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="">
+                    @error('visible')
+                        <div class="invalid-feedback d-block">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
 
                 <div class="mt-4">
                     <button type="submit" class="btn btn-success">Aggiungi</button>
