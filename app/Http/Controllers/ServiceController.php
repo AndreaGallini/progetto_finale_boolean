@@ -33,11 +33,7 @@ class ServiceController extends Controller
      */
     // public function create()
     // {
-    //     if (Auth::user()->isAdmin()) {
-    //         return view('admin.services.create');
-
-    //     }
-    //     abort(403);
+    //  
     // }
 
     /**
@@ -67,12 +63,7 @@ class ServiceController extends Controller
      */
     // public function show(Service $service)
     // {
-    //     if (Auth::user()->isAdmin()) {
-    //         return view('admin.services.show', compact('service'));
-
-    //     }
-    //     abort(403);
-
+    //  
     // }
 
     /**
@@ -83,11 +74,7 @@ class ServiceController extends Controller
      */
     // public function edit(Service $service)
     // {
-    //     if (Auth::user()->isAdmin()) {
-    //         return view('admin.services.edit', compact('service'));
-
-    //     }
-    //     abort(403);
+    //
     // }
 
     /**
@@ -103,6 +90,7 @@ class ServiceController extends Controller
             $data = $request->validated();
             $slug = Service::generateSlug($request->title);
             $data['slug'] = $slug;
+
             $service->update($data);
             return redirect()->back()->with('message', "$service->title aggiornato con successo");
         }
