@@ -9,6 +9,20 @@ import.meta.glob([
     '../img/**'
 ])
 
+const options = {
+    idleTimePress: 100,
+    minNumberOfCharacters: 0,
+    searchOptions: {
+        key: 'mjOVKpgWnl7gsw0eNKkVguzisLjLZGIh',
+        language: 'it-IT',
+        limit: 5
+    },
+    autocompleteOptions: {
+        key: 'mjOVKpgWnl7gsw0eNKkVguzisLjLZGIh',
+        language: 'it-IT'
+    },
+    noResultsMessage: 'No results found.'
+}
 
 //delete modal
 const deleteSubmitButtons = document.querySelectorAll('.delete-button');

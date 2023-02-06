@@ -69,7 +69,7 @@
 
                 <div class="mb-3">
                     <label for="address" class="form-label">Add Address</label>
-                    <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address"></textarea>
+                    {{-- <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address"></textarea> --}}
                     <div id="searchBox"></div>
                     @error('address')
                         <div class="invalid-feedback d-block">
