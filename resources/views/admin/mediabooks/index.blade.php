@@ -11,7 +11,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">img</th>
-                    <th scope="col">Title</th>
+                    <th scope="col">Title</th>                    
+                    <th scope="col">Url</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -29,6 +30,8 @@
                     </th>
                     <td><a href="{{ route('admin.mediabooks.show', $mediabook->slug) }}" title="View mediabook">{{
                             $mediabook->title }}</a></td>
+                                                <td>{!! $mediabook->img !!}</td>
+
                     <td><a class="link-secondary" href="{{ route('admin.mediabooks.edit', $mediabook->slug) }}"
                             title="Edit mediabook">Edit</a></td>
                     <td>
