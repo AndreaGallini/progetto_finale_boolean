@@ -25,21 +25,21 @@ class Apartment extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function service(): BelongsToMany
+    public function services(): BelongsToMany
     {
         return $this->belongsToMany(Service::class, 'apartment_service', 'apartment_id', 'service_id');
     }
 
-    public function sponsor(): BelongsToMany
+    public function sponsors(): BelongsToMany
     {
         return $this->belongsToMany(Sponsor::class, 'apartment_sponsor', 'apartment_id', 'sponsor_id');
     }
 
-    public function stat(): HasMany
+    public function stats(): HasMany
     {
         return $this->hasMany(Stat::class);
     }
-    public function mediabook(): HasMany
+    public function mediabooks(): HasMany
     {
         return $this->hasMany(Mediabook::class);
     }

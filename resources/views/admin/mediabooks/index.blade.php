@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($mediabooks as $mediabook)
+                @foreach ($media as $mediabook)
                 <tr>
                     <th scope="row">{{ $mediabook->id }}</th>
                     <th scope="row">
