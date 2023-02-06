@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class CategoryController extends Controller
 {
@@ -15,8 +18,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.categories.index',compact('categories'));
+        if (Auth::user()->isAdmin()) {
+            $categories = Category::all();
+            return view('admin.categories.index', compact('categories'));
+        }
+        abort(403);
+
     }
 
     /**
@@ -26,7 +33,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        if (Auth::user()->isAdmin()) {
+            return view('admin.categories.create');
+
+
+        }
+        abort(403);
     }
 
     /**
@@ -37,17 +49,22 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+        if (Auth::user()->isAdmin()) {
+            $data = $request;
 
-                $data = $request;
+            $slug = Category::generateSlug($data->name);
+            $data['slug'] = $slug;
+            $new_category = Category::create([
+                'name' => $data['name'],
+                'slug' => $slug = Category::generateSlug($data->name),
+                'img' => $data['img'],
+            ]);
+            return redirect()->route('admin.categories.index')->with('message', "$new_category->name aggiunto con successo");
 
-        $slug = Category::generateSlug($data->name);
-        $data['slug'] = $slug;
-        $new_category = Category::create([
-            'name' => $data['name'],
-            'slug' => $slug = Category::generateSlug($data->name),
-            'img' => $data['img'],
-        ]);
-        return redirect()->route('admin.categories.index')->with('message',"$new_category->name aggiunto con successo");
+
+        }
+        abort(403);
+
     }
 
     /**
@@ -58,7 +75,11 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-                return view('admin.categories.show', compact('category'));
+        if (Auth::user()->isAdmin()) {
+            return view('admin.categories.show', compact('category'));
+
+        }
+        abort(403);
 
     }
 
@@ -70,7 +91,12 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.categories.edit',compact('category'));
+        if (Auth::user()->isAdmin()) {
+            return view('admin.categories.edit', compact('category'));
+        }
+        abort(403);
+
+
     }
 
     /**
@@ -82,11 +108,16 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $data = $request->validated();
-        $slug = Category::generateSlug($request->name);
-        $data['slug'] = $slug;
-        $category->update($data);
-        return redirect()->route('admin.categories.index')->with('message', "$category->name aggiornato con successo");
+        if (Auth::user()->isAdmin()) {
+            $data = $request->validated();
+            $slug = Category::generateSlug($request->name);
+            $data['slug'] = $slug;
+            $category->update($data);
+            return redirect()->route('admin.categories.index')->with('message', "$category->name aggiornato con successo");
+
+
+        }
+        abort(403);
     }
 
     /**
@@ -97,7 +128,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->delete();
-        return  redirect()->route('admin.categories.index')->with('message',"$category->name cancellato con successo");
+        if (Auth::user()->isAdmin()) {
+            $category->delete();
+            return redirect()->route('admin.categories.index')->with('message', "$category->name cancellato con successo");
+        }
+        abort(403);
     }
 }
