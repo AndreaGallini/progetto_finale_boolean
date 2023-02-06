@@ -50,10 +50,10 @@ class ServiceController extends Controller
     {
         if (Auth::user()->isAdmin()) {
             $data = $request->validated();
-            $slug = Service::generateSlug($request->name);
+            $slug = Service::generateSlug($request->title);
             $data['slug'] = $slug;
             $new_service = Service::create($data);
-            return redirect()->route('admin.services.index')->with('message', "$new_service->name aggiunto con successo");
+            return redirect()->route('admin.services.index')->with('message', "$new_service->title aggiunto con successo");
 
 
         }
@@ -102,10 +102,10 @@ class ServiceController extends Controller
     {
         if (Auth::user()->isAdmin()) {
             $data = $request->validated();
-            $slug = Service::generateSlug($request->name);
+            $slug = Service::generateSlug($request->title);
             $data['slug'] = $slug;
             $service->update($data);
-            return redirect()->route('admin.services.index')->with('message', "$service->name aggiornato con successo");
+            return redirect()->route('admin.services.index')->with('message', "$service->title aggiornato con successo");
 
         }
 
@@ -122,7 +122,7 @@ class ServiceController extends Controller
     {
         if (Auth::user()->isAdmin()) {
             $service->delete();
-            return redirect()->route('admin.services.index')->with('message', "$service->name cancellato con successo");
+            return redirect()->route('admin.services.index')->with('message', "$service->title cancellato con successo");
 
         }
         abort(403);
