@@ -11,54 +11,60 @@ class ServiceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view('admin.service.index',compact('services'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function create()
     {
-        //
+        return view('admin.service.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreServiceRequest  $request
-     * @return \Illuminate\Http\Response
+     *
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+        $data = $request->validated();
+        $slug = Service::generateSlug($request->name);
+        $data['slug'] = $slug;
+        $new_service = Service::create($data);
+        return redirect()->route('admin.service.index')->with('message',"$new_service->name aggiunto con successo");
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
+     *
      */
     public function show(Service $service)
     {
-        //
+                return view('admin.service.show', compact('service'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
+     *
      */
     public function edit(Service $service)
     {
-        //
+        return view('admin.service.edit',compact('service'));
     }
 
     /**
@@ -66,21 +72,26 @@ class ServiceController extends Controller
      *
      * @param  \App\Http\Requests\UpdateServiceRequest  $request
      * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
+     *
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-        //
+                $data = $request->validated();
+        $slug = Service::generateSlug($request->name);
+        $data['slug'] = $slug;
+        $service->update($data);
+        return redirect()->route('admin.service.index')->with('message', "$service->name aggiornato con successo");
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
+     *
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->route('admin.service.index')->with('message',"$service->name cancellato con successo");
     }
 }
