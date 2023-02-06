@@ -13,7 +13,7 @@ class StoreMediabookRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class StoreMediabookRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'media' => 'nullable',
+            'apartament_id' => 'required|exists:appartaments,id'
+        ];
+    }
+    public function message()
+    {
+        return [
+            'apartament_id' => 'The appartament is required'
         ];
     }
 }
