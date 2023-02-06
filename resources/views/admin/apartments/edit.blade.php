@@ -138,7 +138,7 @@
                         @if (old("services"))
                             <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}" {{in_array( $service->id, old("services", []) ) ? 'checked' : ''}}>
                         @else
-                            <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}" {{$apartment->service->contains($service) ? 'checked' : ''}}>
+                            <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}" {{$apartment->services->contains($service) ? 'checked' : ''}}>
                         @endif
                         <label class="form-check-label" for="{{$service->slug}}">{{$service->title}}</label>
                     </div>
