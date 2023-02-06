@@ -16,7 +16,13 @@
 
                         {{ __('You are logged in!') }}
                     </div>
-                    <a href="{{ route('admin.categories.index') }}">Index</a>
+                    <a href="{{ route('admin.apartments.index') }}">Index apartments</a>
+                    <a href="{{ route('admin.mediabooks.index') }}">Index mediabooks</a>
+                    <a href="{{ route('admin.services.index') }}">Index services</a>
+                    <a href="{{ route('admin.sponsors.index') }}">Index sponsors</a>
+                    <a href="{{ route('admin.categories.index') }}">Index categories</a>
+                    <a href="{{ route('admin.stats.index') }}">Index stats</a>
+
 
                 </div>
             </div>
