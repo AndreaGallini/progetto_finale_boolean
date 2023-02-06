@@ -29,3 +29,19 @@ deleteSubmitButtons.forEach((button) => {
         })
     })
 });
+
+//Image preview
+if(document.getElementById('cover_image')){
+    const previewImage = document.getElementById('cover_image');
+    previewImage.addEventListener('change', (event) => {
+    var oFReader = new FileReader();
+    // var image  =  previewImage.files[0];
+    // console.log(image);
+    oFReader.readAsDataURL(previewImage.files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        //console.log(oFREvent);
+        document.getElementById("uploadPreview").src = oFREvent.target.result;
+    };
+});
+}

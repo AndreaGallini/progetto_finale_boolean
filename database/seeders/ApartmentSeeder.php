@@ -6,6 +6,8 @@ use App\Models\Apartment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 
 class ApartmentSeeder extends Seeder
 {
@@ -23,7 +25,7 @@ class ApartmentSeeder extends Seeder
             $newapartment->title = $apartment['title'];
             $newapartment->slug = Str::slug($newapartment->title, '-');
             $newapartment->room_number = $apartment['room_number'];
-            $newapartment->cover_img = $apartment['cover_img'];
+            $newapartment->cover_img = ApartmentSeeder::storeimage($apartment['cover_img']);
             $newapartment->bed_number = $apartment['bed_number'];
             $newapartment->bath_number = $apartment['bath_number'];
             $newapartment->mq_value = $apartment['mq_value'];
@@ -34,5 +36,16 @@ class ApartmentSeeder extends Seeder
             $newapartment->visible = $apartment['visible'];
             $newapartment->save();
         }
+    }
+
+    public static function storeimage($img)
+    {
+        $url = 'https:' . $img;
+        $contents = file_get_contents($url);
+        $temp_name = substr($url, strrpos($url, '/') + 1);
+        $name = substr($temp_name, 0, strpos($temp_name, '?')) . '.jpg';
+        $path = 'images/' . $name;
+        Storage::put('/public/images/' . $name, $contents);
+        return $path;
     }
 }

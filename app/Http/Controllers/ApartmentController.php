@@ -58,9 +58,9 @@ class ApartmentController extends Controller
 
         $data['slug'] = $slug;
 
-        if ($request->hasFile('cover_image')) {
-            $path = Storage::disk('public')->put('images', $request->cover_image);
-            $data['cover_image'] = $path;
+        if ($request->hasFile('cover_img')) {
+            $path = Storage::disk('public')->put('images', $request->cover_img);
+            $data['cover_img'] = $path;
         }
         $newApartment = Apartment::create($data);
 
