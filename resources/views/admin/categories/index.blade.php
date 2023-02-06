@@ -24,7 +24,7 @@
                             <td><a href="{{ route('admin.categories.show', $category->slug) }}"
                                     title="View category">{{ $category->name }}</a></td>
                             <td> {{ $category->img }}</td>
-                            <td>{{$category->img}}</td>
+                            <td>{!! $category->img !!}</td>
                             {{-- @if ($category->category)
                                 <td>{{ $category->category->name }}</td>
                             @else

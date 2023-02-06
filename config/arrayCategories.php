@@ -19,7 +19,7 @@ return [
     ],
     [
         'name' => 'Villa di campagna',
-        'img' => '<i class="fa-regular fa-house-tree"></i>'
+        'img' => '<i class="fa-solid fa-house-tree"></i>'
     ],
     [
         'name' => 'Villa al mare',
