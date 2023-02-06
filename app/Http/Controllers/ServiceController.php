@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ServiceController extends Controller
 {
@@ -15,8 +17,13 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
-        return view('admin.services.index',compact('services'));
+        if (Auth::user()->isAdmin()) {
+            $services = Service::all();
+            return view('admin.services.index', compact('services'));
+        }
+        abort(403);
+
+
     }
 
     /**
@@ -26,7 +33,11 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+        if (Auth::user()->isAdmin()) {
+            return view('admin.services.create');
+
+        }
+        abort(403);
     }
 
     /**
@@ -37,11 +48,16 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        $data = $request->validated();
-        $slug = Service::generateSlug($request->name);
-        $data['slug'] = $slug;
-        $new_service = Service::create($data);
-        return redirect()->route('admin.services.index')->with('message',"$new_service->name aggiunto con successo");
+        if (Auth::user()->isAdmin()) {
+            $data = $request->validated();
+            $slug = Service::generateSlug($request->name);
+            $data['slug'] = $slug;
+            $new_service = Service::create($data);
+            return redirect()->route('admin.services.index')->with('message', "$new_service->name aggiunto con successo");
+
+
+        }
+        abort(403);
     }
 
     /**
@@ -52,7 +68,11 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-                return view('admin.services.show', compact('service'));
+        if (Auth::user()->isAdmin()) {
+            return view('admin.services.show', compact('service'));
+
+        }
+        abort(403);
 
     }
 
@@ -64,7 +84,11 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('admin.services.edit',compact('service'));
+        if (Auth::user()->isAdmin()) {
+            return view('admin.services.edit', compact('service'));
+
+        }
+        abort(403);
     }
 
     /**
@@ -76,11 +100,16 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-                $data = $request->validated();
-        $slug = Service::generateSlug($request->name);
-        $data['slug'] = $slug;
-        $service->update($data);
-        return redirect()->route('admin.services.index')->with('message', "$service->name aggiornato con successo");
+        if (Auth::user()->isAdmin()) {
+            $data = $request->validated();
+            $slug = Service::generateSlug($request->name);
+            $data['slug'] = $slug;
+            $service->update($data);
+            return redirect()->route('admin.services.index')->with('message', "$service->name aggiornato con successo");
+
+        }
+
+        abort(403);
     }
 
     /**
@@ -91,7 +120,11 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        $service->delete();
-        return redirect()->route('admin.services.index')->with('message',"$service->name cancellato con successo");
+        if (Auth::user()->isAdmin()) {
+            $service->delete();
+            return redirect()->route('admin.services.index')->with('message', "$service->name cancellato con successo");
+
+        }
+        abort(403);
     }
 }
