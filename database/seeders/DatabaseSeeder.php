@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ServiceSeeder::class,
             ApartmentSeeder::class,
+            MediabookSeeder::class,
         ]);
     }
 }
