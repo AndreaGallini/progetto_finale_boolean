@@ -40,10 +40,10 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
     ->group(function () {
         // Route::get('/', [DashboardController::class, 'index'])
         // ->name('dashboard');
-        Route::resource('apartment', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
-        Route::resource('category', CategoryController::class)->parameters(['categories' => 'category:slug']);
-        Route::resource('mediabook', MediabookController::class)->parameters(['mediabooks' => 'mediabook:slug']);
-        Route::resource('service', ServiceController::class)->parameters(['services' => 'service:slug']);
-        Route::resource('stat', StatController::class)->parameters(['stats' => 'stat:slug']);
-        Route::resource('sponsor', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
+        Route::resource('apartments', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
+        Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']);
+        Route::resource('mediabooks', MediabookController::class)->parameters(['mediabooks' => 'mediabook:slug']);
+        Route::resource('services', ServiceController::class)->parameters(['services' => 'service:slug']);
+        Route::resource('stats', StatController::class)->parameters(['stats' => 'stat:slug']);
+        Route::resource('sponsors', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
     });

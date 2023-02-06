@@ -23,6 +23,7 @@ class ApartmentSeeder extends Seeder
             $newapartment->title = $apartment['title'];
             $newapartment->slug = Str::slug($newapartment->name, '-');
             $newapartment->room_number = $apartment['room_number'];
+            $newapartment->cover_img = $apartment['cover_img'];
             $newapartment->bed_number = $apartment['bed_number'];
             $newapartment->bath_number = $apartment['bath_number'];
             $newapartment->mq_value = $apartment['mq_value'];

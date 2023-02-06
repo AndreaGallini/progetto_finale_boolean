@@ -16,7 +16,7 @@ class MediabookController extends Controller
     public function index()
     {
         $media = Mediabook::all();
-        return view('admin.mediabook.index', compact('media'));
+        return view('admin.mediabooks.index', compact('media'));
     }
 
     /**
@@ -26,7 +26,7 @@ class MediabookController extends Controller
      */
     public function create()
     {
-        return view('admin.mediabook.create');
+        return view('admin.mediabooks.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class MediabookController extends Controller
         $slug = Mediabook::generateSlug($request->name);
         $data['slug'] = $slug;
         $new_mediabook = Mediabook::create($data);
-        return redirect()->route('admin.mediabook.index')->with('message',"$new_mediabook->name aggiunto con successo");
+        return redirect()->route('admin.mediabooks.index')->with('message',"$new_mediabook->name aggiunto con successo");
     }
 
     /**
@@ -52,7 +52,7 @@ class MediabookController extends Controller
      */
     public function show(Mediabook $mediabook)
     {
-        return view('admin.mediabook.show', compact('mediabook'));
+        return view('admin.mediabooks.show', compact('mediabook'));
     }
 
     /**
@@ -63,7 +63,7 @@ class MediabookController extends Controller
      */
     public function edit(Mediabook $mediabook)
     {
-        return view('admin.mediabook.edit', compact('mediabook'));
+        return view('admin.mediabooks.edit', compact('mediabook'));
     }
 
     /**
@@ -79,7 +79,7 @@ class MediabookController extends Controller
         $slug = Mediabook::generateSlug($request->name);
         $data['slug'] = $slug;
         $mediabook->update($data);
-        return redirect()->route('admin.mediabook.index')->with('message', "$mediabook->name aggiornato con successo");
+        return redirect()->route('admin.mediabooks.index')->with('message', "$mediabook->name aggiornato con successo");
     }
 
     /**
@@ -91,6 +91,6 @@ class MediabookController extends Controller
     public function destroy(Mediabook $mediabook)
     {
         $mediabook->delete();
-        return redirect()->route('admin.mediabook.index')->with('message', "$mediabook->name cancellato con successo");
+        return redirect()->route('admin.mediabooks.index')->with('message', "$mediabook->name cancellato con successo");
     }
 }

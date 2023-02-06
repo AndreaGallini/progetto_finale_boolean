@@ -34,7 +34,7 @@ class StoreApartmentRequest extends FormRequest
             'long' => 'required',
             'price' => 'required',
             'visible' => 'required',
-            // 'cover_img' => 'required',
+            'cover_img' => 'required',
             'category_id' => 'nullable|exists:categories,id',
             'user_id' => 'nullable|exists:users,id',
         ];
@@ -60,7 +60,7 @@ class StoreApartmentRequest extends FormRequest
             'long.required' => 'Per favore inserire una longitudine',
             'price.required' => 'Per favore inserire un prezzo',
             'visible.required' => 'Per favore scegliere sì o no',
-            // 'cover_img.required' => 'Per favore aggiungere una foto',
+             'cover_img.required' => 'Per favore aggiungere una foto',
         ];
     }
 }

@@ -1,4 +1,4 @@
-<form action="{{ route('admin.category.store') }}" method="POST">
+<form action="{{ route('admin.categories.store') }}" method="POST">
     @csrf
     <input type="text" name="name">
 

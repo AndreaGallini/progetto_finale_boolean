@@ -12,7 +12,7 @@ class SponsorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class SponsorController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     // public function create()
     // {
@@ -34,7 +34,7 @@ class SponsorController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreSponsorRequest  $request
-     * @return \Illuminate\Http\Response
+     *
      */
     public function store(StoreSponsorRequest $request)
     {
@@ -51,7 +51,7 @@ class SponsorController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Sponsor  $sponsor
-     * @return \Illuminate\Http\Response
+     *
      */
     // public function show(Sponsor $sponsor)
     // {
@@ -62,7 +62,7 @@ class SponsorController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Sponsor  $sponsor
-     * @return \Illuminate\Http\Response
+     *
      */
     // public function edit(Sponsor $sponsor)
     // {
@@ -74,7 +74,7 @@ class SponsorController extends Controller
      *
      * @param  \App\Http\Requests\UpdateSponsorRequest  $request
      * @param  \App\Models\Sponsor  $sponsor
-     * @return \Illuminate\Http\Response
+     *
      */
     public function update(UpdateSponsorRequest $request, Sponsor $sponsor)
     {
@@ -90,7 +90,7 @@ class SponsorController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Sponsor  $sponsor
-     * @return \Illuminate\Http\Response
+     *
      */
     public function destroy(Sponsor $sponsor)
     {

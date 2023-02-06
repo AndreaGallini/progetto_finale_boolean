@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('admin.category.index',compact('categories'));
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -47,7 +47,7 @@ class CategoryController extends Controller
             'slug' => $slug = Category::generateSlug($data->name),
             'img' => $data['img'],
         ]);
-        return redirect()->route('admin.category.index')->with('message',"$new_category->name aggiunto con successo");
+        return redirect()->route('admin.categories.index')->with('message',"$new_category->name aggiunto con successo");
     }
 
     /**
@@ -58,7 +58,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-                return view('admin.category.show', compact('category'));
+                return view('admin.categories.show', compact('category'));
 
     }
 
@@ -70,7 +70,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.category.edit',compact('category'));
+        return view('admin.categories.edit',compact('category'));
     }
 
     /**
@@ -86,7 +86,7 @@ class CategoryController extends Controller
         $slug = Category::generateSlug($request->name);
         $data['slug'] = $slug;
         $category->update($data);
-        return redirect()->route('admin.category.index')->with('message', "$category->name aggiornato con successo");
+        return redirect()->route('admin.categories.index')->with('message', "$category->name aggiornato con successo");
     }
 
     /**
@@ -98,6 +98,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return  redirect()->route('admin.category.index')->with('message',"$category->name cancellato con successo");
+        return  redirect()->route('admin.categories.index')->with('message',"$category->name cancellato con successo");
     }
 }

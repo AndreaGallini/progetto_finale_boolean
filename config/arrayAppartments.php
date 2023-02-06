@@ -4,6 +4,7 @@ return [
     [
         "title" => "Villa stile Barocco in riva mare con piscina 4 posti auto",
         "price" => 650,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 11,
         "bed_number" => 5,
         "bath_number" => 3,
@@ -16,6 +17,7 @@ return [
     [
         "title" => "Attico stile Moderno centro citta Parcheggio",
         "price" => 400,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -28,6 +30,7 @@ return [
     [
         "title" => "Cottage montagna con servizio funivia",
         "price" => 1200,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 14,
         "bed_number" => 7,
         "bath_number" => 3,
@@ -40,6 +43,7 @@ return [
     [
         "title" => "Villa Bella",
         "price" => 1000,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 5,
         "bed_number" => 10,
         "bath_number" => 4,
@@ -52,6 +56,7 @@ return [
     [
         "title" => "Palazzo d'Oro",
         "price" => 2000,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 16,
         "bath_number" => 6,
@@ -64,6 +69,7 @@ return [
     [
         "title" => "Palazzo d'Oro",
         "price" => 2000,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 16,
         "bath_number" => 6,
@@ -76,6 +82,7 @@ return [
     [
         "title" => "Luxury Mansion in Beverly Hills",
         "price" => 2500,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 15,
         "bed_number" => 10,
         "bath_number" => 8,
@@ -88,6 +95,7 @@ return [
     [
         "title" => "Elegant Villa in Monaco",
         "price" => 2000,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 12,
         "bed_number" => 8,
         "bath_number" => 6,
@@ -100,6 +108,7 @@ return [
     [
         "title" => "Luxury Apartment in Paris",
         "price" => 1000,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 4,
         "bath_number" => 3,
@@ -112,6 +121,7 @@ return [
     [
         "title" => "Luxury Penthouse con vista panoramica sulla città",
         "price" => 800,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 7,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -124,6 +134,7 @@ return [
     [
         "title" => "Chalet in montagna con vista mozzafiato",
         "price" => 550,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 9,
         "bed_number" => 6,
         "bath_number" => 3,
@@ -136,6 +147,7 @@ return [
     [
         "title" => "Appartamento moderno in centro città",
         "price" => 500,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 4,
         "bed_number" => 2,
         "bath_number" => 1,
@@ -148,6 +160,7 @@ return [
     [
         "title" => "Villa con giardino privato e piscina",
         "price" => 700,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -160,6 +173,7 @@ return [
     [
         "title" => "Appartamento moderno con terrazza panoramica",
         "price" => 450,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 5,
         "bed_number" => 2,
         "bath_number" => 1,
@@ -172,6 +186,7 @@ return [
     [
         "title" => "Casa colonica in campagna con giardino privato",
         "price" => 900,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -184,6 +199,7 @@ return [
     [
         "title" => "Loft industrial con vista sul fiume",
         "price" => 550,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 4,
         "bed_number" => 2,
         "bath_number" => 1,
@@ -196,6 +212,7 @@ return [
     [
         "title" => "Lussuoso appartamento moderno con vista città",
         "price" => 400,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 8,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -208,6 +225,7 @@ return [
     [
         "title" => "Rustico con giardino e piscina in campagna",
         "price" => 500,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 6,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -220,6 +238,7 @@ return [
     [
         "title" => "Chalet in montagna con sauna e vista panoramica",
         "price" => 800,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 10,
         "bed_number" => 6,
         "bath_number" => 3,
@@ -232,6 +251,7 @@ return [
     [
         "title" => "Appartamento con terrazza vista mare",
         "price" => 450,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 7,
         "bed_number" => 4,
         "bath_number" => 2,
@@ -244,6 +264,7 @@ return [
     [
         "title" => "Casa in stile provenzale con piscina privata",
         "price" => 700,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 9,
         "bed_number" => 5,
         "bath_number" => 3,
@@ -256,6 +277,7 @@ return [
     [
         "title" => "Appartamento in centro città con parcheggio",
         "price" => 400,
+        'cover_img' => 'https://via.placeholder.com/150',
         "room_number" => 6,
         "bed_number" => 3,
         "bath_number" => 2,

@@ -16,7 +16,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('admin.service.index',compact('services'));
+        return view('admin.services.index',compact('services'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.service.create');
+        return view('admin.services.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class ServiceController extends Controller
         $slug = Service::generateSlug($request->name);
         $data['slug'] = $slug;
         $new_service = Service::create($data);
-        return redirect()->route('admin.service.index')->with('message',"$new_service->name aggiunto con successo");
+        return redirect()->route('admin.services.index')->with('message',"$new_service->name aggiunto con successo");
     }
 
     /**
@@ -52,7 +52,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-                return view('admin.service.show', compact('service'));
+                return view('admin.services.show', compact('service'));
 
     }
 
@@ -64,7 +64,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('admin.service.edit',compact('service'));
+        return view('admin.services.edit',compact('service'));
     }
 
     /**
@@ -80,7 +80,7 @@ class ServiceController extends Controller
         $slug = Service::generateSlug($request->name);
         $data['slug'] = $slug;
         $service->update($data);
-        return redirect()->route('admin.service.index')->with('message', "$service->name aggiornato con successo");
+        return redirect()->route('admin.services.index')->with('message', "$service->name aggiornato con successo");
     }
 
     /**
@@ -92,6 +92,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-        return redirect()->route('admin.service.index')->with('message',"$service->name cancellato con successo");
+        return redirect()->route('admin.services.index')->with('message',"$service->name cancellato con successo");
     }
 }
