@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreApartmentRequest;
 use App\Http\Requests\UpdateApartmentRequest;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Apartment;
 use App\Models\Category;
@@ -63,10 +64,10 @@ class ApartmentController extends Controller
         }
         $newApartment = Apartment::create($data);
 
-        if($request->has('sponsors')){
+        if ($request->has('sponsors')) {
             $newApartment->sponsors()->attach($request->sponsors);
         }
-        if($request->has('services')){
+        if ($request->has('services')) {
             $newApartment->services()->attach($request->services);
         }
         return redirect()->route('admin.apartments.index', $newApartment->slug)->with('message', "La creazione di $newApartment->title è andata a buon fine!");
@@ -120,13 +121,13 @@ class ApartmentController extends Controller
         }
         $apartment->update($data);
 
-        if($request->has('services')){
+        if ($request->has('services')) {
             $apartment->services()->sync($request->services);
         } else {
             $apartment->services()->sync([]);
         }
 
-        if($request->has('sponsors')){
+        if ($request->has('sponsors')) {
             $apartment->sponsors()->sync($request->sponsors);
         } else {
             $apartment->sponsors()->sync([]);

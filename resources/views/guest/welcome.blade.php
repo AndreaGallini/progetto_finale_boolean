@@ -17,7 +17,6 @@
                         {{ __('You are logged in!') }}
                     </div>
                     <a href="{{ route('admin.categories.index') }}">Index</a>
-
                 </div>
             </div>
         </div>
