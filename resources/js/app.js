@@ -1,5 +1,8 @@
 import './bootstrap';
-import 'regenerator-runtime/runtime';
+import 'regenerator-runtime/runtime'
+import "core-js/stable";
+
+import "regenerator-runtime/runtime";
 import '~resources/scss/app.scss';
 import * as bootstrap from 'bootstrap';
 import.meta.glob([
