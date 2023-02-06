@@ -36,7 +36,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="delete-button btn btn-danger ms-3"
-                                data-item-title="{{ $mediabook->title }}">Delete</button>
+                                data-item-title="{{ $mediabook->slug }}">Delete</button>
                         </form>
                     </td>
                 </tr>
