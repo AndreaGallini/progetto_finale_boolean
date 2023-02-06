@@ -20,7 +20,7 @@
 
                         <th scope="col">Category</th>
 
-                        <th scope="col">Sponsor</th>
+                        <th scope="col">Sponsor (total)</th>
                         <th scope="col">Services (total)</th>
 
                         <th scope="col">Edit</th>

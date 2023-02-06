@@ -34,7 +34,7 @@ class UpdateApartmentRequest extends FormRequest
             // 'long' => ['required'],
             'price' => ['required'],
             'visible' => ['nullable'],
-            'cover_img' => ['required'],
+            // 'cover_img' => ['required'],
             'category_id' => 'nullable|exists:categories,id',
             'user_id' => 'nullable|exists:users,id',
         ];

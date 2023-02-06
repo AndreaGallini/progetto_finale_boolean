@@ -70,6 +70,7 @@
                 <div class="mb-3">
                     <label for="address" class="form-label">Add Address</label>
                     <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address"></textarea>
+                    <div id="searchBox"></div>
                     @error('address')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -137,7 +138,8 @@
                 <div class="mb-3">
                     <h5>Visibility</h5>
                     <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="">
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1">
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="0">
                     @error('visible')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -152,8 +154,23 @@
                 </div>
             </form>
         </div>
-        {{-- <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            bkLib.onDomLoaded(nicEditors.allTextAreas);
-        </script> --}}
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script>
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/services/services-web.min.js"></script>
+        <script>
+
+            let ttSearchBox = new tt.plugins.SearchBox(tt.services, this.options);
+
+                let searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+                const searchBox = document.getElementById('searchBox');
+                searchBox.appendChild(searchBoxHTML);
+
+                ttSearchBox.on('tomtom.searchbox.resultsfound', function(data){
+                    console.log(data);
+                })
+
+                ttSearchBox.on('tomtom.searchbox.resultselected', function(data){
+                    console.log(data);
+                })
+        </script>
     @endsection

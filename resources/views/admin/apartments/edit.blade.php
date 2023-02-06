@@ -166,7 +166,8 @@
                 <div class="mb-3">
                     <h5>Visibility</h5>
                     <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" {{ old('visible', $apartment->visible) == true ? 'checked' : '' }}>
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1" {{ old('visible', $apartment->visible) == 1 ? 'checked' : '' }}>
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="0" {{ old('visible', $apartment->visible) == 0 ? 'checked' : '' }}>
                     @error('visible')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
