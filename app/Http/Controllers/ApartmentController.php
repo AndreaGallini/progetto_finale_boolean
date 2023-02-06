@@ -21,18 +21,24 @@ class ApartmentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
-        $apartments = Apartment::all();
-        return view('admin.apartments.index', compact('apartments'));
+        if (Auth::user()->isAdmin()) {
+            $apartments = Apartment::all();
+            return view('admin.apartments.index', compact('apartments'));
+        } else {
+            $apartments = Apartment::paginate(3);
+            return view('admin.apartments.index', compact('apartments'));
+        }
+
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function create()
     {
@@ -48,14 +54,15 @@ class ApartmentController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreApartmentRequest  $request
-     * @return \Illuminate\Http\Response
+     *
      */
     public function store(StoreApartmentRequest $request)
     {
         $data = $request->validated();
+        $userid = Auth::id();
 
         $slug = Apartment::generateSlug($request->title);
-
+        $data['user_id'] = $userid;
         $data['slug'] = $slug;
 
         if ($request->hasFile('cover_img')) {
@@ -77,10 +84,13 @@ class ApartmentController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Apartment  $apartment
-     * @return \Illuminate\Http\Response
+     *
      */
     public function show(Apartment $apartment)
     {
+        if (!Auth::user()->isAdmin() && $apartment->user_id !== Auth::id()) {
+            abort(403);
+        }
         return view('admin.apartments.show', compact('apartment'));
     }
 
@@ -88,10 +98,13 @@ class ApartmentController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Apartment  $apartment
-     * @return \Illuminate\Http\Response
+     *
      */
     public function edit(Apartment $apartment)
     {
+        if (!Auth::user()->isAdmin() && $apartment->user_id !== Auth::id()) {
+            abort(403);
+        }
         $apartments = Apartment::all();
         $categories = Category::all();
         $mediabooks = Mediabook::all();
@@ -105,10 +118,13 @@ class ApartmentController extends Controller
      *
      * @param  \App\Http\Requests\UpdateApartmentRequest  $request
      * @param  \App\Models\Apartment  $apartment
-     * @return \Illuminate\Http\Response
+     *
      */
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
+        if (!Auth::user()->isAdmin() && $apartment->user_id !== Auth::id()) {
+            abort(403);
+        }
         $data = $request->validated();
         $slug = Apartment::generateSlug($request->title);
         $data['slug'] = $slug;
@@ -139,10 +155,13 @@ class ApartmentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Apartment  $apartment
-     * @return \Illuminate\Http\Response
+     *
      */
     public function destroy(Apartment $apartment)
     {
+        if (!Auth::user()->isAdmin() && $apartment->user_id !== Auth::id()) {
+            abort(403);
+        }
         $apartment->delete();
         return redirect()->route('admin.apartments.index')->with('message', "$apartment->title cancellato");
     }
