@@ -11,8 +11,8 @@
             @endforeach
             @endif --}}
             <div class="image">
-                @if($apartment->cover_image)
-                <img src="{{ asset('storage/' . $apartment->cover_image) }}">
+                @if($apartment->cover_img)
+                <img src="{{ asset('storage/' . $apartment->cover_img) }}">
                 @else
                 <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="">
                 @endif
