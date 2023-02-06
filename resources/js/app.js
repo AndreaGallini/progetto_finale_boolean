@@ -1,8 +1,8 @@
-import './bootstrap';
 import 'regenerator-runtime/runtime'
-import "core-js/stable";
+import './bootstrap';
 
-import "regenerator-runtime/runtime";
+import "core-js/stable";
+import "babel-polyfill";
 import '~resources/scss/app.scss';
 import * as bootstrap from 'bootstrap';
 import.meta.glob([
