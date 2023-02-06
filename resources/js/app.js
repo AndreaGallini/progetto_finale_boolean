@@ -63,16 +63,19 @@ if(document.getElementById('cover_image')){
     };
 });
 }
-            let ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 
-            let searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-            const searchBox = document.getElementById('searchBox');
-            searchBox.appendChild(searchBoxHTML);
+if(document.getElementById('searchBox')){
+    let ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
 
-            ttSearchBox.on('tomtom.searchbox.resultsfound', function(data) {
-                console.log(data);
-            })
+    let searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    const searchBox = document.getElementById('searchBox');
+    searchBox.appendChild(searchBoxHTML);
 
-            ttSearchBox.on('tomtom.searchbox.resultselected', function(data) {
-                console.log(data);
-            })
+    ttSearchBox.on('tomtom.searchbox.resultsfound', function(data) {
+        console.log(data);
+    })
+
+    ttSearchBox.on('tomtom.searchbox.resultselected', function(data) {
+        console.log(data);
+    })
+}
