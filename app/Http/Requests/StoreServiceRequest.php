@@ -24,17 +24,17 @@ class StoreServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:services|min:3|max:100',
-            'image' => 'nullable'
+            'title' => 'required|unique:services|min:3|max:100',
+            'img' => 'nullable'
         ];
     }
     public function message()
     {
         return [
-            'name.required' => 'The name is required',
-            'name.unique' => 'This name already exists',
-            'name.min' => 'The name is too short',
-            'name.max' => 'The name is too long, max :max characters'
+            'title.required' => 'The title is required',
+            'title.unique' => 'This title already exists',
+            'title.min' => 'The title is too short',
+            'title.max' => 'The title is too long, max :max characters'
         ];
     }
 }

@@ -31,14 +31,10 @@ class ServiceController extends Controller
      *
      *
      */
-    public function create()
-    {
-        if (Auth::user()->isAdmin()) {
-            return view('admin.services.create');
-
-        }
-        abort(403);
-    }
+    // public function create()
+    // {
+    //  
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -52,10 +48,9 @@ class ServiceController extends Controller
             $data = $request->validated();
             $slug = Service::generateSlug($request->title);
             $data['slug'] = $slug;
-            $new_service = Service::create($data);
-            return redirect()->route('admin.services.index')->with('message', "$new_service->title aggiunto con successo");
 
-
+            Service::create($data);
+            return redirect()->back()->with('message', "$slug aggiunto con successo");
         }
         abort(403);
     }
@@ -66,15 +61,10 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      *
      */
-    public function show(Service $service)
-    {
-        if (Auth::user()->isAdmin()) {
-            return view('admin.services.show', compact('service'));
-
-        }
-        abort(403);
-
-    }
+    // public function show(Service $service)
+    // {
+    //  
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -82,14 +72,10 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      *
      */
-    public function edit(Service $service)
-    {
-        if (Auth::user()->isAdmin()) {
-            return view('admin.services.edit', compact('service'));
-
-        }
-        abort(403);
-    }
+    // public function edit(Service $service)
+    // {
+    //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -104,9 +90,9 @@ class ServiceController extends Controller
             $data = $request->validated();
             $slug = Service::generateSlug($request->title);
             $data['slug'] = $slug;
-            $service->update($data);
-            return redirect()->route('admin.services.index')->with('message', "$service->title aggiornato con successo");
 
+            $service->update($data);
+            return redirect()->back()->with('message', "$service->title aggiornato con successo");
         }
 
         abort(403);
@@ -122,8 +108,7 @@ class ServiceController extends Controller
     {
         if (Auth::user()->isAdmin()) {
             $service->delete();
-            return redirect()->route('admin.services.index')->with('message', "$service->title cancellato con successo");
-
+            return redirect()->back()->with('message', "$service->title cancellato con successo");
         }
         abort(403);
     }

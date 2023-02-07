@@ -12,9 +12,9 @@ class Service extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public static function generateSlug($name)
+    public static function generateSlug($title)
     {
-        return Str::slug($name, '-');
+        return Str::slug($title, '-');
     }
     public function apartments(): BelongsToMany
     {

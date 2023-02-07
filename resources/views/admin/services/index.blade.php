@@ -14,19 +14,32 @@
                     placeholder="Aggiungi un servizio">
                 <button class="btn btn-outline-success" type="submit">Nuovo servizio</button>
             </form>
+
             <ul class="mt-5">
                 @foreach ($services as $service)
                     <li class="mb-3 pb-3 border-bottom border-dark">
-                        <form id="servizio-{{ $service->id }}" class="mb-3"
-                            action="{{ route('admin.services.update', $service->slug) }}" method="post">
+                        <form id="service-{{ $service->id }}"
+                            action="{{route('admin.services.update', $service->slug)}}" method="post" class="mb-3">
                             @csrf
                             @method('PATCH')
+                        
                             <input class="border-0 bg-transparent fs-3" type="text" name="title"
-                                value="{{ $service->title }}"> 
-                            <input class="border-0 bg-transparent fs-3" type="text" name="img"
-                            value="{{ $service->img }}">
-                            <div>{!! $service->img !!}</div>
+                                value="{{old('title', $service->title)}}">
                         </form>
+
+
+                        <form id="service-{{ $service->id }}" class="mb-3"
+                            action="{{route('admin.services.update', $service->slug)}}" method="post">
+                            @csrf 
+                            @method('PATCH') 
+
+                            <input class="border-0 bg-transparent fs-3" type="text" name="img"
+                            value="{{old('img', $service->img)}}">
+                        </form>
+
+                        <div>{!! old('img', $service->img) !!}</div>
+
+                       
                         <form action="{{ route('admin.services.destroy', $service->slug) }}" method="POST">
                             @csrf
                             @method('DELETE')
@@ -37,7 +50,9 @@
                 @endforeach
             </ul>
         </div>
-    </section>
+    </section> 
 
-    @include('partials.admin.modal-delete')
+
+   
+    @include('partials.admin.modal-delete') 
 @endsection

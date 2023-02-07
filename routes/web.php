@@ -43,7 +43,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::resource('apartments', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
         Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']);
         Route::resource('mediabooks', MediabookController::class)->parameters(['mediabooks' => 'mediabook:slug']);
-        Route::resource('services', ServiceController::class)->parameters(['services' => 'service:slug']);
+        Route::resource('services', ServiceController::class)->parameters(['services' => 'service:slug'])->except('show', 'edit');
         Route::resource('stats', StatController::class)->parameters(['stats' => 'stat:slug']);
         Route::resource('sponsors', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
     });

@@ -15,9 +15,9 @@ class Apartment extends Model
 
     protected $guarded = [];
 
-    public static function generateSlug($name)
+    public static function generateSlug($title)
     {
-        return Str::slug($name, '-');
+        return Str::slug($title, '-');
     }
 
     public function category(): BelongsTo
@@ -27,12 +27,12 @@ class Apartment extends Model
 
     public function services(): BelongsToMany
     {
-        return $this->belongsToMany(Service::class, 'apartment_service', 'apartment_id', 'service_id');
+        return $this->belongsToMany(Service::class);
     }
 
     public function sponsors(): BelongsToMany
     {
-        return $this->belongsToMany(Sponsor::class, 'apartment_sponsor', 'apartment_id', 'sponsor_id');
+        return $this->belongsToMany(Sponsor::class);
     }
 
     public function stats(): HasMany
