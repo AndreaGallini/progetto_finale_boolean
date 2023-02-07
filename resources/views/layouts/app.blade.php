@@ -25,16 +25,15 @@
         <header>
             @include('partials.admin.header')
         </header>
-       
-
         <main class="">
             @yield('content')
         </main>
-
         <footer>
             @include('partials.admin.footer')
         </footer>
-
+        <nav class="fixbot">
+            @include('partials.admin.navsmartphone')
+        </nav>
     </div>
 </body>
 

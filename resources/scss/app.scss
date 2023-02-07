@@ -1,5 +1,6 @@
 @use './partials/_header';
 @use './partials/_login';
+@use './partials/_navsmartphone';
 @import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
 
@@ -111,3 +112,8 @@ body{
     border: 1px solid black;
 }
 
+.fixbot{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}

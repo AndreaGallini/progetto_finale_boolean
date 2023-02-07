@@ -1,3 +1,3 @@
 <header class="mdd">
-    <div class=""></div>
+    <h1>BoolBnB</h1>
 </header>

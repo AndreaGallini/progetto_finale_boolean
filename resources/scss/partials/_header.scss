@@ -1,13 +1,20 @@
 @import '../variables/variables';
 .mdd{
     background-color: $mainColor;
-    height: 80px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 250ms;
+    h1{
+        font-weight: 700;
+        font-family: $main-font;
+    }
 }
 
 @media screen and (min-width: 992px) {
   .mdd{
     background-color: $secondaryColor;
-    height: 100px;
+    height: 80px;
   }
 }
