@@ -31,7 +31,7 @@ class StoreMediabookRequest extends FormRequest
     public function message()
     {
         return [
-            'apartament_id' => 'The appartament is required'
+            'apartament_id' => "L'appartamento è richiesto"
         ];
     }
 }
