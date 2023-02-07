@@ -143,9 +143,11 @@
 
                 <div class="mb-3">
                     <h5>Visibility</h5>
-                    <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1">
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="0">
+                    <label for="visible" class="form-label">Visibile</label>
+                    <input type="radio" class="form-check-input" id="visible" name="visible" value="1">
+                    <label for="visible" class="form-label">Non visibile</label>
+                    <input type="radio" class="form-check-input" id="visible" name="visible" value="0">
+                    {{-- <input type="radio" id="visible" name="visible" value=""> --}}
                     @error('visible')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
