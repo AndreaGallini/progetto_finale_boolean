@@ -20,7 +20,7 @@
             <div class="infos d-flex flex-column">
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
-                        <span>Price:</span>
+                        <span>Prezzo:</span>
                         <span>{{ $apartment->price }}</span>
                     </div>
                     <div class="info-col d-flex justify-content-between">
@@ -30,44 +30,44 @@
                 </div>
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
-                        <span>Category:</span>
+                        <span>Categoria:</span>
                         @if ($apartment->category)
                             <span>{{ $apartment->category->name }}</span>
                         @else
-                            <span>Category not specified</span>
+                            <span>Categoria non specificata</span>
                         @endif
                     </div>
                 </div>
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
-                        <span>Services:</span>
+                        <span>Servizi:</span>
                         <div class="tags">
                             @if ($apartment->services && count($apartment->services) > 0)
                                 @foreach ($apartment->services as $service)
                                     <small class="d-inline">{{ $service->name }}</small>
                                 @endforeach
                             @else
-                                <span>No services Specified</span>
+                                <span>Nessun servizio</span>
                             @endif
                         </div>
                     </div>
                 </div>
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
-                        <span>Sponsors:</span>
+                        <span>Sponsor:</span>
                         <div>
                             @if ($apartment->sponsors && count($apartment->sponsors) > 0)
                                 @foreach ($apartment->sponsors as $sponsor)
                                     <small class="d-inline p-2 rounded-pill text-white">{{ $sponsor->name }}</small>
                                 @endforeach
                             @else
-                                <span>No Sponsors Specified</span>
+                                <span>Nessuno sponsor</span>
                             @endif
                         </div>
                     </div>
                 </div>
                 <div class="map-wrapper d-flex flex-column justify-content-center align-items-center">
-                    <h4>Position:</h4>
+                    <h4>Posizione:</h4>
                     <div ref="mapRef" id="map"></div>
                 </div>
             </div>
@@ -130,5 +130,4 @@
 
         initMap();
     </script>
-    ciao
 @endsection

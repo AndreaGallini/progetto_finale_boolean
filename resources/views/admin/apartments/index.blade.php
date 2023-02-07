@@ -3,28 +3,28 @@
     <section id="admin-index">
         @include('partials.admin.navbar')
         <div class="create-new">
-            <a href="{{ route('admin.apartments.create') }}" class="btn btn-outline-success">New Apartment</a>
+            <a href="{{ route('admin.apartments.create') }}" class="btn btn-outline-success">Nuovo appartamento</a>
         </div>
         <div class="activities-list mt-1">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col"># beds</th>
-                        <th scope="col"># baths</th>
-                        <th scope="col"># rooms</th>
-                        <th scope="col">Square Metres</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Titolo</th>
+                        <th scope="col"># posti letto</th>
+                        <th scope="col"># bagni</th>
+                        <th scope="col"># stanze</th>
+                        <th scope="col">Metri quadrati</th>
+                        <th scope="col">Indirizzo</th>
+                        <th scope="col">Prezzo</th>
 
-                        <th scope="col">Category</th>
+                        <th scope="col">Categoria</th>
 
-                        <th scope="col">Sponsor (total)</th>
-                        <th scope="col">Services (total)</th>
+                        <th scope="col">Servizi (totale)</th>
+                        <th scope="col">Sponsor (totale)</th>
 
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Modifica</th>
+                        <th scope="col">Elimina</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,7 +57,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="delete-button btn btn-danger ms-3"
-                                        data-item-title="{{ $apartment->title }}">Delete</button>
+                                        data-item-title="{{ $apartment->title }}">Elimina</button>
                                 </form>
                             </td>
                         </tr>
