@@ -75,22 +75,23 @@ if(document.getElementById('searchBox')){
     const searchBox = document.getElementById('searchBox');
     searchBox.appendChild(searchBoxHTML);
 
-    ttSearchBox.on('tomtom.searchbox.resultsfound', function(event) {
-        console.log(event);
-    })
+    // ttSearchBox.on('tomtom.searchbox.resultsfound', function(event) {
+    //     console.log(event);
+    // })
 
-    ttSearchBox.on('tomtom.searchbox.resultselected', function(event) {
-      //  console.log(event.data.result.address.position);
-        let variabileindirizzo = document.getElementsByClassName("tt-search-box-input").value;
-        console.log(variabileindirizzo)
-        let selected = event.data.result.value
-        console.log(selected)
-        delete axios.defaults.headers.common['X-Requested-With'];
-        axios.get(`https://api.tomtom.com/search/2/geocode/${selected}.json?storeResult=false&view=Unified&key=h7cAdo65F2uuetiST0o1pnUygRaWDuuX`).then((res) => {
-            console.log(res.data.results)
+    ttSearchBox.on('tomtom.searchbox.resultselected', function(data) {
+       console.log(data.data.result.position.lat);
+       console.log(data.data.result.position.lng);
+        // let variabileindirizzo = document.getElementsByClassName("tt-search-box-input").value;
+        // console.log(variabileindirizzo)
+        // let selected = event.data.result.value
+        // console.log(selected)
+        // delete axios.defaults.headers.common['X-Requested-With'];
+        // axios.get(`https://api.tomtom.com/search/2/geocode/${selected}.json?storeResult=false&view=Unified&key=h7cAdo65F2uuetiST0o1pnUygRaWDuuX`).then((res) => {
+        //     console.log(res.data.results)
 
-            return res.data
-        })
+        //     return res.data
+        // })
 
 
 
