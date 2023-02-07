@@ -185,11 +185,11 @@
 
                         <div class="mb-3">
                             <h5>Visibilità</h5>
-                            <label for="visible" class="form-label">Visible</label>
-                            <input type="checkbox" class="form-check-input" id="visible" name="visible"
-                                value="1" {{ old('visible', $apartment->visible) == 1 ? 'checked' : '' }}>
-                            <input type="checkbox" class="form-check-input" id="visible" name="visible"
-                                value="0" {{ old('visible', $apartment->visible) == 0 ? 'checked' : '' }}>
+                            <label for="visible" class="form-label">Visibile</label>
+                            <input type="radio" class="form-check-input" id="visible" name="visible" value="1" {{ old('visible', $apartment->visible) == 1 ? 'checked' : '' }}>
+                            <label for="visible" class="form-label">Non visibile</label>
+                            <input type="radio" class="form-check-input" id="visible" name="visible" value="0" {{ old('visible', $apartment->visible) == 0 ? 'checked' : '' }}>
+                            {{-- <input type="radio" id="visible" name="visible" value=""> --}}
                             @error('visible')
                                 <div class="invalid-feedback d-block">
                                     {{ $message }}
