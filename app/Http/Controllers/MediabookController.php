@@ -41,7 +41,7 @@ class MediabookController extends Controller
         $slug = Mediabook::generateSlug($request->name);
         $data['slug'] = $slug;
         $new_mediabook = Mediabook::create($data);
-        return redirect()->route('admin.mediabooks.index')->with('message', "$new_mediabook->name aggiunto con successo");
+        return redirect()->route('admin.mediabooks.index', $new_mediabook->slug)->with('message', "$new_mediabook->name aggiunto con successo");
     }
 
     /**

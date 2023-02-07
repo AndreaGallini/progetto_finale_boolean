@@ -5,14 +5,14 @@
     <a class="back-btn btn btn-dark" href="{{ route('admin.mediabooks.index') }}">BACK</a>
     <div class="container">
 
-        <h2 class="mt-3 mb-3 text-center">Add a new mediabook</h2>
+        <h2 class="mt-3 mb-3 text-center">Aggiungi un nuovo album foto</h2>
 
         <form action="{{ route('admin.mediabooks.store') }}" method="POST" class="py-5" enctype="multipart/form-data">
             @csrf
 
 
             <div class="mb-3">
-                <label for="title" class="form-label">Add title</label>
+                <label for="title" class="form-label">Aggiungi titolo</label>
                 <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
                     required maxlength="100">
                 @error('title')

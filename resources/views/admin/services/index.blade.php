@@ -32,19 +32,22 @@
                             action="{{route('admin.services.update', $service->slug)}}" method="post">
                             @csrf 
                             @method('PATCH') 
-
+                            <label for="img" class="border-0 bg-transparent fs-3">Html dell'icona:</label>
                             <input class="border-0 bg-transparent fs-3" type="text" name="img"
                             value="{{old('img', $service->img)}}">
                         </form>
 
-                        <div>{!! old('img', $service->img) !!}</div>
+                        <div>
+                            <span>Icona:</span>
+                            {!! old('img', $service->img) !!}
+                        </div>
 
                        
                         <form action="{{ route('admin.services.destroy', $service->slug) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="delete-button btn btn-danger"
-                                data-item-title="{{ $service->title }}">DELETE</button>
+                                data-item-title="{{ $service->title }}">Elimina</button>
                         </form>
                     </li>
                 @endforeach
