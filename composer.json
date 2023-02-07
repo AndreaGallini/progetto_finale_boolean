@@ -5,7 +5,6 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "braintree/braintree_php" : "6.10.0",
         "php": "^8.0.2",
         "doctrine/dbal": "^3.5",
         "guzzlehttp/guzzle": "^7.2",
@@ -62,7 +61,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
-        }
+        },
+        "platform-check": false
     },
     "minimum-stability": "stable",
     "prefer-stable": true
