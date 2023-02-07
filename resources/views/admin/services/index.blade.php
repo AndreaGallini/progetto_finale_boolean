@@ -18,7 +18,7 @@
             <ul class="mt-5">
                 @foreach ($services as $service)
                     <li class="mb-3 pb-3 border-bottom border-dark">
-                        <form id="tag-{{ $service->id }}"
+                        <form id="service-{{ $service->id }}"
                             action="{{route('admin.services.update', $service->slug)}}" method="post" class="mb-3">
                             @csrf
                             @method('PATCH')
@@ -28,7 +28,7 @@
                         </form>
 
 
-                        <form id="tag-{{ $service->id }}" class="mb-3"
+                        <form id="service-{{ $service->id }}" class="mb-3"
                             action="{{route('admin.services.update', $service->slug)}}" method="post">
                             @csrf 
                             @method('PATCH') 
