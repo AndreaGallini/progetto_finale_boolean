@@ -3,38 +3,38 @@
 @section('content')
     <section id="admin-show">
         <div>
-            <a class="back-btn btn btn-dark" href="{{route('admin.apartments.index')}}">BACK</a>
+            <a class="back-btn btn btn-dark" href="{{ route('admin.apartments.index') }}">BACK</a>
             <h1>{{ $apartment->title }}</h1>
-            {{-- @if($activity->categories && count($activity->categories) > 0)
+            {{-- @if ($activity->categories && count($activity->categories) > 0)
             @foreach ($activity->categories as $category)
                 <span>{{$category->name}}</span>
             @endforeach
             @endif --}}
             <div class="image">
-                @if($apartment->cover_img)
-                <img src="{{ asset('storage/' . $apartment->cover_img) }}">
+                @if ($apartment->cover_img)
+                    <img src="{{ asset('storage/' . $apartment->cover_img) }}">
                 @else
-                <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="">
+                    <img src="{{ Vite::asset('resources/img/not_found.jpeg') }}" alt="">
                 @endif
             </div>
             <div class="infos d-flex flex-column">
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
                         <span>Price:</span>
-                        <span>{{$apartment->price}}</span>
+                        <span>{{ $apartment->price }}</span>
                     </div>
                     <div class="info-col d-flex justify-content-between">
                         <span>Slug:</span>
-                        <span>{{$apartment->slug}}</span>
+                        <span>{{ $apartment->slug }}</span>
                     </div>
                 </div>
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
                         <span>Category:</span>
-                        @if($apartment->category)
-                        <span>{{$apartment->category->name}}</span>
+                        @if ($apartment->category)
+                            <span>{{ $apartment->category->name }}</span>
                         @else
-                        <span>Category not specified</span>
+                            <span>Category not specified</span>
                         @endif
                     </div>
                 </div>
@@ -42,9 +42,9 @@
                     <div class="info-col d-flex justify-content-between">
                         <span>Services:</span>
                         <div class="tags">
-                            @if($apartment->services && count($apartment->services) > 0)
+                            @if ($apartment->services && count($apartment->services) > 0)
                                 @foreach ($apartment->services as $service)
-                                    <small class="d-inline">{{$service->name}}</small>
+                                    <small class="d-inline">{{ $service->name }}</small>
                                 @endforeach
                             @else
                                 <span>No services Specified</span>
@@ -56,9 +56,9 @@
                     <div class="info-col d-flex justify-content-between">
                         <span>Sponsors:</span>
                         <div>
-                            @if($apartment->sponsors && count($apartment->sponsors) > 0)
+                            @if ($apartment->sponsors && count($apartment->sponsors) > 0)
                                 @foreach ($apartment->sponsors as $sponsor)
-                                    <small class="d-inline p-2 rounded-pill text-white">{{$sponsor->name}}</small>
+                                    <small class="d-inline p-2 rounded-pill text-white">{{ $sponsor->name }}</small>
                                 @endforeach
                             @else
                                 <span>No Sponsors Specified</span>
@@ -83,28 +83,31 @@
             '{{ $apartment->title }}'
         ]
 
-        const locations = [
-                    {
-                        lat: place[0],
-                        lng: place[1]
-                    }
-                ];
+        const locations = [{
+            lat: place[0],
+            lng: place[1]
+        }];
 
-        const insertLocs = function(map){
+        const insertLocs = function(map) {
             const tomtom = window.tt;
 
             locations.forEach((location) => {
-            let marker = new tomtom.Marker().setLngLat(location).addTo(map);
-            const popup = new tt.Popup({ anchor: 'top'}).setText(locationName);
-            marker.setPopup(popup).togglePopup();
-            console.log(place);
-        })
+                let marker = new tomtom.Marker().setLngLat(location).addTo(map);
+                const popup = new tt.Popup({
+                    anchor: 'top'
+                }).setText(locationName);
+                marker.setPopup(popup).togglePopup();
+                console.log(place);
+            })
         }
 
-        const initMap = function(){
+        const initMap = function() {
             const tt = window.tt;
             console.log(tt);
-            const focus = { lat: place[0], lng: place[1] }
+            const focus = {
+                lat: place[0],
+                lng: place[1]
+            }
 
             let map = tt.map({
                 key: 'mjOVKpgWnl7gsw0eNKkVguzisLjLZGIh',
@@ -127,4 +130,5 @@
 
         initMap();
     </script>
+    ciao
 @endsection
