@@ -1,5 +1,13 @@
 @import '../variables/variables';
 .mdd{
     background-color: $mainColor;
-    height: 50px;
+    height: 80px;
+    transition: all 250ms;
+}
+
+@media screen and (min-width: 992px) {
+  .mdd{
+    background-color: $secondaryColor;
+    height: 100px;
+  }
 }
