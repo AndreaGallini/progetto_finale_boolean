@@ -62,7 +62,7 @@ class ApartmentController extends Controller
         $data = $request->validated();
         $userid = Auth::id();
 
-        $slug = Apartment::generateSlug($request->title);
+        $slug = Apartment::generateSlug($request->title) . $userid;
         $data['user_id'] = $userid;
         $data['slug'] = $slug;
 
@@ -91,6 +91,7 @@ class ApartmentController extends Controller
     {
         if ($apartment->user_id !== Auth::id()) {
             abort(403);
+
         }
         return view('admin.apartments.show', compact('apartment'));
     }
