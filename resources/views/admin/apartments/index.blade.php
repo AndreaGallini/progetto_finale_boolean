@@ -10,18 +10,18 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Appartamenti</th>
-                    <th scope="col">Letti</th>
-                    <th scope="col">Bagni</th>
-                    <th scope="col">Stanze</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col"># posti letto</th>
+                    <th scope="col"># bagni</th>
+                    <th scope="col"># stanze</th>
                     <th scope="col">Metri quadrati</th>
                     <th scope="col">Indirizzo</th>
                     <th scope="col">Prezzo</th>
 
                     <th scope="col">Categoria</th>
 
-                    <th scope="col">Sponsor (totali)</th>
-                    <th scope="col">Serivizzi (totali)</th>
+                    <th scope="col">Servizi (totale)</th>
+                    <th scope="col">Sponsor (totale)</th>
 
                     <th scope="col">Modifica</th>
                     <th scope="col">Elimina</th>
@@ -53,7 +53,7 @@
 
 
                     <td><a class="link-secondary" href="{{ route('admin.apartments.edit', $apartment->slug) }}"
-                            title="Edit Apartment">Modifica</a></td>
+                            title="Edit Apartment">Edit</a></td>
                     <td>
                         <form action="{{ route('admin.apartments.destroy', $apartment->slug) }}" method="POST">
                             @csrf
