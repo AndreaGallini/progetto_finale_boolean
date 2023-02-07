@@ -66,14 +66,20 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="address" class="form-label">Edit Address</label>
-                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
-                        name="address" value="{{ old('address', $apartment->address) }}">
+                    <label for="address" class="form-label">Nuovo Indirizzo</label>
+                    <div id="searchBox"></div>
                     @error('address')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
                         </div>
                     @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Vecchio Indirizzo:</label>
+                    <input type="text" disabled name="address" id="address" value="{{ old('address', $apartment->address) }}">
+                    <input type="hidden" disabled name="lat" id="lat" value="{{ old('lat', $apartment->lat) }}">
+                    <input type="hidden" disabled name="long" id="long" value="{{ old('long', $apartment->long) }}">
                 </div>
 
 
