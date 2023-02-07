@@ -79,6 +79,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <input type="hidden" name="lat" id="lat" value="">
+                    <input type="hidden" name="long" id="long" value="">
+                </div>
+
+                <div class="mb-3">
                     <img id="uploadPreview" width="100" src="https://via.placeholder.com/300x200">
                     <label for="cover_img" class="form-label">Immagine</label>
                     <input type="file" name="cover_img" id="cover_img"
