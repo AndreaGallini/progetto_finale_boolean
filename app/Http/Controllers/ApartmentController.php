@@ -58,7 +58,6 @@ class ApartmentController extends Controller
      */
     public function store(StoreApartmentRequest $request)
     {
-        // dd($request);
         $data = $request->validated();
         $userid = Auth::id();
 
