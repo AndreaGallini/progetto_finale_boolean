@@ -1,4 +1,7 @@
+@use './partials/_header';
+@import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
+
 
 *{
     margin: 0;
@@ -106,3 +109,4 @@ body{
     width: 100vw;
     border: 1px solid black;
 }
+
