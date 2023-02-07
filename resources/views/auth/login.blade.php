@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
+<div class="container mt-4" id="login">
     <div class="row justify-content-center">
-        <div class="col-md-8 suca">
+        <div class="col-md-8 margine-top">
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf

@@ -1,5 +1,6 @@
 @use './partials/_header';
 @use './partials/_login';
+@use './partials/_register';
 @use './partials/_navsmartphone';
 @import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
@@ -12,7 +13,7 @@
 }
 
 body{
-    background-color: var($white);
+    background-color: $white;
 }
 
 #admin-index{
