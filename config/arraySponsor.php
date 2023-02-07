@@ -12,7 +12,7 @@ return [
         'time' => '72'
     ],
     [
-        'name' => 'Sponsor Bronze',
+        'name' => 'Sponsor Platinum',
         'price' => '9,99',
         'time' => '144'
     ],
