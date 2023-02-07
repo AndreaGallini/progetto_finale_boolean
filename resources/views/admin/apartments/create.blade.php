@@ -25,7 +25,8 @@
 
                 <div class="mb-3">
                     <label for="room_number" class="form-label">Add Rooms Number</label>
-                    <input type="number" class="form-control @error('room_number') is-invalid @enderror" id="room_number" name="room_number" required>
+                    <input type="number" class="form-control @error('room_number') is-invalid @enderror" id="room_number"
+                        name="room_number" required>
                     @error('room_number')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -35,7 +36,8 @@
 
                 <div class="mb-3">
                     <label for="bed_number" class="form-label">Add Beds Number</label>
-                    <input type="number" class="form-control @error('bed_number') is-invalid @enderror" id="bed_number" name="bed_number" required>
+                    <input type="number" class="form-control @error('bed_number') is-invalid @enderror" id="bed_number"
+                        name="bed_number" required>
                     @error('bed_number')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -45,7 +47,8 @@
 
                 <div class="mb-3">
                     <label for="bath_number" class="form-label">Add Baths Number</label>
-                    <input type="number" class="form-control @error('bath_number') is-invalid @enderror" id="bath_number" name="bath_number" required>
+                    <input type="number" class="form-control @error('bath_number') is-invalid @enderror" id="bath_number"
+                        name="bath_number" required>
                     @error('bath_number')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -55,7 +58,8 @@
 
                 <div class="mb-3">
                     <label for="mq_value" class="form-label">Add Square Metres</label>
-                    <input type="number" class="form-control @error('mq_value') is-invalid @enderror" id="mq_value" name="mq_value" required>
+                    <input type="number" class="form-control @error('mq_value') is-invalid @enderror" id="mq_value"
+                        name="mq_value" required>
                     @error('mq_value')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -65,12 +69,19 @@
 
                 <div class="mb-3">
                     <label for="address" class="form-label">Add Address</label>
-                    <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address"></textarea>
+                    {{-- <textarea class="form-control @error('address') is-invalid @enderror" id="address" name="address"></textarea> --}}
+                    <div id="searchBox"></div>
                     @error('address')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
                         </div>
                     @enderror
+                </div>
+
+                <div class="mb-3">
+                    <input type="hidden" name="address" id="address" value="">
+                    <input type="hidden" name="lat" id="lat" value="">
+                    <input type="hidden" name="long" id="long" value="">
                 </div>
 
                 <div class="mb-3">
@@ -111,8 +122,9 @@
                     <h5>Select Services</h5>
                     @foreach ($services as $service)
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}">
-                            <label class="form-check-label" for="{{$service->slug}}">{{$service->title}}</label>
+                            <input type="checkbox" class="form-check-input" id="{{ $service->slug }}" name="services[]"
+                                value="{{ $service->id }}">
+                            <label class="form-check-label" for="{{ $service->slug }}">{{ $service->title }}</label>
                         </div>
                     @endforeach
                 </div>
@@ -121,8 +133,10 @@
                     <h5>Select Sponsors</h5>
                     @foreach ($sponsors as $sponsor)
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="{{$sponsor->slug}}" name="sponsors[]" value="{{$sponsor->id}}">
-                            <label class="form-check-label text-white px-2 rounded-pill" for="{{$sponsor->slug}}">{{$sponsor->name}}</label>
+                            <input type="checkbox" class="form-check-input" id="{{ $sponsor->slug }}" name="sponsors[]"
+                                value="{{ $sponsor->id }}">
+                            <label class="form-check-label text-white px-2 rounded-pill"
+                                for="{{ $sponsor->slug }}">{{ $sponsor->name }}</label>
                         </div>
                     @endforeach
                 </div>
@@ -130,7 +144,8 @@
                 <div class="mb-3">
                     <h5>Visibility</h5>
                     <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="">
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1">
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="0">
                     @error('visible')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
@@ -145,8 +160,5 @@
                 </div>
             </form>
         </div>
-        {{-- <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            bkLib.onDomLoaded(nicEditors.allTextAreas);
-        </script> --}}
+        <script defer></script>
     @endsection

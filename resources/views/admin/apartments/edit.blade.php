@@ -138,7 +138,7 @@
                         @if (old("services"))
                             <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}" {{in_array( $service->id, old("services", []) ) ? 'checked' : ''}}>
                         @else
-                            <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}" {{$apartment->service->contains($service) ? 'checked' : ''}}>
+                            <input type="checkbox" class="form-check-input" id="{{$service->slug}}" name="services[]" value="{{$service->id}}" {{$apartment->services->contains($service) ? 'checked' : ''}}>
                         @endif
                         <label class="form-check-label" for="{{$service->slug}}">{{$service->title}}</label>
                     </div>
@@ -166,7 +166,8 @@
                 <div class="mb-3">
                     <h5>Visibility</h5>
                     <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" {{ old('visible', $apartment->visible) == true ? 'checked' : '' }}>
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1" {{ old('visible', $apartment->visible) == 1 ? 'checked' : '' }}>
+                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="0" {{ old('visible', $apartment->visible) == 0 ? 'checked' : '' }}>
                     @error('visible')
                         <div class="invalid-feedback d-block">
                             {{ $message }}
