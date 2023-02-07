@@ -1,3 +1,12 @@
 @import '../variables/variables';
 #register{
+    .margine-top{
+        margin-top: 10rem;
+     }
+    .bottone{
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+        background-color: $grey;
+        border: none;
+    }
 }
