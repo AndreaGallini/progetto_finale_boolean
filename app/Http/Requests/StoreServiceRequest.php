@@ -31,10 +31,10 @@ class StoreServiceRequest extends FormRequest
     public function message()
     {
         return [
-            'title.required' => 'The title is required',
-            'title.unique' => 'This title already exists',
-            'title.min' => 'The title is too short',
-            'title.max' => 'The title is too long, max :max characters'
+            'title.required' => 'Il titolo è richiesto',
+            'title.unique' => 'Questo titolo è già esistente',
+            'title.min' => 'Il titolo è troppo corto, minimo :min caratteri',
+            'title.max' => 'Il titolo è troppo lungo, massimo :max caratteri'
         ];
     }
 }
