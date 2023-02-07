@@ -81,15 +81,18 @@ if(document.getElementById('searchBox')){
 
     ttSearchBox.on('tomtom.searchbox.resultselected', function(data) {
        console.log(data.data.result.position.lat);
-       console.log(data.data.result.position.lng);
+        console.log(data.data.result.position.lng);
+        console.log(data.data.result.address.freeformAddress)
+        let address = document.getElementById('address');
 
        let latitude = document.getElementById('lat');
-       let longitude = document.getElementById('long');
+        let longitude = document.getElementById('long');
+        address.value = data.data.result.address.freeformAddress;
 
        latitude.value = data.data.result.position.lat;
 
        longitude.value = data.data.result.position.lng;
-
+        console.log(address)
 
         // let variabileindirizzo = document.getElementsByClassName("tt-search-box-input").value;
         // console.log(variabileindirizzo)

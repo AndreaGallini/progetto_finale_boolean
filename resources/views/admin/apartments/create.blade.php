@@ -79,6 +79,7 @@
                 </div>
 
                 <div class="mb-3">
+                    <input type="hidden" name="address" id="address" value="">
                     <input type="hidden" name="lat" id="lat" value="">
                     <input type="hidden" name="long" id="long" value="">
                 </div>
