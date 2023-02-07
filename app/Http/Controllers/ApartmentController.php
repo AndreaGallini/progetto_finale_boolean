@@ -89,7 +89,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        if ($apartment->user_id !== Auth::id()) {
+        if ($apartment->user_id !== Auth::id() && !Auth::user()->isAdmin()) {
             abort(403);
 
         }
@@ -104,7 +104,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        if ($apartment->user_id !== Auth::id()) {
+        if ($apartment->user_id !== Auth::id() && !Auth::user()->isAdmin()) {
             abort(403);
         }
         $apartments = Apartment::all();
@@ -125,7 +125,7 @@ class ApartmentController extends Controller
     public function update(UpdateApartmentRequest $request, Apartment $apartment)
     {
         // dd($request);
-        if ($apartment->user_id !== Auth::id()) {
+        if ($apartment->user_id !== Auth::id() && !Auth::user()->isAdmin()) {
             abort(403);
         }
         $data = $request->validated();
@@ -162,7 +162,7 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        if ($apartment->user_id !== Auth::id()) {
+        if ($apartment->user_id !== Auth::id() && !Auth::user()->isAdmin()) {
             abort(403);
         }
         $apartment->delete();
