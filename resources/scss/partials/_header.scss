@@ -1,6 +1,6 @@
 @import '../variables/variables';
 .mdd{
-    background-color: $mainColor;
+    // background-color: $mainColor;
     height: 70px;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 992px) {
   .mdd{
-    background-color: $secondaryColor;
+    // background-color: $secondaryColor;
     height: 80px;
   }
 }

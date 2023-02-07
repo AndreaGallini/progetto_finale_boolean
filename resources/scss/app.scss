@@ -2,6 +2,7 @@
 @use './partials/_login';
 @use './partials/_register';
 @use './partials/_navsmartphone';
+@use './partials/apartmIndex';
 @import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
 
@@ -40,10 +41,6 @@ body{
                 }
             }
         }
-    }
-
-    .create-new{
-        margin: 15px;
     }
 }
 
