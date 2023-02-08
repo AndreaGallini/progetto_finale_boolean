@@ -109,3 +109,17 @@ if(document.getElementById('searchBox')){
 
     })
 }
+
+
+if(document.getElementById('navFixed')){
+    const navTogglerHTML = document.getElementById('navToggler');
+    const navItemsHTML = document.getElementById('navItems');
+    navTogglerHTML.addEventListener('click', ()=>{
+        navItemsHTML.classList.toggle('d-none');
+        if(navItemsHTML.classList.contains('d-none')){
+            navTogglerHTML.innerHTML = `<i class="fa-solid fa-bars"></i>`
+        }else if(!(navItemsHTML.classList.contains('d-none'))){
+            navTogglerHTML.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+        }
+    });
+}
