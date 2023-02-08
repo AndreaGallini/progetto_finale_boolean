@@ -46,4 +46,10 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::resource('services', ServiceController::class)->parameters(['services' => 'service:slug'])->except('show', 'edit');
         Route::resource('stats', StatController::class)->parameters(['stats' => 'stat:slug']);
         Route::resource('sponsors', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
+        Route::get(
+            '/pay',
+            function () {
+                    return view('test');
+                }
+        );
     });
