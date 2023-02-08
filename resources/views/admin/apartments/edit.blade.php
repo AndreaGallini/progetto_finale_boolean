@@ -92,13 +92,13 @@
                 </div>
     
                 <div class="my-3">
-                    <label for="price" class="form-label bold-txt">Sostituisci immagine di copertina</label>
-                    <div class="d-flex">
-                        <div class="media me-4">
+                    <label for="cover_img" class="form-label bold-txt">Sostituisci immagine di copertina</label>
+                    <div>
+                        <div class="media me-4 my-3">
                             <img width="150" src="{{ asset('storage/' . $apartment->cover_img) }}"
                                 alt="{{ $apartment->cover_img }}">
                         </div>
-                        <div class="align-self-end">
+                        <div>
                             <input type="file" name="cover_img" id="cover_img"
                                 class="form-control  @error('cover_img') is-invalid @enderror">
                             @error('cover_img')
@@ -212,7 +212,7 @@
                     </div>
     
                     <div class="mt-4 d-flex justify-content-end">
-                        <button type="submit" class="my-btn btn-add me-3">Aggiungi</button>
+                        <button type="submit" class="my-btn btn-add me-3">Modifica</button>
                         <button type="reset" class="my-btn btn-reset">Annulla</button>
                     </div>
             </form>
