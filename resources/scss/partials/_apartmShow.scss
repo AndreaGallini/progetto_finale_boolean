@@ -62,5 +62,16 @@
                 // }
             }
         }
-    }    
+    }
+    
+    .btn-back {
+        background-color: $mauve;
+        color: $white;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 5px;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 }

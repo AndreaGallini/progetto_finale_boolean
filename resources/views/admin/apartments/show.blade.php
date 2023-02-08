@@ -97,9 +97,18 @@
                     </div>
                 </div>
             </div>
+
+            {{-- mappa --}}
             <div class="map-wrapper d-flex flex-column justify-content-center align-items-center">
                 <h4>Posizione sulla mappa:</h4>
                 <div ref="mapRef" id="map"></div>
+            </div>
+
+            {{-- tasto back --}}
+            <div class="mt-5">
+                <a class="btn-back" href="{{ route('admin.apartments.index') }}">
+                    <i class="fa-solid fa-caret-left me-2"></i>Indietro
+                </a>
             </div>
         </div>
     </section>    
