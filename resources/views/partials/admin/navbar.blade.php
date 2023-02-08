@@ -54,10 +54,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'admin.sponsors.index' ? 'active' : '' }}"
-                    href="{{ route('admin.sponsors.index') }}">Sponsor</a>
+                    href="{{ route('admin.sponsors.index') }}">Sponsorizza</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.sponsors.index' ? 'active' : '' }}"
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.stats.index' ? 'active' : '' }}"
                     href="{{ route('admin.stats.index') }}">Statistiche</a>
             </li>
         @endif

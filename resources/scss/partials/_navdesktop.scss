@@ -64,7 +64,9 @@
   a{
     background-color: $white;
     color: $emerald;
-    padding: 12px 20px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-weight: 700;
     &:hover{
       background-color: $raindrop;
     }   

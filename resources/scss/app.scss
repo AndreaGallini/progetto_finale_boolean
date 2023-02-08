@@ -1,6 +1,7 @@
 @use './partials/_header';
 @use './partials/_login';
 @use './partials/_dashboard';
+@use './partials/_sponsor';
 @use './partials/_register';
 @use './partials/_navsmartphone';
 @use './partials/_navdesktop';
@@ -140,6 +141,7 @@ body{
         width: 60px;
         border-radius: 50%;
         text-align: center;
+        outline: 4px solid $raindrop;
         background-color: $emerald;
         line-height: 56px;
         margin-top: 10px;
@@ -150,7 +152,7 @@ body{
         padding: 0;
         margin: 0;
         li{
-            margin-top: 5px;
+            margin-top: 10px;
             transform: translate(0, 10px);
             opacity: 0;
 
@@ -175,6 +177,7 @@ body{
                 text-align: center;
                 line-height: 50px;
                 border-radius: 50%;
+                outline: 4px solid $sangria;
                 background-color: $raindrop;
                 text-decoration: none;
                 color: $sangria;
