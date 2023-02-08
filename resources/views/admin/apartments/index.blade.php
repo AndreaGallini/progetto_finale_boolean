@@ -1,15 +1,18 @@
 @extends('layouts.admin')
 @section('content')
-<section id="admin-index">
+<section>
     @include('partials.admin.navbar')
     <div id="apartmIndex">
         <div class="container">
-            <h1 class="mb-sm-3">Appartamenti registrati:</h1>
+            <h1 class="mb-sm-3">Appartamenti registrati</h1>
+            <p>Clicca sul nome dell'alloggio per vederne i dettagli:</p>
 
             <div class="my-apts">
                 <div class="row mx-0">
                     <div class="col-12">
                         @foreach ($apartments as $apartment)
+                        {{-- Visualizza lista appartamenti se esistenti, altrimenti compare "Nessun alloggio registrato" --}}
+                        {{-- @if ($apartment->user->id) --}}
                             <div class="card my-5">
                                 <div class="d-flex justify-content-start">
                                     <div class="apt-img me-5 col-4 col-lg-3">
@@ -60,6 +63,11 @@
                                 </div>
                                 <hr>
                             </div>
+                            {{-- @else
+                            <div>
+                                Nessun alloggio registrato.
+                            </div>
+                            @endif --}}
                         @endforeach
                     </div>
                 </div>
