@@ -54,7 +54,7 @@
                                     <form action="{{ route('admin.apartments.destroy', $apartment->slug) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                        <button type="submit" class="delete-btn"
+                                        <button type="submit" class="delete-button delete-btn"
                                         data-item-title="{{ $apartment->title }}"><i class="fa-regular fa-trash-can ms-4 me-2"></i>Elimina</button>
                                     </form>
                                 </div>

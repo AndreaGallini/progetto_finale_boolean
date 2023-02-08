@@ -32,7 +32,7 @@
             @include('partials.admin.footer')
         </footer>
         <nav class="fixbot">
-            @include('partials.admin.navsmartphone')
+            @include('partials.admin.navbarFixed')
         </nav>
     </div>
 </body>
