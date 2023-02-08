@@ -1,11 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-<section id="admin-show">
-    <a class="back-btn btn btn-dark" href="{{ route('admin.apartments.index') }}">INDIETRO</a>
+<section id="apartmShow" class="pb-5">
     <div class="container">
 
-        <h2 class="mt-3 mb-3 text-center">Aggiungi un nuovo appartamento</h2>
+        <h1 class="mt-3 mb-3 text-center">Aggiungi un nuovo appartamento</h1>
 
         <form action="{{ route('admin.apartments.store') }}" method="POST" class="py-5" enctype="multipart/form-data">
             @csrf
@@ -22,7 +21,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="room_number" class="form-label">Numero di Camera</label>
+                <label for="room_number" class="form-label">Numero di stanze</label>
                 <input type="number" class="form-control @error('room_number') is-invalid @enderror" id="room_number"
                     name="room_number" required>
                 @error('room_number')
@@ -33,7 +32,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="bed_number" class="form-label">Numero letti</label>
+                <label for="bed_number" class="form-label">Posti letto</label>
                 <input type="number" class="form-control @error('bed_number') is-invalid @enderror" id="bed_number"
                     name="bed_number" required>
                 @error('bed_number')
@@ -44,7 +43,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="bath_number" class="form-label">Numero bagni</label>
+                <label for="bath_number" class="form-label">Numero di bagni</label>
                 <input type="number" class="form-control @error('bath_number') is-invalid @enderror" id="bath_number"
                     name="bath_number" required>
                 @error('bath_number')
@@ -85,9 +84,9 @@
 
             <div class="mb-3">
                 <img id="uploadPreview" width="100" src="https://via.placeholder.com/300x200">
-                <label for="cover_img" class="form-label">Immagine</label>
+                <label for="cover_img" class="form-label ms-2">Anteprima immagine</label>
                 <input type="file" name="cover_img" id="cover_img"
-                    class="form-control  @error('cover_img') is-invalid @enderror">
+                    class="mt-3 form-control  @error('cover_img') is-invalid @enderror">
                 @error('cover_img')
                 <div class="invalid-feedback d-block">{{ $message }}</div>
                 @enderror
@@ -106,10 +105,8 @@
                 <label for="category_id" class="form-label">Seleziona le categorie</label>
                 <select name="category_id" id="category_id"
                     class="form-control @error('category_id') is-invalid @enderror">
-                    <option value="">Select Category</option>
+                    <option value="">Scegli una categoria</option>
                     @foreach ($categories as $category)
-                    {{-- <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : ''
-                        }}> --}}
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
@@ -119,7 +116,7 @@
             </div>
 
             <div class="mt-3">
-                <h5>Seleziona i servizzi</h5>
+                <label class="form-label">Aggiungi i servizi</label><br>
                 @foreach ($services as $service)
                 <div class="form-check form-check-inline">
                     <input type="checkbox" class="form-check-input" id="{{ $service->slug }}" name="services[]"
@@ -129,8 +126,10 @@
                 @endforeach
             </div>
 
+            {{-- IMPORTANTE: da aggiungere dopo aver creato gli sponsor: --}}
+
             {{-- <div class="mt-3">
-                <h5>Seleziona gli sponsor</h5>
+                <h5>Seleziona uno sponsor</h5>
                 @foreach ($sponsors as $sponsor)
                 <div class="form-check form-check-inline">
                     <input type="checkbox" class="form-check-input" id="{{ $sponsor->slug }}" name="sponsors[]"
@@ -143,7 +142,7 @@
 
             <div class="mb-3">
                 <hr>
-                <h5>Visibile</h5>
+                <label class="form-label">Visibile sul sito?</label><br>
                 {{-- <label for="visible" class="form-label">Visible</label>
                 <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1">
                 <label for="visible" class="form-label">Visible</label>
@@ -167,26 +166,21 @@
                 @enderror
                 <hr>
             </div>
-            <div class="mb-3">
-                <h5>Visibility</h5>
-                <label for="visible" class="form-label">Visibile</label>
-                <input type="radio" class="form-check-input" id="visible" name="visible" value="1">
-                <label for="visible" class="form-label">Non visibile</label>
-                <input type="radio" class="form-check-input" id="visible" name="visible" value="0">
-                {{-- <input type="radio" id="visible" name="visible" value=""> --}}
-                @error('visible')
-                <div class="invalid-feedback d-block">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
 
-
-            <div class="mt-4">
-                <button type="submit" class="btn btn-success">Aggiungi</button>
-                <button type="reset" class="btn btn-danger">Resetta</button>
+            <div class="mt-4 d-flex justify-content-end">
+                <button type="submit" class="my-btn btn-add me-3">Aggiungi</button>
+                <button type="reset" class="my-btn btn-reset">Annulla</button>
             </div>
         </form>
+
+        {{-- tasto back --}}
+        <div class="mt-5">
+            <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
+                <i class="fa-solid fa-caret-left me-2"></i>Indietro
+            </a>
+        </div>
     </div>
-    <script defer></script>
-    @endsection
+</section>
+
+<script defer></script>
+@endsection

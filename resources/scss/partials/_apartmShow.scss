@@ -43,7 +43,6 @@
     .infos{
        color: black;
         .info-row{
-            // border-top: 1px solid rgba(128, 128, 128, 0.5);
             border-bottom: 1px solid rgba(128, 128, 128, 0.5);
             padding: 15px 0;
             .info-col{
@@ -63,15 +62,37 @@
             }
         }
     }
-    
-    .btn-back {
-        background-color: $mauve;
-        color: $white;
+
+    .my-btn {
+        border-style: none;
         font-weight: bold;
         padding: 8px 12px;
         border-radius: 5px;
         &:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
     }
+    
+    .btn-back {
+        background-color: $mauve;
+        color: $white;
+    }
+
+    .btn-add {
+        background-color: $raindrop;
+        color: $emerald;
+    }
+
+    .btn-reset {
+        background-color: $sangria;
+        color: $white;
+    }
+
+    #map{
+        height: 35vh;
+        width: 100vw;
+        border: 1px solid black;
+    }
+
+
 }

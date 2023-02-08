@@ -106,7 +106,7 @@
 
             {{-- tasto back --}}
             <div class="mt-5">
-                <a class="btn-back" href="{{ route('admin.apartments.index') }}">
+                <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
                     <i class="fa-solid fa-caret-left me-2"></i>Indietro
                 </a>
             </div>
