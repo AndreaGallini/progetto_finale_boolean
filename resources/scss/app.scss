@@ -1,11 +1,28 @@
 @use './partials/_header';
 @use './partials/_login';
+@use './partials/_dashboard';
 @use './partials/_register';
 @use './partials/_navsmartphone';
+@use './partials/_navdesktop';
 @use './partials/apartmIndex';
 @import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
 
+// mediaquery
+@media screen and (max-width: 800px) {
+    .navdesktop{
+      // background-color: $secondaryColor;
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .navphone{
+      // background-color: $secondaryColor;
+      display: none;
+    }
+  }
+// end mediaquery
 
 *{
     margin: 0;
@@ -117,15 +134,16 @@ body{
     right: 0;
     min-width: 50px;
     margin: 0 20px 20px 0;
+    font-size: 2rem;
     #navToggler{
-        height: 40px;
-        width: 40px;
+        height: 60px;
+        width: 60px;
         border-radius: 50%;
         text-align: center;
-        background-color: sandybrown;
-        line-height: 40px;
+        background-color: $emerald;
+        line-height: 56px;
         margin-top: 10px;
-        color: white
+        color: $white;
     }
     ul{
         list-style: none;
@@ -151,14 +169,15 @@ body{
             a{
                 display: block;
                 text-align: center;
-                height: 50px;
-                width: 50px;
+                height: 60px;
+                width: 60px;
+                font-size: 1.5rem;
                 text-align: center;
                 line-height: 50px;
                 border-radius: 50%;
-                background-color: salmon;
+                background-color: $raindrop;
                 text-decoration: none;
-                color: white;
+                color: $sangria;
             }
         }
     }

@@ -1,12 +1,20 @@
-<nav class="d-flex justify-content-start align-items-center container">
-    <h2 class="me-3">
+
+
+@guest
+
+@if (Route::has('register'))
+
+@endif
+@else
+<div class="d-flex justify-content-between align-items-center container maincont">
+    <a href="{{ url('admin') }}" class="nameuser">
         @if (Auth::user()->isAdmin())
-            Dashboard admin:
+        <span> Dashboard Admin</span>
         @else
-            Dashboard di {{ Auth::user()->name }}:
+        <span> Dashboard di {{ Auth::user()->name }}:</span>
         @endif
-    </h2>
-    <ul class="d-flex justify-content-between align-items-center">
+    </a>
+    <ul class="d-flex justify-content-between align-items-center navl">
         @if (Auth::user()->isAdmin())
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'admin.apartments.index' ? 'active' : '' }}"
@@ -36,6 +44,10 @@
                     href="{{ route('admin.sponsors.index') }}">Sponsor</a>
             </li>
         @else
+            {{-- <li class="nav-item">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin' ? 'active' : '' }}"
+                    href="{{ url('admin') }}">Dashboard</a>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'admin.apartments.index' ? 'active' : '' }}"
                     href="{{ route('admin.apartments.index') }}">Appartamenti</a>
@@ -44,8 +56,21 @@
                 <a class="nav-link {{ Route::currentRouteName() == 'admin.sponsors.index' ? 'active' : '' }}"
                     href="{{ route('admin.sponsors.index') }}">Sponsor</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.sponsors.index' ? 'active' : '' }}"
+                    href="{{ route('admin.stats.index') }}">Statistiche</a>
+            </li>
         @endif
-
-
     </ul>
-</nav>
+    <div class="logou">
+        <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+    </div>
+</div>
+@endguest

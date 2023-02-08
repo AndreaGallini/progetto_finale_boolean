@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <section id="admin-index">
-    @include('partials.admin.navbar')
+    {{-- @include('partials.admin.navbar') --}}
     <div id="apartmIndex">
         <div class="container">
             <h1 class="mb-sm-3">Appartamenti registrati:</h1>

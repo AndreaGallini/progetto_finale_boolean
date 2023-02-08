@@ -1,0 +1,72 @@
+@import '../variables/_variables';
+
+.navdesktop{
+  background-color: $rosegold;
+  // padding-bottom: 10px;
+  color: $white;
+}
+
+.maincont{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nameuser{
+  margin: 0;
+  font-family: $main-font;      
+  text-decoration: none;
+  span{
+    font-size: 2rem;
+  }
+  color: $white;
+  &:hover{
+    color: $emerald;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nameuser{
+    span{
+    }
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .maincont{
+    margin: 0;
+  }
+}
+
+.navl{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  li{
+    list-style: none;
+    a{
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 0px 0px 20px 20px ;
+      font-weight: 700;
+      &:hover{
+        background-color: $white;
+        color: $sangria;
+      }   
+    }
+  }
+}
+.active{
+  background-color: $emerald;
+}
+.logou{
+  a{
+    background-color: $white;
+    color: $emerald;
+    padding: 12px 20px;
+    &:hover{
+      background-color: $raindrop;
+    }   
+  }
+}
