@@ -1,0 +1,59 @@
+@import '../variables/variables';
+
+#apartmIndex {
+    a {
+        text-decoration: none;
+    }
+    .container {
+        font-family: $main-font;
+        color: $darkgrey;
+    }
+
+    .add-apt {
+        color: $emerald;
+        font-weight: 700;
+    }
+
+    h1 {
+        color: $sangria;
+        margin-top: 30px;
+        font-weight: bold;
+    }
+    
+    h3 {
+        a {
+            color: $rosegold;
+            font-weight: bold;
+        }
+    }
+
+    img {
+        border-radius: 20px;
+    }
+
+    .card {
+        border-style: none;
+    }
+
+    .delete-btn {
+        border-style: none;
+        background-color: transparent;
+        color: $sangria;
+    }
+
+    .link-edit {
+        a {
+            color: $emerald;
+        }
+    }
+
+    .col-8 {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+
+    .create-new {
+        font-size: 1.3rem;
+    }
+}

@@ -1,4 +1,11 @@
+@use './partials/_header';
+@use './partials/_login';
+@use './partials/_register';
+@use './partials/_navsmartphone';
+@use './partials/apartmIndex';
+@import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
+
 
 *{
     margin: 0;
@@ -7,7 +14,7 @@
 }
 
 body{
-    background-color: beige;
+    background-color: $white;
 }
 
 #admin-index{
@@ -34,10 +41,6 @@ body{
                 }
             }
         }
-    }
-
-    .create-new{
-        margin: 15px;
     }
 }
 
@@ -165,4 +168,70 @@ body{
             opacity: 1;
         }
     }
+}
+
+#navFixed{
+    position: fixed;
+    z-index: 500;
+    bottom: 0;
+    right: 0;
+    min-width: 50px;
+    margin: 0 20px 20px 0;
+    #navToggler{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: sandybrown;
+        line-height: 40px;
+        margin-top: 10px;
+        color: white
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+            margin-top: 5px;
+            transform: translate(0, 10px);
+            opacity: 0;
+
+            &:first-of-type{
+                animation: navItemsFX .2s 0s forwards;
+            }
+            &:nth-of-type(2){
+                animation: navItemsFX .2s .1s forwards;
+            }
+            &:nth-of-type(3){
+                animation: navItemsFX .2s .2s forwards;
+            }
+            &:nth-of-type(4){
+                animation: navItemsFX .2s .3s forwards;
+            }
+            a{
+                display: block;
+                text-align: center;
+                height: 50px;
+                width: 50px;
+                text-align: center;
+                line-height: 50px;
+                border-radius: 50%;
+                background-color: salmon;
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+    @keyframes navItemsFX {
+        100%{
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+}
+
+.fixbot{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
 }
