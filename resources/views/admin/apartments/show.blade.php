@@ -3,6 +3,13 @@
 @section('content')
     <section id="apartmShow" class="pb-5">
         <div class="container">
+             {{-- tasto back --}}
+             <div class="mt-5">
+                <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
+                    <i class="fa-solid fa-caret-left me-2"></i>Indietro
+                </a>
+            </div>
+            
             <h1>{{ $apartment->title }}</h1>
             <h4>{{ $apartment->address }}<br>
             {{ $apartment->mq_value }} mq</h4>
@@ -102,13 +109,6 @@
             <div class="map-wrapper d-flex flex-column justify-content-center align-items-center">
                 <h4>Posizione sulla mappa:</h4>
                 <div ref="mapRef" id="map"></div>
-            </div>
-
-            {{-- tasto back --}}
-            <div class="mt-5">
-                <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
-                    <i class="fa-solid fa-caret-left me-2"></i>Indietro
-                </a>
             </div>
         </div>
     </section>    
