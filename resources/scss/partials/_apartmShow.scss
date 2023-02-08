@@ -35,7 +35,7 @@
             }
         }
 
-    .info-container {
+    .info-container, .form-container {
         width: 60%;
         margin: 0 auto;
     }    
@@ -47,10 +47,6 @@
             padding: 15px 0;
             .info-col{
                 width: 600px;
-                .bold-txt {
-                    font-weight: bold;
-                    color: $rosegold;
-                }     
                 // .tags{
                 //     // .services{
                 //     //     // &:not(:last-of-type)::after{
@@ -62,6 +58,11 @@
             }
         }
     }
+
+    .bold-txt {
+        font-weight: bold;
+        color: $rosegold;
+    } 
 
     .my-btn {
         border-style: none;
@@ -94,5 +95,12 @@
         border: 1px solid black;
     }
 
+    #searchBox {
+        border-radius: 10px;
+    }
 
+    #address {
+        border-style: none;
+        background-color: transparent;
+    }
 }
