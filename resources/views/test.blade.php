@@ -9,7 +9,6 @@ $clientToken = $gateway->clientToken()->generate([
     'customerId' => '1111',
 ]);
 
-echo $clientToken = $gateway->clientToken()->generate();
 ?>
 
 
@@ -20,7 +19,8 @@ echo $clientToken = $gateway->clientToken()->generate();
 </head>
 
 <body>
-    <form id="payment-form" action="/route/on/your/server" method="post">
+    <form id="payment-form" action="{{ url('/success') }}" method="GET">
+        @method('POST')
 
         <div id="dropin-container"></div>
         <input type="submit" />

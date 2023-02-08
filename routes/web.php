@@ -52,4 +52,11 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
                     return view('test');
                 }
         );
+
     });
+Route::get(
+    '/success',
+    function () {
+        return view('success')->name('success');
+    }
+);
