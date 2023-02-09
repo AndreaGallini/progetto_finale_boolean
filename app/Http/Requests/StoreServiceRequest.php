@@ -32,7 +32,7 @@ class StoreServiceRequest extends FormRequest
     {
         return [
             'title.required' => 'Il titolo è richiesto',
-            'title.unique' => 'Questo titolo è già esistente',
+            'title.unique' => 'Il titolo è già esistente',
             'title.min' => 'Il titolo è troppo corto, minimo :min caratteri',
             'title.max' => 'Il titolo è troppo lungo, massimo :max caratteri'
         ];

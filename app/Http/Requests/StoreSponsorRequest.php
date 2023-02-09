@@ -33,7 +33,7 @@ class StoreSponsorRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Per favore inserire un nome',
+            'name.required' => 'Per favore inserire un nome.',
             'name.min' => 'Il nome deve essere lungo almeno 5 caratteri.',
             'name.max' => 'Il nome non può superare i 100 caratteri.',
             'time.required' => 'Per favore inserire una durata',
