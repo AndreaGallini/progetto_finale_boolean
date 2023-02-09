@@ -109,7 +109,7 @@
                 </div>
     
                 <div class="my-3">
-                    <label for="price" class="form-label bold-txt">Prezzo</label>
+                    <label for="price" class="form-label bold-txt">Prezzo per notte</label>
                     <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
                         value="{{ old('price', $apartment->price) }}" required>
                     @error('price')

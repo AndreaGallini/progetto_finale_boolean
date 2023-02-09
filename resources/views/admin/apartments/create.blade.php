@@ -82,12 +82,15 @@
                     </div>
                     @enderror
                 </div>
+
     
                 <div class="mb-3">
                     <input type="hidden" name="address" id="address" value="">
                     <input type="hidden" name="lat" id="lat" value="">
                     <input type="hidden" name="long" id="long" value="">
                 </div>
+
+                <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
     
                 <div class="mb-3">
                     <img id="uploadPreview" width="100" src="https://via.placeholder.com/300x200">
@@ -100,7 +103,7 @@
                 </div>
     
                 <div class="mb-3">
-                    <label for="price" class="form-label bold-txt">Prezzo</label>
+                    <label for="price" class="form-label bold-txt">Prezzo per notte</label>
                     <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price"
                         required>
                     @error('price')
