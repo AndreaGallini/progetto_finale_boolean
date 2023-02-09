@@ -23,7 +23,8 @@ class ApartmentSeeder extends Seeder
         foreach ($apartments as $apartment) {
             $newapartment = new Apartment();
             $newapartment->title = $apartment['title'];
-            $newapartment->slug = Str::slug($newapartment->title, '-');
+            // $newapartment->slug = Str::slug($newapartment->title, '-');
+            $newapartment->slug = $apartment['slug'];
             $newapartment->room_number = $apartment['room_number'];
             $newapartment->cover_img = ApartmentSeeder::storeimage($apartment['cover_img']);
             $newapartment->bed_number = $apartment['bed_number'];
