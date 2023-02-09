@@ -1,14 +1,26 @@
 @import '../variables/variables';
+
 .mdd{
+  position: relative;
     // background-color: $mainColor;
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $emerald;
     transition: all 250ms;
-    h1{
+    a{
+      text-decoration: none;
+      &:hover h1{
+        color:$white;
+      }
+      h1{
+        color: $white;
         font-weight: 700;
         font-family: $main-font;
+        font-size: 3rem;
+        margin: 0;
+    }
     }
 }
 
@@ -16,5 +28,25 @@
   .mdd{
     // background-color: $secondaryColor;
     height: 80px;
+  }
+}
+
+.backtom{
+  position: absolute;
+  left: 0;
+  background-color: $emerald;
+  height: 100%;
+  width: 5vw;
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 200ms;
+  color: $white;
+  &:hover{
+    background-color: $raindrop;
+    color: $sangria;
+    font-size: 2rem;
   }
 }
