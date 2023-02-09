@@ -15,14 +15,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $array = config('userarray');
-        foreach ($array as $user) {
-            $newuser = new User;
-            $newuser->name = $user['name'];
-            $newuser->email = $user['email'];
-            $newuser->password = $user['password'];
-            $newuser->is_admin = $user['is_admin'];
-            $newuser->save();
-        }
+        // $array = config('userarray');
+        // foreach ($array as $user) {
+        //     $newuser = new User;
+        //     $newuser->name = $user['name'];
+        //     $newuser->email = $user['email'];
+        //     $newuser->password = $user['password'];
+        //     $newuser->is_admin = $user['is_admin'];
+        //     $newuser->save();
+        // }
     }
 }
