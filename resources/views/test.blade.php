@@ -1,10 +1,12 @@
 <?php
+
 $gateway = new Braintree\Gateway([
     'environment' => 'sandbox',
     'merchantId' => 'kbwtw62jd6k9gv73',
     'publicKey' => 'jnj5dxkfqh72w6c5',
     'privateKey' => '29f7bd74c1b5147e2cf98b65e51de6e8',
 ]);
+
 $clientToken = $gateway->clientToken()->generate([
     'customerId' => '1111',
 ]);

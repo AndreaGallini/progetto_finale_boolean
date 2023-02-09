@@ -51,12 +51,12 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
             function () {
                     return view('test');
                 }
-        );
+        )->name('success');
 
     });
 Route::get(
     '/success',
     function () {
-        return view('success')->name('success');
+        return view('success');
     }
 );
