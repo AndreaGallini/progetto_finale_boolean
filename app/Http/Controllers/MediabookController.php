@@ -40,7 +40,7 @@ class MediabookController extends Controller
     {
         // dd($request);
         $data = $request->validated();
-        $slug = Mediabook::generateSlug($request->name);
+        $slug = Mediabook::generateSlug($request->title);
         $data['slug'] = $slug;
         if ($request->hasFile('img')) {
             $path = Storage::disk('public')->put('images', $request->img);
@@ -82,8 +82,15 @@ class MediabookController extends Controller
     public function update(UpdateMediabookRequest $request, Mediabook $mediabook)
     {
         $data = $request->validated();
-        $slug = Mediabook::generateSlug($request->name);
+        $slug = Mediabook::generateSlug($request->title);
         $data['slug'] = $slug;
+        if ($request->hasFile('img')) {
+            if ($mediabook->img) {
+                Storage::delete($mediabook->img);
+            }
+            $path = Storage::disk('public')->put('mediabook_image', $request->img);
+            $data['img'] = $path;
+        }
         $mediabook->update($data);
         return redirect()->route('admin.mediabooks.index')->with('message', "$mediabook->name aggiornato con successo");
     }

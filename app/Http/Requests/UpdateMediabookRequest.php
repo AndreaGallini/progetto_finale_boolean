@@ -24,10 +24,9 @@ class UpdateMediabookRequest extends FormRequest
     public function rules()
     {
         return [
-
-            'media' => 'nullable',
-            'apartament_id' => 'required|exists:appartaments,id',
-            'is_cover' => 'nullable'
+            'title' => 'nullable',
+            'apartment_id' => 'required|exists:apartments,id',
+            'img' => 'nullable'
         ];
     }
 
