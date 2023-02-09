@@ -66,19 +66,7 @@ return [
         "long" => 12.496295,
         "visible" => true
     ],
-    [
-        "title" => "Palazzo d'Oro",
-        "price" => 2000,
-        'cover_img' => '//via.placeholder.com/150',
-        "room_number" => 8,
-        "bed_number" => 16,
-        "bath_number" => 6,
-        "mq_value" => 700,
-        "address" => "Via della Libertà 2",
-        "lat" => 41.902198,
-        "long" => 12.496295,
-        "visible" => true
-    ],
+
     [
         "title" => "Luxury Mansion in Beverly Hills",
         "price" => 2500,
