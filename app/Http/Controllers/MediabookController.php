@@ -38,6 +38,7 @@ class MediabookController extends Controller
      */
     public function store(StoreMediabookRequest $request)
     {
+        // dd($request);
         $data = $request->validated();
         $slug = Mediabook::generateSlug($request->name);
         $data['slug'] = $slug;
