@@ -23,19 +23,22 @@
                     <a href="{{ route('admin.categories.index') }}">Index categories</a>
                     <a href="{{ route('admin.stats.index') }}">Index stats</a>
                 </div>
-                    @else
-                    <div class="cardsdash">
-                        <a href="{{ route('admin.apartments.index') }}" class="carda cardone d-flex align-items-center justify-content-center">
+                @else
+                    <div class="cardsdash row">
+                        <a href="{{ route('admin.apartments.index') }}" class="col-12 col-md-6 col-lg-12 carda cardone d-flex align-items-center justify-content-center">
                             <h1>appartamenti</h1>
                         </a>
-                        <a href="{{ route('admin.sponsors.index') }}" class="carda cardtwo d-flex align-items-center justify-content-center">
+                        <a href="{{ route('admin.sponsors.index') }}" class="col-12 col-md-6 col-xl-4 carda cardtwo d-flex align-items-center justify-content-center">
                             <h1>sponsorizza</h1>
                         </a>
-                        <a href="{{ route('admin.stats.index') }}" class="carda cardtree d-flex align-items-center justify-content-center">
+                        <a href="{{ route('admin.stats.index') }}" class="col-12 col-md-6 col-xl-4 carda cardfour d-flex align-items-center justify-content-center">
+                            <h1>messaggi</h1>
+                        </a>
+                        <a href="{{ route('admin.stats.index') }}" class="col-12 col-md-6 col-xl-4 carda cardtree d-flex align-items-center justify-content-center">
                             <h1>statistiche</h1>
                         </a>
                     </div>
-                    @endif
+                @endif
             </div>
         </div>
     </div>
