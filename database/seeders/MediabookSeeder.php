@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class MediabookSeeder extends Seeder
 {
@@ -24,5 +25,15 @@ class MediabookSeeder extends Seeder
             $mediabook->img = 'https://via.placeholder.com/150';
             $mediabook->save();
         }
+    }
+    public static function storeimage($img)
+    {
+        $url = 'https:' . $img;
+        $contents = file_get_contents($url);
+        $temp_name = substr($url, strrpos($url, '/') + 1);
+        $name = $temp_name . '.jpg';
+        $path = 'images/' . $name;
+        Storage::put('/public/images/' . $name, $contents);
+        return $path;
     }
 }

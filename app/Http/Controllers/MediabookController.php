@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMediabookRequest;
 use App\Http\Requests\UpdateMediabookRequest;
 use App\Models\Mediabook;
+use Illuminate\Support\Facades\Storage;
 
 class MediabookController extends Controller
 {
@@ -40,6 +41,10 @@ class MediabookController extends Controller
         $data = $request->validated();
         $slug = Mediabook::generateSlug($request->name);
         $data['slug'] = $slug;
+        if ($request->hasFile('img')) {
+            $path = Storage::disk('public')->put('images', $request->img);
+            $data['img'] = $path;
+        }
         $new_mediabook = Mediabook::create($data);
         return redirect()->route('admin.mediabooks.index', $new_mediabook->slug)->with('message', "$new_mediabook->name aggiunto con successo");
     }
