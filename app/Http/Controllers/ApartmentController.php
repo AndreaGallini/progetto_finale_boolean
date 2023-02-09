@@ -93,7 +93,8 @@ class ApartmentController extends Controller
             abort(403);
 
         }
-        return view('admin.apartments.show', compact('apartment'));
+        $mediabooks = Mediabook::where('apartment_id', $apartment->id)->get();
+        return view('admin.apartments.show', compact('apartment', 'mediabooks'));
     }
 
     /**

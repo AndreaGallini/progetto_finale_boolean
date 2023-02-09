@@ -3,16 +3,16 @@
 @section('content')
     <section id="apartmShow" class="pb-5">
         <div class="container">
-             {{-- tasto back --}}
-             <div class="mt-5">
+            {{-- tasto back --}}
+            <div class="mt-5">
                 <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
                     <i class="fa-solid fa-caret-left me-2"></i>Indietro
                 </a>
             </div>
-            
+
             <h1>{{ $apartment->title }}</h1>
             <h4>{{ $apartment->address }}<br>
-            {{ $apartment->mq_value }} mq</h4>
+                {{ $apartment->mq_value }} mq</h4>
 
             <div class="image">
                 @if ($apartment->cover_img)
@@ -28,8 +28,8 @@
                         <span class="bold-txt">Prezzo:</span>
                         <span>{{ $apartment->price }} euro / notte</span>
                     </div>
-                </div>  
-                
+                </div>
+
                 {{-- <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
                         <span class="bold-txt">Slug:</span>
@@ -111,19 +111,22 @@
                 <div ref="mapRef" id="map"></div>
             </div>
         </div>
-    </section>    
+        @foreach ($mediabooks as $mediabook)
+            <img class="mediabook" src="{{ asset('storage/' . $mediabook->img) }}" alt="">
+        @endforeach
+    </section>
 
-        
-        {{-- <div>
+
+    {{-- <div>
             <a class="back-btn btn btn-dark" href="{{ route('admin.apartments.index') }}">BACK</a>
             <h1>{{ $apartment->title }}</h1> --}}
-            {{-- @if ($activity->categories && count($activity->categories) > 0)
+    {{-- @if ($activity->categories && count($activity->categories) > 0)
         @foreach ($activity->categories as $category)
         <span>{{$category->name}}</span>
         @endforeach
         @endif --}}
-            
-        {{-- <div class="image">
+
+    {{-- <div class="image">
                 @if ($apartment->cover_img)
                     <img src="{{ asset('storage/' . $apartment->cover_img) }}">
                 @else
@@ -189,7 +192,7 @@
     </section> --}}
 
 
-{{-- SCRIPT --}}
+    {{-- SCRIPT --}}
 
     <script type="text/javascript">
         braintree.dropin.create({
@@ -260,4 +263,8 @@
 
         initMap();
     </script>
+
+
+
+
 @endsection
