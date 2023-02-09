@@ -26,20 +26,21 @@
         
             <div class="my-apts">
                 <div class="row mx-0">
+                    @foreach ($apartments as $apartment)
                     <div class="col-12">
-                        @foreach ($apartments as $apartment)
+
                         {{-- Visualizza lista appartamenti se esistenti, altrimenti compare "Nessun alloggio registrato" --}}
                         {{-- @if ($apartment->user->id) --}}
                             <div class="card my-5">
-                                <div class="d-flex justify-content-start">
-                                    <div class="apt-img me-5 col-4 col-lg-3">
+                                <div class="row">
+                                    <a href="{{ route('admin.apartments.show', $apartment->slug) }}" class="apt-img me-5 col-12 col-md-12 col-lg-3">
                                         @if ($apartment->cover_img)
                                         <img class="img-fluid" src="{{ asset('storage/' . $apartment->cover_img) }}" alt="Immagine dell'appartamento">
                                         @else
                                         <img src="{{ Vite::asset('resources/img/not_found.jpeg') }}" alt="Immagine non disponibile">
                                         @endif
-                                    </div>
-                                    <div class="apt-details col-8 col-lg-9">
+                                    </a>
+                                    <div class="apt-details col-12 col-md-12 col-lg-6">
                                         <h3>
                                             <a href="{{ route('admin.apartments.show', $apartment->slug) }}" title="View Apartment">{{
                                             $apartment->title }}</a>
