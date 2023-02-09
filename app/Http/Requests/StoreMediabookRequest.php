@@ -24,8 +24,9 @@ class StoreMediabookRequest extends FormRequest
     public function rules()
     {
         return [
-            'media' => 'nullable',
-            'apartament_id' => 'required|exists:appartaments,id'
+            'title' => 'required',
+            'apartment_id' => 'required|exists:apartments,id',
+            'img' => 'required'
         ];
     }
     public function message()
