@@ -16,7 +16,6 @@
 
     h1 {
         color: $sangria;
-        margin-top: 30px;
         font-weight: bold;
     }
     
@@ -55,5 +54,9 @@
 
     .create-new {
         font-size: 1.3rem;
+    }
+
+    p {
+        color: $black;
     }
 }

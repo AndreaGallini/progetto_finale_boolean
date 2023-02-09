@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4" id="register">
+<div class="container mt-4 pdnt" id="register">
     <div class="row justify-content-center">
-        <div class="col-md-8 margine-top">
+        <div class="col-md-8">
 
 
 
@@ -82,14 +82,14 @@
 
 
                 <div class="mb-4 row mb-0 justify-content-center">
-                    <div class="col-2 ">
+                    <div class="col-5  text-center">
                         <button type="submit" class="bottone">
-                            {{ __('Register') }}
+                            {{ __('Registrati') }}
                         </button>
                     </div>
                 </div>
                 <div class="mb-4 row mb-0 justify-content-center">
-                    <div class="col-3 ">
+                    <div class="col-6 text-center">
                         <span>Hai già account? <a class="nav-link}}" href="{{ route('login') }}">
                                 Accedi</a></span>
 

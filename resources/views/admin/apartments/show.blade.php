@@ -1,16 +1,129 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section id="admin-show">
-        <div>
-            <a class="back-btn btn btn-dark" href="{{ route('admin.apartments.index') }}">BACK</a>
+    <section id="apartmShow" class="pb-5">
+        <div class="container">
+             {{-- tasto back --}}
+             <div class="mt-5">
+                <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
+                    <i class="fa-solid fa-caret-left me-2"></i>Indietro
+                </a>
+            </div>
+            
             <h1>{{ $apartment->title }}</h1>
+            <h4>{{ $apartment->address }}<br>
+            {{ $apartment->mq_value }} mq</h4>
+
+            <div class="image">
+                @if ($apartment->cover_img)
+                    <img class="img-fluid" src="{{ asset('storage/' . $apartment->cover_img) }}">
+                @else
+                    <img class="img-fluid" src="{{ Vite::asset('resources/img/not_found.jpeg') }}" alt="">
+                @endif
+            </div>
+
+            <div class="infos d-flex flex-column info-container">
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Prezzo:</span>
+                        <span>{{ $apartment->price }} euro / notte</span>
+                    </div>
+                </div>  
+                
+                {{-- <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Slug:</span>
+                        <span>{{ $apartment->slug }}</span>
+                    </div>
+                </div> --}}
+
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Stanze:</span>
+                        <span>{{ $apartment->room_number }}</span>
+                    </div>
+                </div>
+
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Posti letto:</span>
+                        <span>{{ $apartment->bed_number }}</span>
+                    </div>
+                </div>
+
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Bagni:</span>
+                        <span>{{ $apartment->bath_number }}</span>
+                    </div>
+                </div>
+
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Categoria:</span>
+                        @if ($apartment->category)
+                            <span>{{ $apartment->category->name }}</span>
+                        @else
+                            <span>Categoria non specificata</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Servizi:</span>
+                        <div class="tags">
+                            @if ($apartment->services && count($apartment->services) > 0)
+                                @foreach ($apartment->services as $service)
+                                    <div class="services">{{ $service->title }}</div>
+                                @endforeach
+                            @else
+                                <span>Nessun servizio</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Sponsor:</span>
+                        <div>
+                            @if ($apartment->sponsors && count($apartment->sponsors) > 0)
+                                @foreach ($apartment->sponsors as $sponsor)
+                                    <span class="d-inline p-2 rounded-pill text-white">{{ $sponsor->name }}</span>
+                                @endforeach
+                            @else
+                                <span>Nessuno sponsor</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-row d-flex justify-content-around my-3">
+                    <div class="info-col d-flex justify-content-between">
+                        <span class="bold-txt">Visibile sul sito:</span>
+                        <span>{{ $apartment->visible ? 'Sì' : 'No' }}</span>
+                    </div>
+                </div>
+            </div>
+
+            {{-- mappa --}}
+            <div class="map-wrapper d-flex flex-column justify-content-center align-items-center">
+                <h4>Posizione sulla mappa:</h4>
+                <div ref="mapRef" id="map"></div>
+            </div>
+        </div>
+    </section>    
+
+        
+        {{-- <div>
+            <a class="back-btn btn btn-dark" href="{{ route('admin.apartments.index') }}">BACK</a>
+            <h1>{{ $apartment->title }}</h1> --}}
             {{-- @if ($activity->categories && count($activity->categories) > 0)
         @foreach ($activity->categories as $category)
         <span>{{$category->name}}</span>
         @endforeach
         @endif --}}
-            <div class="image">
+            
+        {{-- <div class="image">
                 @if ($apartment->cover_img)
                     <img src="{{ asset('storage/' . $apartment->cover_img) }}">
                 @else
@@ -73,7 +186,11 @@
             </div>
         </div>
         <div id="dropin-container"></div>
-    </section>
+    </section> --}}
+
+
+{{-- SCRIPT --}}
+
     <script type="text/javascript">
         braintree.dropin.create({
                     container: document.getElementById('dropin-container'),

@@ -33,15 +33,18 @@
         <header>
             @include('partials.admin.header')
         </header>
+        <div class="navdesktop">
+            @include('partials.admin.navbar')
+        </div>
         <main class="">
             @yield('content')
         </main>
         <footer>
             @include('partials.admin.footer')
         </footer>
-        <nav class="fixbot">
+        <div class="navphone">
             @include('partials.admin.navbarFixed')
-        </nav>
+        </div>
     </div>
 </body>
 

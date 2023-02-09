@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-4" id="login">
+    <div class="container mt-4 pdnt" id="login">
         <div class="row justify-content-center">
-            <div class="col-md-8 margine-top">
+            <div class="col-md-8 ">
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -14,8 +14,8 @@
                                                     Address') }}</label> --}}
 
                         <div class="col-md-6">
-                            <input placeholder="Mail" id="email" type="email"
-                                class="form-control @error('email') is-invalid @enderror" name="email"
+                            <input placeholder="Email" id="email" type="email"
+                                class="form-control mycont @error('email') is-invalid @enderror" name="email"
                                 value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -32,7 +32,7 @@
 
                         <div class="col-md-6">
                             <input placeholder="Password" id="password" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                class="form-control mycont @error('password') is-invalid @enderror" name="password" required
                                 autocomplete="current-password">
 
                             @error('password')
@@ -59,24 +59,28 @@
                 </div> --}}
 
                     <div class="mb-4 row mb-0 justify-content-center">
-                        <div class="col-2 ">
+                        <div class="col-5 text-center">
                             <button type="submit" class="bottone">
                                 {{ __('Login') }}
                             </button>
-
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
                         </div>
                     </div>
-                    <div class="mb-4 row mb-0">
-                        <div class="offset-md-2 col-md-8 d-flex gap-4">
-                            <a href="{{ route('register') }}" class="btnloginhighlight">
-                                {{ __('Register') }}
+                    <div class="row">
+                        <div class=" text-center align-items-center">
+                            <span>Non hai un account?</span>
+                            <a href="{{ route('register') }}" class="btnloginhighlight text-center">
+                                {{ __('Registrati') }}
                             </a>
-                        </div>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Non ricordi la tua Password?') }}
+                        </a>
+                    @endif
+                    </div>
+                     
                 </form>
             </div>
         </div>

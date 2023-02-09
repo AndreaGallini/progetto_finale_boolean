@@ -1,15 +1,35 @@
 @extends('layouts.admin')
 @section('content')
 <section id="admin-index">
-    @include('partials.admin.navbar')
+    {{-- @include('partials.admin.navbar') --}}
     <div id="apartmIndex">
         <div class="container">
-            <h1 class="mb-sm-3">Appartamenti registrati:</h1>
-
+            <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1 class="mb-sm-3">Appartamenti registrati</h1>
+                    </div>
+        
+                    <div class="create-new d-flex">
+                        <a href="{{ route('admin.apartments.create') }}" class="add-apt d-flex align-items-center">
+                            <div>
+                                <i class="fa-solid fa-circle-plus me-2"></i>
+                            </div>
+                            <div class="d-block d-md-none">
+                                Nuovo
+                            </div>
+                            <div class="d-none d-md-block">
+                                Aggiungi un nuovo appartamento
+                            </div>
+                        </a>
+                    </div>
+            </div>
+        
             <div class="my-apts">
                 <div class="row mx-0">
                     <div class="col-12">
                         @foreach ($apartments as $apartment)
+                        {{-- Visualizza lista appartamenti se esistenti, altrimenti compare "Nessun alloggio registrato" --}}
+                        {{-- @if ($apartment->user->id) --}}
                             <div class="card my-5">
                                 <div class="d-flex justify-content-start">
                                     <div class="apt-img me-5 col-4 col-lg-3">
@@ -60,19 +80,14 @@
                                 </div>
                                 <hr>
                             </div>
+                            {{-- @else
+                            <div>
+                                Nessun alloggio registrato.
+                            </div>
+                            @endif --}}
                         @endforeach
                     </div>
                 </div>
-            </div>
-            <div class="create-new d-flex justify-content-end pt-0 pb-5">
-                <a href="{{ route('admin.apartments.create') }}" class="add-apt d-flex align-items-center">
-                    <div>
-                        <i class="fa-solid fa-circle-plus me-2"></i>
-                    </div>
-                    <div>
-                        Aggiungi un nuovo appartamento
-                    </div>
-                </a>
             </div>
         </div>
     </div>
