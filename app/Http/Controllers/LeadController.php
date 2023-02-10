@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Mail\NewContact;
 
@@ -15,10 +16,16 @@ use Illuminate\Support\Facades\Auth;
 class LeadController extends Controller
 {
 
-    // public function index(){
+    public function index()
+    {
+        $userId = Auth::id();
+        $apartments = Apartment::where('user_id', $userId)->get();
 
-    // }
-    public function showMails(Apartment $apartment){
+        $users = User::all();
+        return view('emails.inbox', compact('apartments'));
+    }
+    public function showMails(Apartment $apartment)
+    {
         // if ($apartment->user_id !== Auth::id() && !Auth::user()->isAdmin()) {
         //     abort(403);
         // }
@@ -27,7 +34,8 @@ class LeadController extends Controller
 
         return view('emails.show-inbox', compact('apartment'));
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $data = $request->all();
         $newMail = new Lead();
         $newMail->fill($data);
