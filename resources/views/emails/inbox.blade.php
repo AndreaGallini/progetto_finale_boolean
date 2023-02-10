@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Ciaoooo</h1>
     @foreach ($apartments as $apartmentLead)
         <hr>
         <p><strong>Appartamento:</strong> {{ $apartmentLead->title }}</p>
