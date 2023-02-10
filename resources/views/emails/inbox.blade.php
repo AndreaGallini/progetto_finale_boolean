@@ -6,6 +6,8 @@
         <p><strong>Appartamento:</strong> {{ $apartmentLead->title }}</p>
         <ul>
             @foreach ($apartmentLead->leads as $lead)
+                <li>{{ $lead->name }}</li>
+                <li>{{ $lead->email }}</li>
                 <li>{{ $lead->message }}</li>
             @endforeach
         </ul>
