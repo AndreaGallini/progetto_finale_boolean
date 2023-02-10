@@ -110,10 +110,22 @@
                 <h4>Posizione sulla mappa:</h4>
                 <div ref="mapRef" id="map"></div>
             </div>
+
+            <div class="photo-album">
+                <h4 class="my-3">Album Foto:</h4>
+                <div class="my-3 row">
+                    @foreach ($mediabooks as $mediabook)
+                        <div class="col-6 d-flex justify-content-center">
+                            <img class="mediabook" src="{{ asset('storage/' . $mediabook->img) }}" alt="">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="inbox my-5">
+                <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.inbox', $apartment->slug) }}"><i class="fa-solid fa-envelope"></i></a>
+            </div>
         </div>
-        @foreach ($mediabooks as $mediabook)
-            <img class="mediabook" src="{{ asset('storage/' . $mediabook->img) }}" alt="">
-        @endforeach
     </section>
 
 
@@ -194,7 +206,7 @@
 
     {{-- SCRIPT --}}
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         braintree.dropin.create({
                     container: document.getElementById('dropin-container'),
 
@@ -205,7 +217,7 @@
                         authorization: CLIENT_TOKEN_FROM_SERVER,
                         container: '#dropin-container'
                     }
-    </script>
+    </script> --}}
     <script>
         let place = [
             {{ $apartment->lat }},

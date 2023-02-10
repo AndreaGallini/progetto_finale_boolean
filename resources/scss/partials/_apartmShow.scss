@@ -45,7 +45,7 @@
     .info-container, .form-container {
         width: 60%;
         margin: 0 auto;
-    }    
+    }
 
     .infos{
        color: black;
@@ -64,7 +64,7 @@
                 // }
                 .services {
                     text-align: right;
-                }    
+                }
             }
         }
     }
@@ -72,7 +72,7 @@
     .bold-txt {
         font-weight: bold;
         color: $rosegold;
-    } 
+    }
 
     .my-btn {
         border-style: none;
@@ -83,7 +83,7 @@
             opacity: 0.9;
         }
     }
-    
+
     .btn-back {
         background-color: $mauve;
         color: $white;
@@ -112,5 +112,19 @@
     #address {
         border-style: none;
         background-color: transparent;
+    }
+
+    .photo-album{
+        .col-6{
+            height: 200px;
+
+            img{
+                height: 100%;
+                width: 75%;
+                object-fit: cover;
+                box-shadow: 0 0 0 6px white,
+                            0 0 0 7px black;
+            }
+        }
     }
 }

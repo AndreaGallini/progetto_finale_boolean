@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
+use App\Models\Lead;
 class Apartment extends Model
 {
     use HasFactory;
@@ -42,5 +42,10 @@ class Apartment extends Model
     public function mediabooks(): HasMany
     {
         return $this->hasMany(Mediabook::class);
+    }
+
+    public function leads(): HasMany
+    {
+        return $this->hasMany(Lead::class);
     }
 }

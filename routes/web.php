@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\StatController;
+use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,12 +47,8 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::resource('services', ServiceController::class)->parameters(['services' => 'service:slug'])->except('show', 'edit');
         Route::resource('stats', StatController::class)->parameters(['stats' => 'stat:slug']);
         Route::resource('sponsors', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
-        Route::get(
-            '/pay',
-            function () {
-                    return view('test');
-                }
-        )->name('success');
+        Route::get('/pay', function () { return view('test'); })->name('success');
+        Route::get('/inbox/{apartment:slug}', [LeadController::class, 'index'])->name('inbox');
 
     });
 Route::get(
