@@ -123,7 +123,7 @@
             </div>
 
             <div class="inbox my-5">
-                <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.inbox', $apartment->slug) }}"><i class="fa-solid fa-envelope"></i></a>
+                <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.show-inbox', $apartment->slug) }}"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </section>

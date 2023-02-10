@@ -10,5 +10,5 @@
     <p><strong>Messaggio:</strong> {{ $lead->message }}</p>
     <hr>
 @endforeach
-<h2>{{ $apartment->title }}</h2>
+{{-- <h2>{{ $apartment->title }}</h2> --}}
 @endsection

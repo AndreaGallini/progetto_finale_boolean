@@ -14,14 +14,18 @@ use Illuminate\Support\Facades\Auth;
 
 class LeadController extends Controller
 {
-    public function index(Apartment $apartment){
+
+    // public function index(){
+
+    // }
+    public function showMails(Apartment $apartment){
         // if ($apartment->user_id !== Auth::id() && !Auth::user()->isAdmin()) {
         //     abort(403);
         // }
 
         // dd($apartment);
 
-        return view('emails.inbox', compact('apartment'));
+        return view('emails.show-inbox', compact('apartment'));
     }
     public function store(Request $request){
         $data = $request->all();
