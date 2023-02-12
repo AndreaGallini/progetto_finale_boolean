@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Mail\NewContact;
-
+use Illuminate\Support\Facades\Validator;
 use App\Models\Lead;
 use App\Models\Apartment;
 
@@ -18,8 +18,13 @@ class LeadController extends Controller
 
     public function index()
     {
-        $userId = Auth::id();
-        $apartments = Apartment::where('user_id', $userId)->get();
+        if (Auth::user()->isAdmin()) {
+            $apartments = Apartment::all();
+        } else {
+            $userId = Auth::id();
+            $apartments = Apartment::where('user_id', $userId)->get();
+        }
+
 
         $users = User::all();
         return view('emails.inbox', compact('apartments'));
@@ -37,6 +42,18 @@ class LeadController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $validator = Validator::make($data, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'succes' => false,
+                'errors' => $validator->errors()
+            ]);
+        }
         $newMail = new Lead();
         $newMail->fill($data);
         $newMail->save();
@@ -46,5 +63,9 @@ class LeadController extends Controller
         return response()->json([
             'success' => true
         ]);
+    }
+    public function testform()
+    {
+        return view('emails.new-contact-email');
     }
 }

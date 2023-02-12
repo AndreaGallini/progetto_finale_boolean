@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <section id="admin-index">
-        @include('partials.admin.navbar')
+
         <div class="create-new">
             <a href="{{ route('admin.categories.create') }}" class="btn btn-outline-success">Nuova categoria</a>
         </div>

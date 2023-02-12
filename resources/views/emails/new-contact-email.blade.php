@@ -1,8 +1,7 @@
-<div class="container">
-    <h1>Email</h1>
-    <div>
-        <p>Hai ricevuto un messaggio da : {{ $lead->nome }}</p>
-        <p>email: {{ $lead->email }}</p>
-        <p>Testo : {{ $lead->messaggio }}</p>
-    </div>
-</div>
+<form action="{{ route('admin.store') }}" method="post">
+    <input type="text" name="name">
+    <input type="text" name="email">
+    <input type="text" name="message">
+    <button type="submit">Invia</button>
+
+</form>

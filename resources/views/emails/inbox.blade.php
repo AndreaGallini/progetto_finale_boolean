@@ -1,16 +1,22 @@
 @extends('layouts.app')
 @section('content')
-    @foreach ($apartments as $apartmentLead)
-        <hr>
-        <p><strong>Appartamento:</strong> {{ $apartmentLead->title }}</p>
-        <ul>
-            @foreach ($apartmentLead->leads as $lead)
-                <li>{{ $lead->name }}</li>
-                <li>{{ $lead->email }}</li>
-                <li>{{ $lead->message }}</li>
-            @endforeach
-        </ul>
+    <div class="container-fluid mt-4 mb-5">
+        <div class="row">
+            @foreach ($apartments as $apartmentLead)
+                @if (count($apartmentLead->leads) == 0)
+                @else
+                    @foreach ($apartmentLead->leads as $lead)
+                        <div class="col-4">
+                            <h4> <strong> Messaggio inviato all'appartamento : {{ $apartmentLead->title }}</strong></h4>
+                            <p> <strong>Mittente </strong>: {{ $lead->name }} </p>
+                            <p><strong>Mail :</strong> {{ $lead->email }}</p>
+                            <p><strong>Testo :</strong> {{ $lead->message }}</p>
+                            <a href=" mailto: {{ $lead->email }}" class="btn btn-primary">Rispondi alla mail</a>
 
-        <hr>
-    @endforeach
+                        </div>
+                    @endforeach
+                @endif
+            @endforeach
+        </div>
+    </div>
 @endsection
