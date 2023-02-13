@@ -51,6 +51,10 @@
                                                 {{ $apartment->mq_value }} mq
                                             </h5>
 
+                                            @foreach ($apartment->services as $service)
+                                                <h5>{{ $service->title }}</h5>
+                                            @endforeach
+
                                             @if ($apartment->category)
                                                 <div class="mt-3">
                                                     {!! $apartment->category->img !!}
