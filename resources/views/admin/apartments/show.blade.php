@@ -29,14 +29,6 @@
                         <span>{{ $apartment->price }} euro / notte</span>
                     </div>
                 </div>
-
-                {{-- <div class="info-row d-flex justify-content-around my-3">
-                    <div class="info-col d-flex justify-content-between">
-                        <span class="bold-txt">Slug:</span>
-                        <span>{{ $apartment->slug }}</span>
-                    </div>
-                </div> --}}
-
                 <div class="info-row d-flex justify-content-around my-3">
                     <div class="info-col d-flex justify-content-between">
                         <span class="bold-txt">Stanze:</span>

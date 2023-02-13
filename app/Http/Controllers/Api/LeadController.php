@@ -27,7 +27,7 @@ class LeadController extends Controller
         }
         $new_lead = new Lead();
         $new_lead = Lead::create($data);
-        // $new_lead->save();
+
         Mail::to('andreagallini01@gmail.com')->send(new NewContact($new_lead));
 
         return response()->json([

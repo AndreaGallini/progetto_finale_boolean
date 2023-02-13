@@ -24,12 +24,6 @@
                             <td>{{ $category->name }}</td>
                             <td> {{ $category->img }}</td>
                             <td>{!! $category->img !!}</td>
-                            {{-- @if ($category->category)
-                                <td>{{ $category->category->name }}</td>
-                            @else
-                                <td>Categoria non attribuita</td>
-                            @endif --}}
-
                             <td><a class="link-secondary" href="{{ route('admin.categories.edit', $category->slug) }}"
                                     title="Edit category">Modifica</a></td>
                             <td>

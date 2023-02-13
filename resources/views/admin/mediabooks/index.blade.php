@@ -56,53 +56,6 @@
                 @endforeach
             </div>
         </div>
-
-        {{-- <div class="mt-4 table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="bold-txt" scope="col">#</th>
-                        <th class="bold-txt" scope="col">Foto</th>
-                        <th class="bold-txt" scope="col">Titolo</th>
-                        <th class="bold-txt" scope="col">id appartamento</th>
-                        <th class="bold-txt" scope="col">Url</th>
-                        <th class="bold-txt" scope="col">Modifica</th>
-                        <th class="bold-txt" scope="col">Cancella</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($media as $mediabook)
-                    <tr>
-                        <th scope="row">{{ $mediabook->id }}</th>
-                        <th scope="row">
-                            @if ($mediabook->img)
-                            <img src="{{ asset('storage/' . $mediabook->img) }}">
-                            @else
-                            <img src="{{Vite::asset('resources/img/not_found.jpeg')}}" alt="Immagine non disponibile">
-                            @endif
-                        </th>
-                        <td><a href="{{ route('admin.mediabooks.show', $mediabook->slug) }}" title="View mediabook">{{
-                                $mediabook->title }}</a></td>
-
-                        <td>{{$mediabook->apartment_id }}</td>
-
-                        <td>{!! $mediabook->img !!}</td>
-
-                        <td class="link-edit"><a href="{{ route('admin.mediabooks.edit', $mediabook->slug) }}"
-                                title="Edit mediabook"><i class="fa-solid fa-pen me-2"></i></a></td>
-                        <td>
-                            <form action="{{ route('admin.mediabooks.destroy', $mediabook->slug) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="delete-button delete-btn"
-                                    data-item-title="{{ $mediabook->slug }}"><i class="fa-regular fa-trash-can ms-4 me-2"></i></button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div> --}}
     </section>
     @include('partials.admin.modal-delete')
 @endsection

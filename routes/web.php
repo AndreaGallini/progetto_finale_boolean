@@ -39,8 +39,6 @@ require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
     ->group(function () {
-        // Route::get('/', [DashboardController::class, 'index'])
-        // ->name('dashboard');
         Route::resource('apartments', ApartmentController::class)->parameters(['apartments' => 'apartment:slug']);
         Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']);
         Route::resource('mediabooks', MediabookController::class)->parameters(['mediabooks' => 'mediabook:slug']);

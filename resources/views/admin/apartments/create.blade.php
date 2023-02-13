@@ -3,7 +3,7 @@
 @section('content')
     <section id="apartmShow" class="pb-5">
         <div class="container">
-            {{-- tasto back --}}
+
             <div class="mt-4">
                 <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
                     <i class="fa-solid fa-caret-left me-2"></i>Indietro
@@ -74,8 +74,6 @@
 
                     <div class="mb-3">
                         <label for="address" class="form-label bold-txt">Indirizzo <strong>*</strong></label>
-                        {{-- <textarea class="form-control @error('address') is-invalid @enderror" id="address"
-                        name="address"></textarea> --}}
                         <div id="searchBox"></div>
                         @error('address')
                             <div class="invalid-feedback d-block">
@@ -157,29 +155,6 @@
                 </div> --}}
 
                     <div class="my-3">
-                        {{-- <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="1">
-                    <label for="visible" class="form-label">Visible</label>
-                    <input type="checkbox" class="form-check-input" id="visible" name="visible" value="0"> --}}
-                        {{-- <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Si
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            No
-                        </label>
-                    </div>
-                    @error('visible')
-                    <div class="invalid-feedback d-block">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                    <hr> --}}
-
                         <div class="my-3">
                             <label class="form-label bold-txt">Visibile sul sito? <strong>*</strong></label><br>
                             <input type="radio" class="form-check-input" id="visible" name="visible"

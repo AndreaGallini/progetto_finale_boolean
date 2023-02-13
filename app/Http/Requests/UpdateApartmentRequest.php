@@ -30,11 +30,8 @@ class UpdateApartmentRequest extends FormRequest
             'bath_number' => ['required', 'max:2'],
             'mq_value' => ['required', 'max:20'],
             'address' => ['max:200'],
-            // 'lat' => ['required'],
-            // 'long' => ['required'],
             'price' => ['required'],
             'visible' => ['nullable'],
-            // 'cover_img' => ['required'],
             'category_id' => 'nullable|exists:categories,id',
             'user_id' => 'nullable|exists:users,id',
         ];
