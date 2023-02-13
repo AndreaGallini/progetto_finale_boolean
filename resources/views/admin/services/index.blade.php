@@ -21,7 +21,7 @@
                 @foreach ($services as $service)
                     <li class="mb-3 pb-3 border-bottom border-dark">
                         <form id="service-{{ $service->id }}" action="{{ route('admin.services.update', $service->slug) }}"
-                            method="post" class="mb-3">
+                            method="POST" class="mb-3">
                             @csrf
                             @method('PATCH')
 
