@@ -19,6 +19,6 @@ use App\Http\Controllers\Api\LeadController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('apartments', [ApartmentController::class, 'index']);
-Route::get('apartments/{slug}', [ApartmentController::class, 'show']);
+Route::get('apartments', [ApartamentController::class, 'index']);
+Route::get('apartments/{slug}', [ApartamentController::class, 'show']);
 Route::post('/form', [LeadController::class, 'store']);
