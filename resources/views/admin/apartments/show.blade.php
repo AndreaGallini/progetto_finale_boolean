@@ -80,7 +80,7 @@
                         <div>
                             @if ($apartment->sponsors && count($apartment->sponsors) > 0)
                                 @foreach ($apartment->sponsors as $sponsor)
-                                    <span class="d-inline p-2 rounded-pill text-white">{{ $sponsor->name }}</span>
+                                    <span class="d-inline p-2 rounded-pill">{{ $sponsor->name }}</span>
                                 @endforeach
                             @else
                                 <span>Nessuno sponsor</span>
