@@ -115,15 +115,22 @@
                 <h4 class="my-3">Album Foto:</h4>
                 <div class="my-3 row">
                     @foreach ($mediabooks as $mediabook)
-                        <div class="col-6 d-flex justify-content-center">
-                            <img class="mediabook" src="{{ asset('storage/' . $mediabook->img) }}" alt="">
-                        </div>
+                        @if (str_contains($mediabook, 'http'))
+                            <div class="col-6 d-flex justify-content-center">
+                                <img class="mediabook" src="{{ $mediabook->img }}" alt="">
+                            </div>
+                        @else
+                            <div class="col-6 d-flex justify-content-center">
+                                <img class="mediabook" src="{{ asset('storage/' . $mediabook->img) }}" alt="">
+                            </div>
+                        @endif
                     @endforeach
                 </div>
             </div>
 
             <div class="inbox my-5">
-                <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.show-inbox', $apartment->slug) }}"><i class="fa-solid fa-envelope"></i></a>
+                <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.show-inbox', $apartment->slug) }}"><i
+                        class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </section>
