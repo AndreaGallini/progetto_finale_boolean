@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Arr;
 
 
 class ApartmentSeeder extends Seeder
@@ -32,10 +33,19 @@ class ApartmentSeeder extends Seeder
             $newapartment->mq_value = $apartment['mq_value'];
             $newapartment->address = $apartment['address'];
             $newapartment->lat = $apartment['lat'];
+            $newapartment->category_id = $apartment['category_id'];
             $newapartment->long = $apartment['long'];
             $newapartment->price = $apartment['price'];
             $newapartment->visible = $apartment['visible'];
             $newapartment->save();
+            $services = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            $totRandServices = rand(1, 4);
+            $apartRandServices = Arr::random($services, $totRandServices);
+            $categories = [1, 2, 3, 4, 5, 6];
+            $apartRandCat = Arr::random($categories, 1);
+            $newapartment->services()->sync($apartRandServices);
+
+
         }
     }
 

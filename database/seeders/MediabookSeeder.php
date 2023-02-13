@@ -21,6 +21,7 @@ class MediabookSeeder extends Seeder
         for ($i = 0; $i < 30; $i++) {
             $mediabook = new Mediabook();
             $mediabook->title = $faker->sentence(1);
+            $mediabook->apartment_id = $faker->numberBetween(1, 21);
             $mediabook->slug = Str::slug($mediabook->title, '-'); //creazione slug
             $mediabook->img = 'https://via.placeholder.com/150';
             $mediabook->save();
