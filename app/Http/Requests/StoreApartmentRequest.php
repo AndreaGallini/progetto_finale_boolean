@@ -23,35 +23,21 @@ class StoreApartmentRequest extends FormRequest
      */
     public function rules()
     {
-        // return [
-        //     'title' => 'required|min:5|max:100',
-        //     'room_number' => 'required|max:2',
-        //     'bed_number' => 'required|max:2',
-        //     'bath_number' => 'required|max:2',
-        //     'mq_value' => 'required|max:20',
-        //     'address' => 'required|max:200',
-        //     'lat' => 'required',
-        //     'long' => 'required',
-        //     'price' => 'required',
-        //     'visible' => 'nullable',
-        //     'cover_img' => 'required',
-        //     'category_id' => 'nullable|exists:categories,id',
-        //     'user_id' => 'nullable|exists:users,id',
-        // ];
         return [
-            'title' => ['required', 'min:5', 'max:100'],
-            'room_number' => ['required', 'max:2'],
-            'bed_number' => ['required', 'max:2'],
-            'bath_number' => ['required', 'max:2'],
-            'mq_value' => ['required', 'max:20'],
-            'address' => ['required', 'max:200'],
-            'price' => ['required'],
-            'visible' => ['nullable'],
+            'title' => 'required|min:5|max:100',
+            'room_number' => 'required|max:2',
+            'bed_number' => 'required|max:2',
+            'bath_number' => 'required|max:2',
+            'mq_value' => 'required|max:20',
+            'address' => 'required|max:200',
+            'lat' => 'required',
+            'long' => 'required',
+            'price' => 'required',
+            'visible' => 'nullable',
+            'cover_img' => 'required',
             'category_id' => 'nullable|exists:categories,id',
             'user_id' => 'nullable|exists:users,id',
-            'cover_img' => ['required'],
         ];
-
     }
 
     public function messages()
