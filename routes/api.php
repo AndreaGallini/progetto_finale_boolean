@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('apartments', [ApartamentController::class, 'index']);
 Route::get('apartments/{slug}', [ApartamentController::class, 'show']);
-Route::post('/form', [LeadController::class, 'store']);
+Route::post('/contacts', [LeadController::class, 'store']);

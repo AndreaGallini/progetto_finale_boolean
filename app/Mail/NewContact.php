@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Apartment;
 
 class NewContact extends Mailable
 {
@@ -19,9 +20,12 @@ class NewContact extends Mailable
      * @return void
      */
     public $lead;
+    public $apartment;
+    // public $apartments = Apartment::all();
     public function __construct($_lead)
     {
         $this->lead = $_lead;
+        // $this->apartment = Apartment::where('id', $this->lead->apartment_id);
     }
 
     /**
