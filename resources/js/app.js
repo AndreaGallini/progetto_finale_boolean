@@ -50,17 +50,20 @@ deleteSubmitButtons.forEach((button) => {
 
 //Image preview
 const previewImage = document.getElementById("create_cover_img");
-previewImage.addEventListener("change", (event) => {
-    var oFReader = new FileReader();
-    // var image  =  previewImage.files[0];
-    // console.log(image);
-    oFReader.readAsDataURL(previewImage.files[0]);
+if (previewImage != null) {
+    previewImage.addEventListener("change", (event) => {
+        var oFReader = new FileReader();
+        // var image  =  previewImage.files[0];
+        // console.log(image);
+        oFReader.readAsDataURL(previewImage.files[0]);
 
-    oFReader.onload = function (oFREvent) {
-        //console.log(oFREvent);
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-    };
-});
+        oFReader.onload = function (oFREvent) {
+            //console.log(oFREvent);
+            document.getElementById("uploadPreview").src =
+                oFREvent.target.result;
+        };
+    });
+}
 
 if (document.getElementById("searchBox")) {
     let ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
