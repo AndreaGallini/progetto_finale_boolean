@@ -17,10 +17,10 @@ return new class extends Migration {
             $table->string('title', 200)->unique();
             $table->string('slug')->nullable();
             $table->text('cover_img');
-            $table->string('room_number');
-            $table->string('bed_number');
-            $table->string('bath_number');
-            $table->string('mq_value');
+            $table->integer('room_number');
+            $table->integer('bed_number');
+            $table->integer('bath_number');
+            $table->integer('mq_value');
             $table->string('address');
             $table->float('lat')->nullable();
             $table->float('long')->nullable();
