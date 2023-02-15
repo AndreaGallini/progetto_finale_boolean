@@ -5,7 +5,7 @@ return [
         "title" => "Villa stile Barocco in riva mare con piscina 4 posti auto",
         "price" => 650,
         "slug" => "Villa-stile-Barocco-in-riva-mare-con-piscina-4-posti-auto2",
-        'cover_img' => '//via.placeholder.com/150',
+        'cover_img' => '//media.gettyimages.com/id/1283532082/it/foto/lussuosa-bella-villa-moderna-con-giardino-cortile-al-tramonto.jpg?s=612x612&w=gi&k=20&c=6YS2X_56iB5mpc69G60RW6C5BGHpyiBGyKvZHeAVVFY=',
         "room_number" => 11,
         "bed_number" => 5,
         "bath_number" => 3,
