@@ -13,13 +13,14 @@
             <h1 class="mt-3 mb-3 text-center">Aggiungi un nuovo appartamento</h1>
 
             <div class="form-container">
-                <form action="{{ route('admin.apartments.store') }}" method="POST" class="py-5"
+                <form action="{{ route('admin.apartments.store') }}" method="POST" class="py-5 needs-validation" novalidate
                     enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label bold-txt">Titolo <strong>*</strong></label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
-                            name="title" required maxlength="100">
+                            name="title"
+                            value="{{ old('title', $apartment->title) }}"> 
                         @error('title')
                             <div class="invalid-feedback d-block">
                                 {{ $message }}
@@ -30,8 +31,9 @@
 
                     <div class="mb-3">
                         <label for="room_number" class="form-label bold-txt">Numero di stanze <strong>*</strong></label>
-                        <input type="number" class="form-control @error('room_number') is-invalid @enderror"
-                            id="room_number" name="room_number" required>
+                        <input type="text" class="form-control @error('room_number') is-invalid @enderror"
+                            id="room_number" name="room_number" required
+                            value="{{ old('room_number', $apartment->room_number) }}">
                         @error('room_number')
                             <div class="invalid-feedback d-block">
                                 {{ $message }}
@@ -41,8 +43,9 @@
 
                     <div class="mb-3">
                         <label for="bed_number" class="form-label bold-txt">Posti letto <strong>*</strong></label>
-                        <input type="number" class="form-control @error('bed_number') is-invalid @enderror" id="bed_number"
-                            name="bed_number" required>
+                        <input type="text" class="form-control @error('bed_number') is-invalid @enderror" id="bed_number"
+                            name="bed_number" required
+                            value="{{ old('bed_number', $apartment->bed_number) }}">
                         @error('bed_number')
                             <div class="invalid-feedback d-block">
                                 {{ $message }}
@@ -52,8 +55,9 @@
 
                     <div class="mb-3">
                         <label for="bath_number" class="form-label bold-txt">Numero di bagni <strong>*</strong></label>
-                        <input type="number" class="form-control @error('bath_number') is-invalid @enderror"
-                            id="bath_number" name="bath_number" required>
+                        <input type="text" class="form-control @error('bath_number') is-invalid @enderror"
+                            id="bath_number" name="bath_number" required
+                            value="{{ old('bath_number', $apartment->bath_number) }}">
                         @error('bath_number')
                             <div class="invalid-feedback d-block">
                                 {{ $message }}
@@ -63,8 +67,9 @@
 
                     <div class="mb-3">
                         <label for="mq_value" class="form-label bold-txt">Metri quadrati <strong>*</strong></label>
-                        <input type="number" class="form-control @error('mq_value') is-invalid @enderror" id="mq_value"
-                            name="mq_value" required>
+                        <input type="text" class="form-control @error('mq_value') is-invalid @enderror" id="mq_value"
+                            name="mq_value" required
+                            value="{{ old('mq_value', $apartment->mq_value) }}">
                         @error('mq_value')
                             <div class="invalid-feedback d-block">
                                 {{ $message }}
@@ -92,10 +97,10 @@
                     <input type="hidden" name="MAX_FILE_SIZE" value="4194304">
 
                     <div class="mb-3">
-                        <img id="uploadPreview" width="100" src="https://via.placeholder.com/300x200">
-                        <label for="cover_img" class="form-label ms-2">Anteprima immagine <strong>*</strong></label>
-                        <input type="file" name="cover_img" id="cover_img"
-                            class="mt-3 form-control  @error('cover_img') is-invalid @enderror">
+                        <img id="uploadPreview" class="mb-3" width="100" src="https://via.placeholder.com/300x200">
+                        <label for="create_cover_img" class="form-label ms-2">Anteprima immagine <strong>*</strong></label>
+                        <input type="file" name="cover_img" id="create_cover_img"
+                            class="form-control  @error('cover_img') is-invalid @enderror" required>
                         @error('cover_img')
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror
@@ -104,7 +109,8 @@
                     <div class="mb-3">
                         <label for="price" class="form-label bold-txt">Prezzo per notte <strong>*</strong></label>
                         <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
-                            name="price" required>
+                            name="price" required
+                            value="{{ old('price', $apartment->price) }}">
                         @error('price')
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror
@@ -117,7 +123,9 @@
                             class="form-control @error('category_id') is-invalid @enderror">
                             <option value="">Scegli una categoria</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}"
+                                    {{ old('category_id', $apartment->category_id) == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}</option>
                             @endforeach
                         </select>
                         @error('category_id')
@@ -131,8 +139,15 @@
                         <div class="row ms-0">
                             @foreach ($services as $service)
                                 <div class="form-check form-check-inline">
-                                    <input type="checkbox" class="form-check-input" id="{{ $service->slug }}"
-                                        name="services[]" value="{{ $service->id }}">
+                                        @if (old('services'))
+                                        <input type="checkbox" class="form-check-input" id="{{ $service->slug }}"
+                                            name="services[]" value="{{ $service->id }}"
+                                            {{ in_array($service->id, old('services', [])) ? 'checked' : '' }}>
+                                    @else
+                                        <input type="checkbox" class="form-check-input" id="{{ $service->slug }}"
+                                            name="services[]" value="{{ $service->id }}"
+                                            {{ $apartment->services->contains($service) ? 'checked' : '' }}>
+                                    @endif
                                     <label class="form-check-label"
                                         for="{{ $service->slug }}">{{ $service->title }}</label>
                                 </div>

@@ -60,7 +60,7 @@ class StoreApartmentRequest extends FormRequest
             'long.required' => 'Per favore inserire una longitudine',
             'price.required' => 'Per favore inserire un prezzo',
             'visible.required' => 'Per favore scegliere sì o no',
-             'cover_img.required' => 'Per favore aggiungere una foto',
+            'cover_img.required' => 'Per favore aggiungere una foto',
         ];
     }
 }

@@ -48,7 +48,9 @@ class ApartmentController extends Controller
         $services = Service::all();
         $sponsors = Sponsor::all();
 
-        return view('admin.apartments.create', compact('apartments', 'categories', 'services', 'sponsors'));
+        $apartment = new Apartment();
+
+        return view('admin.apartments.create', compact('apartments', 'categories', 'services', 'sponsors'))->with('apartment', $apartment);
     }
 
     /**
