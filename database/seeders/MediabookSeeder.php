@@ -18,13 +18,19 @@ class MediabookSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 30; $i++) {
-            $mediabook = new Mediabook();
-            $mediabook->title = $faker->sentence(1);
-            $mediabook->apartment_id = $faker->numberBetween(1, 21);
-            $mediabook->slug = Str::slug($mediabook->title, '-'); //creazione slug
-            $mediabook->img = 'https://via.placeholder.com/150';
-            $mediabook->save();
+        $apartments = config('arrayAppartments');
+        $mediabooks = config('mediabook');
+        $totApartments = count($apartments);
+
+        for ($i = 0; $i < $totApartments; $i++) {
+            for($j = 0; $j < 4; $j++){
+                $mediabook = new Mediabook();
+                $mediabook->title = $faker->sentence(1);
+                $mediabook->apartment_id = $i+1;
+                $mediabook->slug = Str::slug($mediabook->title, '-'); //creazione slug
+                $mediabook->img = MediabookSeeder::storeimage($mediabooks[$i][$j]);
+                $mediabook->save();
+            }
         }
     }
     public static function storeimage($img)
