@@ -25,7 +25,6 @@
 @endsection
 <script>
     function dropdown(id) {
-        document.getElementById('myDropdown'
-            '.'.id).classList.toggle("show");
+        document.getElementById('myDropdown.'.id).classList.toggle("show");
     }
 </script>
