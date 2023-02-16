@@ -54,7 +54,7 @@ class ApartmentSeeder extends Seeder
         $url = 'https:' . $img . '.jpg';
         $contents = file_get_contents($url);
         $temp_name = substr($url, strrpos($url, '/') + 1);
-        $name = $temp_name . '.jpg';
+        $name = $temp_name;
         $path = 'images/' . $name;
         Storage::put('/public/images/' . $name, $contents);
         return $path;
