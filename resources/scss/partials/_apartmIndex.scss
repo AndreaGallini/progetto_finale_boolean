@@ -114,7 +114,7 @@
         align-items: center;
     }
 
-    .rosegold {
+    .rosegold { //contenitore
         height: 60px;
         width: 60px;
         display: flex;
@@ -128,7 +128,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        input {
+        input { //input
             position: absolute;
             opacity: 0;
             cursor: pointer;
@@ -138,7 +138,7 @@
             width: 60px;
             border-radius: 50%;
           }
-          .checkmark2 {
+          .checkmark2 { //contenitore span
             position: absolute;
             display: flex;
             align-items: center;
@@ -151,7 +151,7 @@
             background-color: $white;
             border: 4px solid $grey;
           }
-          .checkedicon {
+          .checkedicon { //span contenitore icona
             font-size: 2rem;
             // display: none;
             color: $grey;
