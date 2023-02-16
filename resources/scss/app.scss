@@ -258,3 +258,39 @@ a{
         }
     }
 }
+.top_messages{
+            position: relative;
+            cursor: pointer;
+
+}
+.bottom_messages{
+
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            overflow: auto;
+
+}
+.show {
+    display: block;
+}
+.my_col{
+    position: relative;
+    min-width: 300px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.my_dflex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.name_message{
+    font-size: 20px;
+
+}
+.mail_message{
+    font-size: 20px;
+
+}
