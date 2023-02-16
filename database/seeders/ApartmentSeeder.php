@@ -51,7 +51,7 @@ class ApartmentSeeder extends Seeder
 
     public static function storeimage($img)
     {
-        $url = 'https:' . $img . '.jpg';
+        $url = 'https:' . $img;
         $contents = file_get_contents($url);
         $temp_name = substr($url, strrpos($url, '/') + 1);
         $name = $temp_name . '.jpg';
