@@ -32,6 +32,7 @@ class ApartmentSeeder extends Seeder
             $newapartment->bath_number = $apartment['bath_number'];
             $newapartment->mq_value = $apartment['mq_value'];
             $newapartment->address = $apartment['address'];
+            $newapartment->descrizione = $apartment['descrizione'];
             $newapartment->lat = $apartment['lat'];
             $newapartment->category_id = $apartment['category_id'];
             $newapartment->long = $apartment['long'];
@@ -54,7 +55,7 @@ class ApartmentSeeder extends Seeder
         $url = 'https:' . $img . '.jpg';
         $contents = file_get_contents($url);
         $temp_name = substr($url, strrpos($url, '/') + 1);
-        $name = $temp_name . '.jpg';
+        $name = $temp_name;
         $path = 'images/' . $name;
         Storage::put('/public/images/' . $name, $contents);
         return $path;

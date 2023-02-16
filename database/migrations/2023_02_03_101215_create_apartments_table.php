@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('slug')->nullable();
             $table->text('cover_img');
             $table->integer('room_number');
+            $table->text('descrizione')->nullable();
             $table->integer('bed_number');
             $table->integer('bath_number');
             $table->integer('mq_value');
