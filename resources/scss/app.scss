@@ -7,7 +7,9 @@
 @use './partials/_navdesktop';
 @use './partials/_apartmIndex';
 @use './partials/_apartmShow';
-@use './partials/mediabook';
+@use './partials/_mediabook';
+@use './partials/_inboxSingle';
+
 @import './variables/_variables.scss';
 @import '~bootstrap/scss/bootstrap';
 

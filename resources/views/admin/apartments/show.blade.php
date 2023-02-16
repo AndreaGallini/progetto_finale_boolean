@@ -4,9 +4,12 @@
     <section id="apartmShow" class="pb-5">
         <div class="container">
             {{-- tasto back --}}
-            <div class="mt-5">
+            <div class="mt-5 d-flex justify-content-between">
                 <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
                     <i class="fa-solid fa-caret-left me-2"></i>Indietro
+                </a>
+                <a class="btn inbox d-flex justify-content-center align-items-center" href="{{ route('admin.show-inbox', $apartment->slug) }}">
+                    <i class="fa-solid fa-envelope"></i> <span>Vai alla tua <span class="text-uppercase">inbox</span></span>
                 </a>
             </div>
 
@@ -120,10 +123,10 @@
                 </div>
             </div>
 
-            <div class="inbox my-5">
+            {{-- <div class="inbox my-5">
                 <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.show-inbox', $apartment->slug) }}"><i
                         class="fa-solid fa-envelope"></i></a>
-            </div>
+            </div> --}}
         </div>
     </section>
 
