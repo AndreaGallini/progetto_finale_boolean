@@ -57,7 +57,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::post('/formstore ', [LeadController::class, 'store'])->name('store');
 
     });
-Route::get(
+Route::post(
     '/success',
     function () {
         return view('success');

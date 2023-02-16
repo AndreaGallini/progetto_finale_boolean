@@ -66,6 +66,12 @@
                                                 </div>
                                             @endif
                                         </div>
+                                        {{-- <div class="sponsor col-12 col-md-12 col-lg-2">
+                                            <h2 class="d-flex">
+                                                <a class="sponsorr" href="{{ route('admin.apartments.show', $apartment->slug) }}"
+                                                    title="View Apartment">sponsorizza</a>
+                                            </h2>
+                                        </div> --}}
                                     </div>
                                     <div class="d-flex justify-content-end mt-3">
                                         <div class="link-edit">

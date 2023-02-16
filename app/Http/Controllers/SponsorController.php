@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSponsorRequest;
 use App\Http\Requests\UpdateSponsorRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Sponsor;
+use App\Models\Apartment;
 
 class SponsorController extends Controller
 {
@@ -16,8 +18,10 @@ class SponsorController extends Controller
      */
     public function index()
     {
+        $userId = Auth::id();
         $sponsors = Sponsor::all();
-        return view('admin.sponsors.index', compact('sponsors'));
+        $apartments = Apartment::where('user_id', $userId)->get();
+        return view('admin.sponsors.index', compact('sponsors', 'apartments'));
     }
 
     /**
