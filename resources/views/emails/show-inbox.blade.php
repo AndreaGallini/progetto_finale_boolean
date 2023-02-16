@@ -13,8 +13,7 @@
 
                     <small onclick="dropdown({{ $lead->id }})">Clicca qui per vedere il corpo della mail</small>
                 </div>
-                <div class="bottom_messages" :id="myDropdown.
-                {{ $lead->id }}">
+                <div class="bottom_messages d-none" id="myDropdown_{{ $lead->id }}">
                     <p class="pt-2"><strong>Messaggio:</strong> {{ $lead->message }}</p>
                 </div>
             </div>
@@ -25,6 +24,9 @@
 @endsection
 <script>
     function dropdown(id) {
-        document.getElementById('myDropdown.'.id).classList.toggle("show");
+        // console.log('ciao')
+        const selMessage = document.getElementById(`myDropdown_${id}`);
+        selMessage.classList.toggle('d-none');
+        console.log(selMessage.classList)
     }
 </script>
