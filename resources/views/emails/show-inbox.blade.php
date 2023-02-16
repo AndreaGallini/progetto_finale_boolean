@@ -13,7 +13,8 @@
 
                     <small onclick="dropdown({{ $lead->id }})">Clicca qui per vedere il corpo della mail</small>
                 </div>
-                <div class="bottom_messages" id="myDropdown">
+                <div class="bottom_messages" :id="myDropdown.
+                {{ $lead->id }}">
                     <p class="pt-2"><strong>Messaggio:</strong> {{ $lead->message }}</p>
                 </div>
             </div>
@@ -24,6 +25,7 @@
 @endsection
 <script>
     function dropdown(id) {
-        document.getElementById('myDropdown').classList.toggle("show");
+        document.getElementById('myDropdown'
+            '.'.id).classList.toggle("show");
     }
 </script>
