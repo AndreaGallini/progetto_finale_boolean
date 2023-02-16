@@ -117,3 +117,57 @@ if (document.getElementById("navFixed")) {
         }
     });
 }
+
+if(document.getElementById('selApartments')){
+    const selectAppHTML = document.getElementById('selApartments');
+
+    const previewAppHTML = document.getElementById('previewApp');
+
+
+    const hidWeekHTML =  document.getElementById('hidWeek');
+    const hidMonthHTML =  document.getElementById('hidMonth');
+    const hidYearHTML =  document.getElementById('hidYear');
+
+    const selPicHTML = document.getElementById('selPic');
+    const selTitleHTML = document.getElementById('selTitle');
+    const selAddressHTML = document.getElementById('selAddress');
+    const selIconHTML = document.getElementById('selIcon');
+    const selCategoryHTML = document.getElementById('selCategory');
+
+    const subBtnWeekHTML = document.getElementById('subBtnWeek');
+    const subBtnMonthHTML = document.getElementById('subBtnMonth');
+    const subBtnYearHTML = document.getElementById('subBtnYear');
+
+    const apiSingleBaseUrl = 'http://localhost:8000/api/apartments/';
+    const imgBaseUrl = 'http://localhost:8000/storage/'
+
+    let activeApartment = null;
+
+
+    selectAppHTML.addEventListener('change', ()=>{
+
+        axios.get(`${apiSingleBaseUrl}${selectAppHTML.value}`).then((response)=>{
+            activeApartment = response.data.results;
+
+            selPicHTML.src = `${imgBaseUrl}${activeApartment.cover_img}`;
+            selTitleHTML.innerHTML = `${activeApartment.title}`;
+            selAddressHTML.innerHTML = `${activeApartment.address}`;
+            selIconHTML.innerHTML = `${activeApartment.category.img}`;
+            selCategoryHTML.innerHTML = `${activeApartment.category.name}`;
+
+            if(subBtnWeekHTML.classList.contains('d-none')){
+                subBtnWeekHTML.classList.toggle('d-none');
+                subBtnMonthHTML.classList.toggle('d-none');
+                subBtnYearHTML.classList.toggle('d-none');
+            }
+
+            if(previewAppHTML.classList.contains('d-none')){
+                previewAppHTML.classList.toggle('d-none');
+            }
+
+            hidWeekHTML.value = activeApartment.id;
+            hidMonthHTML.value = activeApartment.id;
+            hidYearHTML.value = activeApartment.id;
+        })
+    })
+}

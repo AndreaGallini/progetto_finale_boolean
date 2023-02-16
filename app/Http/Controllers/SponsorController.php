@@ -8,9 +8,27 @@ use App\Http\Requests\UpdateSponsorRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Sponsor;
 use App\Models\Apartment;
+use Illuminate\Http\Request;
 
 class SponsorController extends Controller
 {
+    public function pay(Request $request){
+
+        if($request->has('hidWeek')){
+            $apartment = Apartment::where('id', $request->hidWeek)->get()->first();
+        }
+        if($request->has('hidMonth')){
+            $apartment = Apartment::where('id', $request->hidMonth)->get()->first();
+        }
+        if($request->has('hidYear')){
+            $apartment = Apartment::where('id', $request->hidYear)->get()->first();
+        }
+
+        $sponsor = Sponsor::where('id', $request->sponsor)->get()->first();
+
+        return view('admin.sponsors.paypage', compact('apartment', 'sponsor'));
+    }
+
     /**
      * Display a listing of the resource.
      *

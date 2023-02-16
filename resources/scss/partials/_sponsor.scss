@@ -36,7 +36,7 @@
         justify-content: center;
         width: 100%;
         padding: 50px 0px;
-        a{
+        button{
             padding: 12px 30px;
             background-color: $white;
             border-radius: 5px;
@@ -75,3 +75,49 @@
     color: $rosegold;
 }
 
+#selectArea{
+    font-family: $main-font;
+    #selApartments{
+
+    }
+
+    .selectedApp{
+        .pic{
+            height: 300px;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .infos{
+            padding: 40px;
+            h2{
+                color: $rosegold;
+            }
+        }
+    }
+}
+
+#previewApp{
+    animation: appearFromLeft .5s ease-out;
+}
+#subBtnWeek{
+    animation: appearFromLeft .5s ease-out;
+}
+#subBtnMonth{
+    animation: appearFromLeft .5s ease-out;
+}
+#subBtnYear{
+    animation: appearFromLeft .5s ease-out;
+}
+@keyframes appearFromLeft {
+    0%{
+        transform: translate(-10%, 0);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

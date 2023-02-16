@@ -1,10 +1,39 @@
 @extends('layouts.admin')
 @section('content')
 <section>
-    <div  class=" container px-4 mndv">
+    <div  class="container px-4 mndv">
         <div class="row">
-            <h1>Seleziona l'appartamento da sponsorizzare:</h1>
-            @foreach ($apartments as $apartment)
+            <div id="selectArea">
+                <h1>Seleziona l'appartamento da sponsorizzare:</h1>
+                <select name="selApartments" id="selApartments">
+                    <option value="" selected>Seleziona l'appartamento da sponsorizzare</option>
+                    @foreach ($apartments as $apartment)
+                        <option value="{{ $apartment->slug }}">{{ $apartment->title }}</option>
+                    @endforeach
+                </select>
+                <div id="previewApp" class="selectedApp d-flex justify-content-center d-none">
+                    <div class="pic w-25">
+                        <img id="selPic" src="" alt="Immagine non disponibile">
+                    </div>
+                    <div class="infos w-75 d-flex flex-column justify-content-between">
+                        <h2 id="selTitle" class="fw-bold"></h2>
+                        <div class="d-flex justify-content-between">
+                            <div class="address">
+                                <i class="fa-solid fa-location-dot me-3"></i> <span id="selAddress" class="fs-5 fw-bold"></span>
+                            </div>
+                            <div class="category">
+                                <span id="selIcon" class="me-3"></span> <span id="selCategory" class="fs-5 fw-bold"></span>
+                            </div>
+                        </div>
+                        <div class="sponsors">
+                            <p>spon1</p>
+                            <p>spon2</p>
+                            <p>spon3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- @foreach ($apartments as $apartment)
                             <div class="apartmIndex sponsoredblock col-12">
                                 <div class="card my-5">
                                     <div class="row">
@@ -59,10 +88,10 @@
                                         </div>
                                     </div>
                                 </div>
-                        @endforeach
+                        @endforeach --}}
         </div>
 
-        <div class="row  g-3">
+        <div class="row g-3">
 
             <div class="col-lg-4 col-md-6 col-sm-12 cardb cardb1">
                 <h3 class="text-center">Settimanale</h3>
@@ -72,11 +101,16 @@
                         <i class="fa-solid fa-euro-sign"></i>5.99</span>
                     {{-- <span class="befp"></span> --}}
                 </div>
-                
+
                 <div class="butto">
-                    <a class="text-center" href="#">
-                        abbonati ora
-                    </a>
+                    <form action="{{ route('admin.paypage') }}" class="d-flex flex-column align-items-center" id="formWeek">
+                        <input type="hidden" id="hidWeek" name="hidWeek">
+                        <input type="hidden" id="sponsor" name="sponsor" value="1">
+                        <button id="subBtnWeek" type="submit" class="text-center d-none">
+                            abbonati ora
+                        </button>
+                        {{-- <span class="text-danger d-none">Devi prima selezionare un appartamento!</span> --}}
+                    </form>
                 </div>
 
                 <ul class="text-center list-unstyled">
@@ -94,11 +128,16 @@
                         <i class="fa-solid fa-euro-sign"></i>19.99</span>
                     <span class="befp">23.99</span>
                 </div>
-                
+
                 <div class="butto">
-                    <a class="text-center" href="#">
-                        abbonati ora
-                    </a>
+                    <form action="{{ route('admin.paypage') }}" class="d-flex flex-column align-items-center">
+                        <input type="hidden" id="hidMonth" name="hidMonth">
+                        <input type="hidden" id="sponsor" name="sponsor" value="2">
+                        <button id="subBtnMonth" class="text-center d-none">
+                            abbonati ora
+                        </button>
+                        {{-- <span class="text-danger">Devi prima selezionare un appartamento!</span> --}}
+                    </form>
                 </div>
 
                 <ul class="text-center list-unstyled">
@@ -116,11 +155,16 @@
                         <i class="fa-solid fa-euro-sign"></i>199.99</span>
                     <span class="befp">287.99</span>
                 </div>
-                
+
                 <div class="butto">
-                    <a class="text-center" href="#">
-                        abbonati ora
-                    </a>
+                    <form action="{{ route('admin.paypage') }}" class="d-flex flex-column align-items-center">
+                        <input type="hidden" id="hidYear" name="hidYear">
+                        <input type="hidden" id="sponsor" name="sponsor" value="3">
+                        <button id="subBtnYear" class="text-center d-none">
+                            abbonati ora
+                        </button>
+                        {{-- <span class="text-danger">Devi prima selezionare un appartamento!</span> --}}
+                    </form>
                 </div>
 
                 <ul class="text-center list-unstyled">
@@ -132,9 +176,5 @@
 
         </div>
     </div>
-    <script>
-        
-    </script>
 </section>
-@include('partials.admin.modal-delete')
 @endsection
