@@ -58,15 +58,39 @@ class SponsorController extends Controller
      * @param  \App\Http\Requests\StoreSponsorRequest  $request
      *
      */
-    public function store(StoreSponsorRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
-        $slug = Sponsor::generateSlug($request->name);
-        $data['slug'] = $slug;
 
-        Sponsor::create($data);
+        $userId = Auth::id();
+        $sponsors = Sponsor::all();
+        $apartments = Apartment::where('user_id', $userId)->get();
 
-        return redirect()->back()->with('message', "Sponsor $slug added successfully");
+        $sponsorId = $request->sponsor_id;
+        $apartmentId = $request->apartment_id;
+
+        $apartmentToUpdate = Apartment::with('sponsors')->where('id', $apartmentId)->get();
+        // $apartmentToUpdate = Apartment::where('id', $apartmentId)->get();
+
+        $apartmentToUpdate->sponsors()->sync($sponsorId);
+
+        // dd($apartmentToUpdate);
+
+
+        // dd($sponsorToUpdate);
+
+        // $sponsorToUpdate->apartments()->attach($apartmentId);
+
+        // $apartmentToUpdate->sponsors()->sync($sponsorId);
+
+
+        // dd($request);
+        // $data = $request->validated();
+        // $slug = Sponsor::generateSlug($request->name);
+        // $data['slug'] = $slug;
+
+        // Sponsor::create($data);
+
+        return view('admin.sponsors.index', compact('sponsors', 'apartments'));
     }
 
     /**
