@@ -145,6 +145,13 @@ if(document.getElementById('selApartments')){
 
 
     selectAppHTML.addEventListener('change', ()=>{
+        if(selectAppHTML.value == ''){
+            previewAppHTML.classList.add('d-none');
+            subBtnWeekHTML.classList.add('d-none');
+            subBtnMonthHTML.classList.add('d-none');
+            subBtnYearHTML.classList.add('d-none');
+            return console.log('reset');
+        }
 
         axios.get(`${apiSingleBaseUrl}${selectAppHTML.value}`).then((response)=>{
             activeApartment = response.data.results;
