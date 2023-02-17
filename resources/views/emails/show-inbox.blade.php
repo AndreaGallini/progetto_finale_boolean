@@ -1,27 +1,36 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Inbox di: {{ $apartment->title }} </h1>
-    <section class="  my_dflex">
 
-        @foreach ($apartment->leads as $lead)
-            <div class=" my_col">
-                <div class="top_messages ">
+<section id="show-inbox">
+    <div class="container py-5">
+        <h4 class="pb-4">I tuoi messaggi per: {{ $apartment->title }} </h4>
+        <div class="msg-list">
+            @foreach ($apartment->leads as $lead)
+                <div class="my_col">
+                    <div class="top_messages">
+    
+                        <p class="name_message">
+                            <span class="emerald"><strong>Mittente:</strong>
+                            </span> {{ $lead->name }}</p>
 
-                    <p class="name_message"><strong>Mittente:</strong> {{ $lead->name }}</p>
-                    <p class="mail_message"><strong>Mail mittente:</strong> {{ $lead->email }}</p>
-
-
-                    <small onclick="dropdown({{ $lead->id }})">Clicca qui per vedere il corpo della mail</small>
+                        <p class="mail_message"><span  class="emerald"><strong>Mail mittente:</strong></span> {{ $lead->email }}</p>
+    
+                        <small onclick="dropdown({{ $lead->id }})">
+                            <i class="fa-solid fa-envelope emerald pe-2"></i>
+                                Clicca qui per vedere il corpo della mail</small>
+                    </div>
+                    <div class="bottom_messages d-none" id="myDropdown_{{ $lead->id }}">
+                        <p class="pt-3"><span class="emerald"><strong>Messaggio:</strong></span>
+                            {{ $lead->message }}</p>
+                    </div>
                 </div>
-                <div class="bottom_messages d-none" id="myDropdown_{{ $lead->id }}">
-                    <p class="pt-2"><strong>Messaggio:</strong> {{ $lead->message }}</p>
-                </div>
-            </div>
-        @endforeach
+            <hr />
+            @endforeach
+        </div>
+    </div>
+@endsection 
 
-    </section>
-    {{-- <h2>{{ $apartment->title }}</h2> --}}
-@endsection
+   
 <script>
     function dropdown(id) {
         // console.log('ciao')
@@ -29,4 +38,6 @@
         selMessage.classList.toggle('d-none');
         console.log(selMessage.classList)
     }
+
+  
 </script>
