@@ -22,11 +22,11 @@ return [
         'img' => '<i class="fa-solid fa-tree-city"></i>'
     ],
     [
-        'name' => 'Villa al mare',
+        'name' => 'Villa al lago',
         'img' => '<i class="fa-solid fa-house-flood-water"></i>'
     ],
     [
-        'name' => 'Abitazione in stile industriale',
+        'name' => 'Cottage in montagna',
         'img' => '<i class="fa-solid fa-warehouse"></i>'
     ],
     [
