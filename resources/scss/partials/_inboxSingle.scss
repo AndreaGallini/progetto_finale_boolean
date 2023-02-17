@@ -1,3 +1,21 @@
 @import '../variables/variables';
 
+#show-inbox {
+    .container {
+        font-family: $main-font;
+        color: $darkgrey; 
+    }
+
+    h4 {
+        color: $rosegold;
+    }
+
+    .emerald {
+        color: $emerald;
+    }
+
+    .my_col {
+      height: 200px;
+    }    
+}
 
