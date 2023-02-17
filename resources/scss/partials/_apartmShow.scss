@@ -5,6 +5,34 @@
         text-decoration: none;
     }
 
+    .inbox{
+        border: 1px solid $emerald;
+        background: linear-gradient(to right, $emerald 50%, $white 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all .3s ease-in-out;
+        color: $emerald;
+        padding: 0px 40px;
+        position: relative;
+        i{
+            position: absolute;
+            transform: translate(-5em, 0);
+            color: $emerald;
+            z-index: 600;
+            transition: transform .3s ease-in-out;
+        }
+
+        &:hover{
+            background-position: left bottom;
+            color: $white;
+        }
+
+        &:hover i{
+            transform: translate(5em, 0);
+            color: $white;
+        }
+    }
+
     .container {
         font-family: $main-font;
         color: $darkgrey;
@@ -126,5 +154,5 @@
                             0 0 0 7px black;
             }
         }
-    }   
+    }
 }
