@@ -8,7 +8,8 @@
                 <a class="my-btn btn-back" href="{{ route('admin.apartments.index') }}">
                     <i class="fa-solid fa-caret-left me-2"></i>Indietro
                 </a>
-                <a class="btn inbox d-flex justify-content-center align-items-center" href="{{ route('admin.show-inbox', $apartment->slug) }}">
+                <a class="btn inbox d-flex justify-content-center align-items-center"
+                    href="{{ route('admin.show-inbox', $apartment->slug) }}">
                     <i class="fa-solid fa-envelope"></i> <span>Vai alla tua <span class="text-uppercase">inbox</span></span>
                 </a>
             </div>
@@ -108,6 +109,7 @@
 
             <div class="photo-album">
                 <h4 class="my-3">Album Foto:</h4>
+                <button class="bottone_mio">Aggiungi foto</button>
                 <div class="my-3 row">
                     @foreach ($mediabooks as $mediabook)
                         @if (str_contains($mediabook, 'http'))
@@ -123,103 +125,10 @@
                 </div>
             </div>
 
-            {{-- <div class="inbox my-5">
-                <a class="btn btn-outline-dark d-block m-auto" href="{{ route('admin.show-inbox', $apartment->slug) }}"><i
-                        class="fa-solid fa-envelope"></i></a>
-            </div> --}}
+
         </div>
     </section>
 
-
-    {{-- <div>
-            <a class="back-btn btn btn-dark" href="{{ route('admin.apartments.index') }}">BACK</a>
-            <h1>{{ $apartment->title }}</h1> --}}
-    {{-- @if ($activity->categories && count($activity->categories) > 0)
-        @foreach ($activity->categories as $category)
-        <span>{{$category->name}}</span>
-        @endforeach
-        @endif --}}
-
-    {{-- <div class="image">
-                @if ($apartment->cover_img)
-                    <img src="{{ asset('storage/' . $apartment->cover_img) }}">
-                @else
-                    <img src="{{ Vite::asset('resources/img/not_found.jpeg') }}" alt="">
-                @endif
-            </div>
-            <div class="infos d-flex flex-column">
-                <div class="info-row d-flex justify-content-around my-3">
-                    <div class="info-col d-flex justify-content-between">
-                        <span>Prezzo:</span>
-                        <span>{{ $apartment->price }}</span>
-                    </div>
-                    <div class="info-col d-flex justify-content-between">
-                        <span>Slug:</span>
-                        <span>{{ $apartment->slug }}</span>
-                    </div>
-                </div>
-                <div class="info-row d-flex justify-content-around my-3">
-                    <div class="info-col d-flex justify-content-between">
-                        <span>Categoria:</span>
-                        @if ($apartment->category)
-                            <span>{{ $apartment->category->name }}</span>
-                        @else
-                            <span>Categoria non specificata</span>
-                        @endif
-                    </div>
-                </div>
-                <div class="info-row d-flex justify-content-around my-3">
-                    <div class="info-col d-flex justify-content-between">
-                        <span>Servizi:</span>
-                        <div class="tags">
-                            @if ($apartment->services && count($apartment->services) > 0)
-                                @foreach ($apartment->services as $service)
-                                    <small class="d-inline">{{ $service->name }}</small>
-                                @endforeach
-                            @else
-                                <span>Nessun servizio</span>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="info-row d-flex justify-content-around my-3">
-                    <div class="info-col d-flex justify-content-between">
-                        <span>Sponsor:</span>
-                        <div>
-                            @if ($apartment->sponsors && count($apartment->sponsors) > 0)
-                                @foreach ($apartment->sponsors as $sponsor)
-                                    <small class="d-inline p-2 rounded-pill text-white">{{ $sponsor->name }}</small>
-                                @endforeach
-                            @else
-                                <span>Nessuno sponsor</span>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="map-wrapper d-flex flex-column justify-content-center align-items-center">
-                    <h4>Posizione:</h4>
-                    <div ref="mapRef" id="map"></div>
-                </div>
-            </div>
-        </div>
-        <div id="dropin-container"></div>
-    </section> --}}
-
-
-    {{-- SCRIPT --}}
-
-    {{-- <script type="text/javascript">
-        braintree.dropin.create({
-                    container: document.getElementById('dropin-container'),
-
-                }
-                braintree.dropin.create({
-                        // Step three: get client token from your server, such as via
-                        //    templates or async http request
-                        authorization: CLIENT_TOKEN_FROM_SERVER,
-                        container: '#dropin-container'
-                    }
-    </script> --}}
     <script>
         let place = [
             {{ $apartment->lat }},
@@ -257,7 +166,7 @@
             }
 
             let map = tt.map({
-                key: 'mjOVKpgWnl7gsw0eNKkVguzisLjLZGIh',
+                key: 'h7cAdo65F2uuetiST0o1pnUygRaWDuuX',
                 container: document.getElementById('map'),
                 center: focus,
                 zoom: 5
@@ -267,11 +176,6 @@
 
             map.addControl(new tt.FullscreenControl());
             map.addControl(new tt.NavigationControl());
-
-            // const ttSearchBox = new tt.plugins.SearchBox(tt.services, this.options);
-            // map.addControl(ttSearchBox, 'top-left');
-
-            // this.mapGlob = map
             insertLocs(map)
         }
 
