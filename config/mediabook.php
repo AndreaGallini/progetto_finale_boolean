@@ -1,210 +1,210 @@
 <?php
 return [
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     //a0.muscache.com/im/pictures/prohost-api/Hosting-783647534231521626/original/86f74812-55c9-4a08-a494-c91707825623
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     //torino
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
     [
-        '//www.brokey.it/wp-content/uploads/2021/07/arredare-casa-stile-barocco-1-e1627631064697',
-        '//images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758',
-        '//images.pexels.com/photos/3701434/pexels-photo-3701434',
-        '//images.pexels.com/photos/6957089/pexels-photo-6957089'
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
+        'https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg',
     ],
 ]
-?>
+    ?>
