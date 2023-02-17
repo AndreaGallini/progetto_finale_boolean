@@ -71,6 +71,17 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="my-3">
+                        <label for="descrizione" class="form-label bold-txt">Descrizione <strong>*</strong></label>
+                        <input type="textarea" class="form-control @error('descrizione') is-invalid @enderror"
+                            id="descrizione" name="descrizione" required
+                            value="{{ old('descrizione', $apartment->descrizione) }}">
+                        @error('descrizione')
+                            <div class="invalid-feedback d-block">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
                     <div class="my-3">
                         <label for="address" class="form-label bold-txt">Nuovo indirizzo</label>
