@@ -46,6 +46,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::resource('stats', StatController::class)->parameters(['stats' => 'stat:slug']);
         Route::resource('sponsors', SponsorController::class)->parameters(['sponsors' => 'sponsor:slug']);
         Route::get('/paypage', [SponsorController::class, 'pay'])->name('paypage');
+        Route::get('/braintree', [SponsorController::class, 'braintree'])->name('braintree');
         Route::get('/inbox/{apartment:slug}', [LeadController::class, 'showMails'])->name('show-inbox');
         Route::get('/inbox', [LeadController::class, 'index'])->name('inbox');
         Route::get('/formtest', [LeadController::class, 'testform'])->name('testform');

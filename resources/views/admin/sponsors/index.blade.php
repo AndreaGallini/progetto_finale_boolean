@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="butto">
-                    <form action="{{ route('admin.paypage') }}" class="d-flex flex-column align-items-center" id="formWeek">
+                    <form action="{{ route('admin.braintree') }}" class="d-flex flex-column align-items-center" id="formWeek">
                         <input type="hidden" id="hidWeek" name="hidWeek">
                         <input type="hidden" id="sponsor" name="sponsor" value="1">
                         <button id="subBtnWeek" type="submit" class="text-center d-none">
@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="butto">
-                    <form action="{{ route('admin.paypage') }}" class="d-flex flex-column align-items-center">
+                    <form action="{{ route('admin.braintree') }}" class="d-flex flex-column align-items-center">
                         <input type="hidden" id="hidMonth" name="hidMonth">
                         <input type="hidden" id="sponsor" name="sponsor" value="2">
                         <button id="subBtnMonth" class="text-center d-none">
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="butto">
-                    <form action="{{ route('admin.paypage') }}" class="d-flex flex-column align-items-center">
+                    <form action="{{ route('admin.braintree') }}" class="d-flex flex-column align-items-center">
                         <input type="hidden" id="hidYear" name="hidYear">
                         <input type="hidden" id="sponsor" name="sponsor" value="3">
                         <button id="subBtnYear" class="text-center d-none">

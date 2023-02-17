@@ -12,21 +12,43 @@ use Illuminate\Http\Request;
 
 class SponsorController extends Controller
 {
-    public function pay(Request $request){
 
-        if($request->has('hidWeek')){
+    public function braintree(Request $request)
+    {
+
+        if ($request->has('hidWeek')) {
             $apartment = Apartment::where('id', $request->hidWeek)->get()->first();
         }
-        if($request->has('hidMonth')){
+        if ($request->has('hidMonth')) {
             $apartment = Apartment::where('id', $request->hidMonth)->get()->first();
         }
-        if($request->has('hidYear')){
+        if ($request->has('hidYear')) {
             $apartment = Apartment::where('id', $request->hidYear)->get()->first();
         }
 
         $sponsor = Sponsor::where('id', $request->sponsor)->get()->first();
 
-        return view('admin.sponsors.paypage', compact('apartment', 'sponsor'));
+        return view('admin.sponsors.braintree', compact('apartment', 'sponsor'));
+    }
+
+    public function pay(Request $request)
+    {
+        // if ($request->has('hidWeek')) {
+        //     $apartment = Apartment::where('id', $request->hidWeek)->get()->first();
+        // }
+        // if ($request->has('hidMonth')) {
+        //     $apartment = Apartment::where('id', $request->hidMonth)->get()->first();
+        // }
+        // if ($request->has('hidYear')) {
+        //     $apartment = Apartment::where('id', $request->hidYear)->get()->first();
+        // }
+        if ($request->has('sponsor_id')) {
+            $apartment = Apartment::where('id', $request->apartment_id)->get()->first();
+        }
+
+        $sponsor = Sponsor::where('id', $request->sponsor)->get()->first();
+
+        return view('admin.sponsors.store', compact('apartment', 'sponsor'));
     }
 
     /**
@@ -60,7 +82,7 @@ class SponsorController extends Controller
      */
     public function store(Request $request)
     {
-
+        dd($request);
         $userId = Auth::id();
         $sponsors = Sponsor::all();
         $apartments = Apartment::where('user_id', $userId)->get();
