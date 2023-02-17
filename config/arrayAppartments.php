@@ -294,7 +294,7 @@ Casa colonica al mare con giardino privato è un'incantevole proprietà situata 
         'cover_img' => 'https://a0.muscache.com/im/pictures/51c5973c-0021-4b75-884c-537313bf20be.jpg',
         'descrizione' => 'prova',
         "room_number" => 10,
-        "category_id" => 3,
+        "category_id" => 7,
         "bed_number" => 6,
         "bath_number" => 3,
         "mq_value" => 400,
@@ -330,7 +330,7 @@ Casa colonica al mare con giardino privato è un'incantevole proprietà situata 
         "category_id" => 6,
         "bath_number" => 3,
         "mq_value" => 350,
-        "address" => "rue des lavandes 43",
+        "address" => "via roma 12 , Como",
         "lat" => 45.52338368175692,
         "long" => 9.001395418514797,
         "visible" => true
