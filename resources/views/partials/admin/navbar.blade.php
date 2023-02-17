@@ -57,8 +57,8 @@
                     href="{{ route('admin.sponsors.index') }}">Sponsorizza</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'admin.stats.index' ? 'active' : '' }}"
-                    href="{{ route('admin.stats.index') }}">Statistiche</a>
+                <a class="nav-link {{ Route::currentRouteName() == 'admin.inbox' ? 'active' : '' }}"
+                    href="{{ route('admin.inbox') }}">Messaggi</a>
             </li>
         @endif
     </ul>

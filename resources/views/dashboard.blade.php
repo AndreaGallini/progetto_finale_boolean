@@ -41,16 +41,12 @@
                             <h1>appartamenti</h1>
                         </a>
                         <a href="{{ route('admin.sponsors.index') }}"
-                            class="col-12 col-md-6 col-xl-4 carda cardtwo d-flex align-items-center justify-content-center">
+                            class="col-12 col-md-6 col-xl-6 carda cardtwo d-flex align-items-center justify-content-center">
                             <h1>sponsorizza</h1>
                         </a>
-                        <a href="{{ route('admin.stats.index') }}"
-                            class="col-12 col-md-6 col-xl-4 carda cardfour d-flex align-items-center justify-content-center">
+                        <a href="{{ route('admin.inbox') }}"
+                            class="col-12 col-md-6 col-xl-6 carda cardfour d-flex align-items-center justify-content-center">
                             <h1>messaggi</h1>
-                        </a>
-                        <a href="{{ route('admin.stats.index') }}"
-                            class="col-12 col-md-6 col-xl-4 carda cardtree d-flex align-items-center justify-content-center">
-                            <h1>statistiche</h1>
                         </a>
                     </div>
                 @endif

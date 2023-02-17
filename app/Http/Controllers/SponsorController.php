@@ -65,30 +65,13 @@ class SponsorController extends Controller
         $sponsors = Sponsor::all();
         $apartments = Apartment::where('user_id', $userId)->get();
 
-        $sponsorId = $request->sponsor_id;
+        $sponsorId = [$request->sponsor_id];
+
+
         $apartmentId = $request->apartment_id;
 
         $apartmentToUpdate = Apartment::with('sponsors')->where('id', $apartmentId)->get();
-        // $apartmentToUpdate = Apartment::where('id', $apartmentId)->get();
-
-        $apartmentToUpdate->sponsors()->sync($sponsorId);
-
-        // dd($apartmentToUpdate);
-
-
-        // dd($sponsorToUpdate);
-
-        // $sponsorToUpdate->apartments()->attach($apartmentId);
-
-        // $apartmentToUpdate->sponsors()->sync($sponsorId);
-
-
-        // dd($request);
-        // $data = $request->validated();
-        // $slug = Sponsor::generateSlug($request->name);
-        // $data['slug'] = $slug;
-
-        // Sponsor::create($data);
+        $apartmentToUpdate[0]->sponsors()->attach($sponsorId);
 
         return view('admin.sponsors.index', compact('sponsors', 'apartments'));
     }
