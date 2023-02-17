@@ -257,10 +257,10 @@
             }
 
             let map = tt.map({
-                key: 'mjOVKpgWnl7gsw0eNKkVguzisLjLZGIh',
+                key: 'h7cAdo65F2uuetiST0o1pnUygRaWDuuX',
                 container: document.getElementById('map'),
                 center: focus,
-                zoom: 5
+                zoom: 15
             })
 
             console.log(map);
