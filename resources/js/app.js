@@ -178,3 +178,12 @@ if(document.getElementById('selApartments')){
         })
     })
 }
+
+
+if(document.getElementById('saveSponsorForm')){
+    const formSponsorHTML = document.getElementById('saveSponsorForm');
+
+    setTimeout(()=>{
+        formSponsorHTML.click();
+    }, 5000)
+}
