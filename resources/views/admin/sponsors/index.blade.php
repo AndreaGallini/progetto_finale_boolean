@@ -114,9 +114,9 @@
                 </div>
 
                 <ul class="text-center list-unstyled">
-                    <li><i class="fa-solid fa-check"></i>motivo generico dove spiegi cose</li>
-                    <li><i class="fa-solid fa-xmark"></i>motivo generico</li>
-                    <li><i class="fa-solid fa-xmark"></i>motivo generico dove spiegi cose</li>
+                    <li><i class="fa-solid fa-check"></i>Appartamento comparirà in cima a parità di ricerca</li>
+                    <li><i class="fa-solid fa-xmark"></i>Risparmi sulla sponsorizzazzione nel lungo periodo</li>
+                    <li><i class="fa-solid fa-xmark"></i>Resterai visibile in evidenza per molto</li>
                 </ul>
             </div>
 
@@ -141,9 +141,9 @@
                 </div>
 
                 <ul class="text-center list-unstyled">
-                    <li><i class="fa-solid fa-check"></i>motivo generico</li>
-                    <li><i class="fa-solid fa-check"></i>motivo generico dove spiegi cose</li>
-                    <li><i class="fa-solid fa-xmark"></i>motivo generico dove spiegi cose</li>
+                    <li><i class="fa-solid fa-check"></i>Appartamento comparirà in cima a parità di ricerca</li>
+                    <li><i class="fa-solid fa-check"></i>Risparmi sulla sponsorizzazzione nel lungo periodo</li>
+                    <li><i class="fa-solid fa-xmark"></i>Resterai visibile in evidenza per molto</li>
                 </ul>
             </div>
 
@@ -168,9 +168,9 @@
                 </div>
 
                 <ul class="text-center list-unstyled">
-                    <li><i class="fa-solid fa-check"></i>motivo generico dove spiegi cose</li>
-                    <li><i class="fa-solid fa-check"></i>motivo generico dove spiegi cose</li>
-                    <li><i class="fa-solid fa-check"></i>motivo generico</li>
+                    <li><i class="fa-solid fa-check"></i>Appartamento comparirà in cima a parità di ricerca</li>
+                    <li><i class="fa-solid fa-check"></i>Risparmi sulla sponsorizzazzione nel lungo periodo</li>
+                    <li><i class="fa-solid fa-check"></i>Resterai visibile in evidenza per molto</li>
                 </ul>
             </div>
 
