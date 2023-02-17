@@ -72,6 +72,17 @@
                                                     title="View Apartment">sponsorizza</a>
                                             </h2>
                                         </div> --}}
+                                        <div class="apt-details col-12 col-md-12 col-lg-2">
+                                            @if (count($apartment->sponsors) > 0)
+                                                <div class="mytry">
+                                                    SPONSORIZZATO
+                                                </div>
+                                            @else
+                                                <div>
+                                                    Non Sponsorizzato
+                                                </div>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="d-flex justify-content-end mt-3">
                                         <div class="link-edit">
