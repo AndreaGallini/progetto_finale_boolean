@@ -25,6 +25,7 @@ class StoreApartmentRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5|max:100',
+            'descrizione' => 'required',
             'room_number' => 'required|max:2',
             'bed_number' => 'required|max:2',
             'bath_number' => 'required|max:2',
@@ -46,6 +47,7 @@ class StoreApartmentRequest extends FormRequest
             'title.required' => 'Per favore inserire un titolo',
             'title.min' => 'Il titolo deve essere lungo almeno 5 caratteri',
             'title.max' => 'Il titolo non può superare i 100 caratteri',
+            'descrizione.required' => 'La descrizione è obbligatoria',
             'room_number.required' => 'Per favore inserire il numero di stanze',
             'room_number.max' => 'Il numero non può superare le 2 cifre',
             'bed_number.required' => 'Per favore inserire i posti letto disponibili',

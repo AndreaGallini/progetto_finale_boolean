@@ -20,8 +20,19 @@
                         <label for="title" class="form-label bold-txt">Titolo <strong>*</strong></label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
                             name="title"
-                            value="{{ old('title', $apartment->title) }}"> 
+                            value="{{ old('title', $apartment->title) }}">
                         @error('title')
+                            <div class="invalid-feedback d-block">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descrizione" class="form-label bold-txt">Descrizione <strong>*</strong></label>
+                        <textarea rows="10" class="form-control" id="descrizione" name="descrizione" class="form-control @error('descrizione') is-invalid @enderror" value="{{ old('descrizione', $apartment->descrizione) }}"></textarea>
+                        @error('descrizione')
                             <div class="invalid-feedback d-block">
                                 {{ $message }}
                             </div>
