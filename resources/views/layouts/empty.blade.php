@@ -32,14 +32,6 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<header>
-    @include('partials.admin.header')
-</header>
-
-<div class="navdesktop">
-    @include('partials.admin.navbar')
-</div>
-
 <body>
     <div id="app">
         <main>
@@ -47,10 +39,6 @@
         </main>
     </div>
 </body>
-{{-- smartphone nav --}}
-<div class="navphone">
-    @include('partials.admin.navbarFixed')
-</div>
 
 <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps-web.min.js"></script>
 <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js">

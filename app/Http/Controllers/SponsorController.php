@@ -10,10 +10,11 @@ use App\Models\Sponsor;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
 
+
 class SponsorController extends Controller
 {
 
-    public function braintree(Request $request)
+    public function checkout(Request $request)
     {
 
         if ($request->has('hidWeek')) {
@@ -28,18 +29,38 @@ class SponsorController extends Controller
 
         $sponsor = Sponsor::where('id', $request->sponsor)->get()->first();
 
-        return view('admin.sponsors.braintree', compact('apartment', 'sponsor'));
+        return view('admin.sponsors.checkout', compact('apartment', 'sponsor'));
     }
 
     public function pay(Request $request)
     {
-        if ($request->has('sponsor_id')) {
-            $apartment = Apartment::where('id', $request->apartment_id)->get()->first();
+        if($request->payment_method_nonce){
+            $gateway = new \Braintree\Gateway([
+                'environment' => 'sandbox',
+                'merchantId' => 'j9pykhw8fynn6t4g',
+                'publicKey' => 'w6qjwdpqqr652vbq',
+                'privateKey' => 'ebe8a9f39e2fd7bf01730e3cef0ae694'
+            ]);
+
+            $result = $gateway->transaction()->sale([
+                'amount' => '10.00',
+                'paymentMethodNonce' => $request->payment_method_nonce,
+                'options' => [
+                  'submitForSettlement' => True
+                ]
+              ]);
+            if($result->success){
+                if ($request->has('sponsor_id')) {
+                    $apartment = Apartment::where('id', $request->apartment_id)->get()->first();
+                }
+                $sponsor = Sponsor::where('id', $request->sponsor_id)->get()->first();
+                return view('admin.sponsors.paypage', compact('apartment', 'sponsor'));
+            }else{
+                abort(403);
+            }
+        }else{
+            abort(403);
         }
-
-        $sponsor = Sponsor::where('id', $request->sponsor_id)->get()->first();
-
-        return view('admin.sponsors.paypage', compact('apartment', 'sponsor'));
     }
 
     /**
@@ -51,7 +72,7 @@ class SponsorController extends Controller
     {
         $userId = Auth::id();
         $sponsors = Sponsor::all();
-        $apartments = Apartment::where('user_id', $userId)->get();
+        $apartments = Apartment::where('user_id', $userId)->with('sponsors')->get();
         return view('admin.sponsors.index', compact('sponsors', 'apartments'));
     }
 
@@ -73,7 +94,6 @@ class SponsorController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $userId = Auth::id();
         $sponsors = Sponsor::all();
         $apartments = Apartment::where('user_id', $userId)->get();
@@ -86,7 +106,7 @@ class SponsorController extends Controller
         $apartmentToUpdate = Apartment::with('sponsors')->where('id', $apartmentId)->get();
         $apartmentToUpdate[0]->sponsors()->attach($sponsorId);
 
-        return view('admin.sponsors.index', compact('sponsors', 'apartments'));
+        return view('admin.apartments.index', compact('sponsors', 'apartments'));
     }
 
     /**

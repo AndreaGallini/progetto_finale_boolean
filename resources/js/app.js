@@ -133,6 +133,8 @@ if(document.getElementById('selApartments')){
     const selAddressHTML = document.getElementById('selAddress');
     const selIconHTML = document.getElementById('selIcon');
     const selCategoryHTML = document.getElementById('selCategory');
+    const selSponsorHTML = document.getElementById('selSponsor');
+
 
     const subBtnWeekHTML = document.getElementById('subBtnWeek');
     const subBtnMonthHTML = document.getElementById('subBtnMonth');
@@ -162,6 +164,17 @@ if(document.getElementById('selApartments')){
             selIconHTML.innerHTML = `${activeApartment.category.img}`;
             selCategoryHTML.innerHTML = `${activeApartment.category.name}`;
 
+            console.log(activeApartment);
+
+            if(activeApartment.sponsors.length > 0){
+                selSponsorHTML.innerHTML = '';
+                activeApartment.sponsors.forEach((sponsor)=>{
+                    selSponsorHTML.innerHTML += `<div class="col-6 mb-2"><span class="${sponsor.name}"></span><span>${sponsor.name}</span></div>`
+                })
+            }else{
+                selSponsorHTML.innerHTML = `<i>L'appartamento non ha sponsorizzazioni attive.</i>`
+            }
+
             if(subBtnWeekHTML.classList.contains('d-none')){
                 subBtnWeekHTML.classList.toggle('d-none');
                 subBtnMonthHTML.classList.toggle('d-none');
@@ -179,9 +192,30 @@ if(document.getElementById('selApartments')){
     })
 }
 
+// if(document.getElementById('payBtn')){
+//     const payBtnHTML = document.getElementById('payBtn');
+
+//     payBtnHTML.addEventListener('click', ()=>{
+//         payBtnHTML.value = 'attendi'
+//     })
+// }
 
 if(document.getElementById('saveSponsorForm')){
     const formSponsorHTML = document.getElementById('saveSponsorForm');
+    const spinnerHTML = document.getElementById('spinner');
+    const successHTML = document.getElementById('success');
+    const approvedHTML = document.getElementById('toBeApproved');
+    const boxHTML = document.getElementById('boxLoad');
+
+
+    setTimeout(()=>{
+        spinnerHTML.classList.toggle('d-none');
+        successHTML.classList.toggle('d-none');
+        approvedHTML.innerHTML = `<h4>Transazione avvenuta con successo!</h4>
+                                    <p>attendi mentre vieni reindirizzato...</p>`
+        boxHTML.style.border = '5px solid green';
+        boxHTML.style.color = 'green';
+    }, 3500)
 
     setTimeout(()=>{
         formSponsorHTML.click();
