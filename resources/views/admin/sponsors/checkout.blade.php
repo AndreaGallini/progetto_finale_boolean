@@ -70,15 +70,33 @@
         }, (error, dropinInstance) => {
             if (error) console.error(error);
 
+            const cardHeaderHTML = document.querySelector('.braintree-sheet__text');
+            const labelsHTML = document.querySelectorAll('.braintree-form__label');
+            const errorsHTML = document.querySelectorAll('.braintree-form__field-error');
+            cardHeaderHTML.innerHTML = 'Inserisci Carta';
+            cardHeaderHTML.style.fontSize = '.8rem';
+
+            for(let i = 0; i < labelsHTML.length; i++){
+                if(i == 0){
+                    labelsHTML[i].innerHTML = 'Numero Carta'
+                }
+                else if(i == 1){
+                    labelsHTML[i].innerHTML = `Data Scadenza <small class="text-secondary">(mm/yy)</small>`
+                }
+                else if(i == 2){
+                    labelsHTML[i].innerHTML = 'Salva Carta'
+                }
+            }
+
             form.addEventListener('submit', event => {
                 event.preventDefault();
 
-                payBtnHTML.value = 'Attendi un momento...'
 
                 dropinInstance.requestPaymentMethod((error, payload) => {
                     if (error) console.error(error);
 
                     document.getElementById('nonce').value = payload.nonce;
+                    payBtnHTML.value = 'Attendi un momento...'
                     console.log(payload);
                     form.submit();
                 });

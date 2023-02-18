@@ -192,14 +192,6 @@ if(document.getElementById('selApartments')){
     })
 }
 
-// if(document.getElementById('payBtn')){
-//     const payBtnHTML = document.getElementById('payBtn');
-
-//     payBtnHTML.addEventListener('click', ()=>{
-//         payBtnHTML.value = 'attendi'
-//     })
-// }
-
 if(document.getElementById('saveSponsorForm')){
     const formSponsorHTML = document.getElementById('saveSponsorForm');
     const spinnerHTML = document.getElementById('spinner');
