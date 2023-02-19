@@ -39,9 +39,9 @@
         <main class="">
             @yield('content')
         </main>
-        <footer>
+        {{-- <footer>
             @include('partials.admin.footer')
-        </footer>
+        </footer> --}}
         <div class="navphone">
             @include('partials.admin.navbarFixed')
         </div>

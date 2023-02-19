@@ -30,7 +30,7 @@
                                         <a href="{{ route('admin.apartments.show', $apartment->slug) }}"
                                             class="apt-img me-5 col-12 col-md-12 col-lg-3">
                                             @if ($apartment->cover_img)
-                                                <img class="img-fluid" src="{{ asset('storage/' . $apartment->cover_img) }}"
+                                                <img src="{{ asset('storage/' . $apartment->cover_img) }}"
                                                     alt="Immagine dell'appartamento">
                                             @else
                                                 <img src="{{ Vite::asset('resources/img/not_found.jpeg') }}"

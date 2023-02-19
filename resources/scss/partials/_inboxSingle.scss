@@ -16,6 +16,20 @@
 
     .my_col {
       height: 200px;
-    }    
+    }   
+    
+    .my-btn {
+        background-color: $mauve;
+        border-color: $mauve;
+        width: 150px;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .card {
+        text-align: justify;
+    }
 }
 
