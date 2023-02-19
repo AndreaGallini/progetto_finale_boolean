@@ -12,6 +12,7 @@
     a{
       text-decoration: none;
       &:hover h1{
+        cursor: default;
         color:$white;
       }
       h1{
