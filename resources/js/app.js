@@ -213,3 +213,32 @@ if(document.getElementById('saveSponsorForm')){
         formSponsorHTML.click();
     }, 5000)
 }
+
+
+if(document.getElementById('countUnread')){
+    const countUnreadHTML = document.getElementById('countUnread');
+    const appIdHTML = document.getElementById('appId').innerHTML;
+
+    console.log(appIdHTML);
+
+    const apiSingleBaseUrl = 'http://localhost:8000/api/apartments/';
+
+    let apartment = null;
+
+    let count;
+
+    axios.get(`${apiSingleBaseUrl}${appIdHTML}`).then((response)=>{
+        apartment = response.data.results;
+        let unreadCount = 0;
+        for(let i = 0; i < apartment.leads.length; i++){
+            if(apartment.leads[i].read == 0){
+                unreadCount++
+            }
+        }
+        count = unreadCount;
+        countUnreadHTML.innerHTML = count;
+    })
+
+
+    console.log(countUnreadHTML)
+}

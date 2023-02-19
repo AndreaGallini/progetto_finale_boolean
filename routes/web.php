@@ -51,6 +51,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::get('/inbox', [LeadController::class, 'index'])->name('inbox');
         Route::get('/formtest', [LeadController::class, 'testform'])->name('testform');
         Route::post('/formstore ', [LeadController::class, 'store'])->name('store');
+        Route::put('/updateInbox', [LeadController::class, 'update'])->name('updateInbox');
 
     });
 Route::post(

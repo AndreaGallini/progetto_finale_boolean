@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Mediabook;
 use App\Models\Service;
 use App\Models\Sponsor;
+use App\Models\Lead;
 use App\Models\Stat;
 
 use Illuminate\Support\Facades\Storage;
@@ -96,7 +97,17 @@ class ApartmentController extends Controller
 
         }
         $mediabooks = Mediabook::where('apartment_id', $apartment->id)->get();
-        return view('admin.apartments.show', compact('apartment', 'mediabooks'));
+        $totLeads = Lead::where('apartment_id', $apartment->id)->get();
+
+        $leads = [];
+
+        for($i = 0 ; $i < count($totLeads); $i++){
+            if($totLeads[$i]->read == 0){
+                array_push($leads, $totLeads[$i]);
+            }
+        };
+
+        return view('admin.apartments.show', compact('apartment', 'mediabooks', 'leads'));
     }
 
     /**

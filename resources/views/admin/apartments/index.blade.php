@@ -39,8 +39,7 @@
                                         </a>
                                         <div class="apt-details col-12 col-md-12 col-lg-6">
                                             <h3>
-                                                <a href="{{ route('admin.apartments.show', $apartment->slug) }}"
-                                                    title="View Apartment">{{ $apartment->title }}</a>
+                                                <a href="{{ route('admin.apartments.show', $apartment->slug) }}" title="View Apartment">{{ $apartment->title }}</a>
                                             </h3>
 
                                             <h5>
