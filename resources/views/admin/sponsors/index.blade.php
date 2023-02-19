@@ -64,7 +64,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 cardb cardb2">
-                <h3 class="text-center">3 Giorni</h3>
+                <h3 class="text-center">Tre Giorni</h3>
 
                 <div class="pric">
                     <span class="nowp text-center">

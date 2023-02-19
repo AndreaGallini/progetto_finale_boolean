@@ -267,26 +267,11 @@ a{
     }
 }
 .top_messages{
-            position: relative;
-            cursor: pointer;
-
-}
-.bottom_messages{
-
-            // display: none;
-            position: absolute;
-            min-width: 160px;
-            overflow: auto;
-
+    position: relative;
+    cursor: pointer;
 }
 .show {
     display: block;
-}
-.my_col{
-    position: relative;
-    min-width: 300px;
-    padding-top: 30px;
-    margin-bottom: 30px;
 }
 .my_dflex{
     display: flex;
@@ -296,11 +281,9 @@ a{
 }
 .name_message{
     font-size: 20px;
-
 }
 .mail_message{
     font-size: 20px;
-
 }
         .bottone_mio {
             border: 1px solid $emerald;
@@ -312,12 +295,10 @@ a{
             padding: 0.5rem 1.5rem;
             position: relative;
             border-radius: 10px;
-
             &:hover {
                 background-position: left bottom;
                 color: $white;
             }
-
             &:hover i {
                 transform: translate(5em, 0);
                 color: $white;

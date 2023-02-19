@@ -3,7 +3,7 @@
 #show-inbox {
     .container {
         font-family: $main-font;
-        color: $darkgrey; 
+        color: $darkgrey;
     }
 
     h4 {
@@ -14,8 +14,41 @@
         color: $emerald;
     }
 
-    .my_col {
-      height: 200px;
-    }    
+    .checkReadBtn{
+        background-color: transparent;
+        border: none;
+
+    }
+
+    .my_col{
+        position: relative;
+        padding: 30px;
+        h6{
+            position: absolute;
+            right: 1%;
+            top: 5%;
+        }
+    }
+
+    .bottom_messages{
+        min-width: 160px;
+        overflow: auto;
+        animation: appearFromRight .5s ease-out;
+    }
+
+    .not-read{
+        // background-color: $grey;
+        background-color: rgb(222, 222, 222);
+    }
 }
 
+@keyframes appearFromRight {
+    0%{
+        transform: translate(10%, 0);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

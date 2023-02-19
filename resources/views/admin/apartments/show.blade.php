@@ -11,6 +11,9 @@
                 <a class="btn inbox d-flex justify-content-center align-items-center"
                     href="{{ route('admin.show-inbox', $apartment->slug) }}">
                     <i class="fa-solid fa-envelope"></i> <span>Vai alla tua <span class="text-uppercase">inbox</span></span>
+                    @if((count($leads) > 0))
+                        <div class="notRead d-flex justify-content-center align-items-center">{{ count($leads) }}</div>
+                    @endif
                 </a>
             </div>
 
@@ -124,8 +127,6 @@
                     @endforeach
                 </div>
             </div>
-
-
         </div>
     </section>
 

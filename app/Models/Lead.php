@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Lead extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'email', 'message', 'apartment_id'];
+    protected $fillable = ['name', 'email', 'message', 'apartment_id', 'read'];
 
     public function apartment():BelongsTo
     {

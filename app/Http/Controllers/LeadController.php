@@ -68,4 +68,15 @@ class LeadController extends Controller
     {
         return view('emails.new-contact-email');
     }
+
+    public function update(Request $request)
+    {
+        $lead = Lead::where('id', $request->inboxId)->get()->first();
+
+        $lead->read = 1;
+
+        $lead->save();
+        return redirect(url()->previous()."#$lead->id");
+    }
 }
+
