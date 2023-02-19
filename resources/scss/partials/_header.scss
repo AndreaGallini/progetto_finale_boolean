@@ -32,21 +32,20 @@
 }
 
 .backtom{
-  position: absolute;
-  left: 0;
-  background-color: $emerald;
-  height: 100%;
-  width: 5vw;
-  min-width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // position: absolute;
+  // left: 0;
+  // background-color: $emerald;
+  // height: 100%;
+  // width: 5vw;
+  // min-width: 70px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   font-size: 1.5rem;
   transition: all 200ms;
   color: $white;
   &:hover{
-    background-color: $raindrop;
-    color: $sangria;
+    color: $rosegold;
     font-size: 2rem;
   }
 }

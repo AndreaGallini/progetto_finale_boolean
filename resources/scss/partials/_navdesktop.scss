@@ -1,7 +1,7 @@
 @import '../variables/_variables';
 
 .navdesktop{
-  background-color: $rosegold;
+  background-color: $raindrop;
   // padding-bottom: 10px;
   color: $white;
 }
@@ -67,8 +67,9 @@
     padding: 4px 16px;
     border-radius: 20px;
     font-weight: 700;
+    transition: all 250ms;
     &:hover{
-      background-color: $raindrop;
+      background-color: $emerald;
     }   
   }
 }

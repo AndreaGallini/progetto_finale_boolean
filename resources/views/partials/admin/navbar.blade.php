@@ -7,13 +7,15 @@
 @endif
 @else
 <div class="d-flex justify-content-between align-items-center container maincont">
-    <a href="{{ url('admin') }}" class="nameuser">
+    <div class="logou">
+        <a class="dropdown-item" href="{{ url('admin') }}"
         @if (Auth::user()->isAdmin())
-        <span> Dashboard Admin</span>
+        <span class="btn btn-light"> Dashboard Admin</span>
         @else
-        <span> Dashboard di {{ Auth::user()->name }}:</span>
+        <span class="btn btn-light"> Dashboard di {{ Auth::user()->name }}</span>
         @endif
-    </a>
+        </a>
+    </div>
     <ul class="d-flex justify-content-between align-items-center navl">
         @if (Auth::user()->isAdmin())
             <li class="nav-item">
