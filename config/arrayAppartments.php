@@ -417,22 +417,22 @@ Casa colonica al mare con giardino privato è un'incantevole proprietà situata 
         "long" => 8.756979452912868,
         "visible" => true
     ],
-    [
-        "title" => "Appartamento in centro storico",
-        "price" => 450,
-        "slug" => "Appartamento-in-centro-storico",
-        'cover_img' => 'https://a0.muscache.com/im/pictures/ebcbeba0-aa96-48f1-a658-39f57426008e.jpg',
-        'descrizione' => 'prova',
-        "room_number" => 7,
-        "bed_number" => 4,
-        "category_id" => 3,
-        "bath_number" => 2,
-        "mq_value" => 250,
-        "address" => "Corso Vivaldi 22, 20132, Milano",
-        "lat" => 45.58395852797021,
-        "long" => 8.821008524331335,
-        "visible" => true
-    ],
+    // [
+    //     "title" => "Appartamento in centro storico",
+    //     "price" => 450,
+    //     "slug" => "Appartamento-in-centro-storico",
+    //     'cover_img' => 'https://a0.muscache.com/im/pictures/ebcbeba0-aa96-48f1-a658-39f57426008e.jpg',
+    //     'descrizione' => 'prova',
+    //     "room_number" => 7,
+    //     "bed_number" => 4,
+    //     "category_id" => 3,
+    //     "bath_number" => 2,
+    //     "mq_value" => 250,
+    //     "address" => "Corso Vivaldi 22, 20132, Milano",
+    //     "lat" => 45.58395852797021,
+    //     "long" => 8.821008524331335,
+    //     "visible" => true
+    // ],
     [
         "title" => "Loft industrial con ampia terrazza",
         "price" => 450,
