@@ -18,15 +18,17 @@
 
                         <p class="mail_message"><span  class="emerald"><strong>Mail mittente:</strong></span> {{ $lead->email }}</p>
 
-                        <small>
-                            <form action="{{ route('admin.updateInbox') }}" method="POST">
-                                @csrf
-                                @method('PUT')
+                        @if($lead->read == 0)
+                            <small>
+                                <form action="{{ route('admin.updateInbox') }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
 
-                                <input type="hidden" id="inboxId" name="inboxId" value="{{ $lead->id }}">
-                                <button class="checkReadBtn text-secondary" type="submit"><i class="fa-solid fa-envelope emerald pe-2"></i> Clicca qui per vedere il corpo della mail</button>
-                            </form>
-                        </small>
+                                    <input type="hidden" id="inboxId" name="inboxId" value="{{ $lead->id }}">
+                                    <button class="checkReadBtn text-secondary" type="submit"><i class="fa-solid fa-envelope emerald pe-2"></i> Clicca qui per vedere il corpo della mail</button>
+                                </form>
+                            </small>
+                        @endif
                     </div>
                     @if($lead->read == 1)
                         <div class="bottom_messages">
