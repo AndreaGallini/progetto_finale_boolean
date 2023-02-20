@@ -38,7 +38,7 @@
         <div class="row g-3">
 
             <div class="col-lg-4 col-md-6 col-sm-12 cardb cardb1">
-                <h3 class="text-center">Giornaliero</h3>
+                <h3 class="text-center">24 ore</h3>
 
                 <div class="pric">
                     <span class="nowp text-center">
@@ -64,7 +64,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 cardb cardb2">
-                <h3 class="text-center">Tre Giorni</h3>
+                <h3 class="text-center">72 ore</h3>
 
                 <div class="pric">
                     <span class="nowp text-center">
@@ -90,7 +90,8 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 cardb cardb3">
-                <h3 class="text-center">Settimanale</h3>
+                <h3 class="text-center">144 ore
+                </h3>
 
                 <div class="pric">
                     <span class="nowp text-center">
