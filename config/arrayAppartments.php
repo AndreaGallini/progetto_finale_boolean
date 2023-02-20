@@ -69,7 +69,7 @@ return [
         "title" => "Appartameno lussuoso in centro città ",
         "price" => 2000,
         "slug" => "appartamento-lussuoso-in-centro-citta3",
-        'cover_img' => 'https://www.domemilano.com/wp-content/uploads/2019/12/interni_moderni_di_lusso_italian_luxury_interiors.jpg',
+        'cover_img' => 'https://a0.muscache.com/im/pictures/miso/Hosting-776537305534841362/original/9b7dbb5b-dce4-4c12-83a7-e2d600d5c9da.jpeg',
         'descrizione' => "Descriviamo un appartamento lussuoso nel cuore di una città. Situato in una zona tranquilla, l'appartamento offre una vista spettacolare sulla città dai suoi balconi. Il grande salone presenta un'illuminazione naturale abbondante ed è arredato con mobili di alta qualità. La cucina moderna offre tutti gli elettrodomestici necessari per la preparazione di un pasto gourmet. La camera da letto principale è dotata di un grande letto king size, mentre la camera degli ospiti è dotata di letti singoli e la seconda camera da letto è dotata di un divano letto. Inoltre, l'appartamento offre un bagno ben arredato con l'accesso a una sauna per rilassarsi dopo una giornata di esplorazione. Inoltre, l'appartamento dispone di un parcheggio privato e di una zona di archiviazione sicura. Il tutto è circondato da ristoranti e negozi di lusso e dalla corona di una vista mozzafiato. L'appartamento è l'ideale per chi cerca il massimo comfort e lusso nella loro prossima vacanza.",
         "room_number" => 8,
         "category_id" => 3,
